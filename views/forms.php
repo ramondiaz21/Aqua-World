@@ -352,9 +352,12 @@
           <textarea class="form-control" id="tipoServicio" name="tipoServicio" rows="2"></textarea>
         </div>
       </div>
-
-
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <h5>DATOS ADICIONALES</h5>
+      <div class="signature-pad" id="signature-pad">
+        <canvas id="signature-canvas"></canvas>
+      </div>
+      <button id="clear-btn" type="button" class="btn btn-secondary">Limpiar</button>
+      <button type="submit" class="btn btn-success">Enviar</button>
     </form>
   </div>
   <div class="tab-pane fade" id="nino" role="tabpanel" aria-labelledby="nino-tab">

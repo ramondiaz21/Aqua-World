@@ -30,7 +30,7 @@
 
   <?php include 'includes/scripts.html'; ?>
 
-  <!-- <script src="resources/js/login.js"></script> -->
+  <script src="resources/js/signature.js"></script>
 </body>
 
 </html>

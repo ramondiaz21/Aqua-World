@@ -111,7 +111,7 @@
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .scroll-to-top {
@@ -141,4 +141,17 @@
 
 .column-gap label {
   width: 100%;
+}
+
+.signature-pad {
+  border: 1px solid #ccc;
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+#signature-canvas {
+  width: 100%;
+  height: 100%;
 }
