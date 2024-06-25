@@ -9,7 +9,7 @@
 <body id="" class="" style="background-color: #f8f9fc; position: relative; min-height: 100vh;">
   <?php include 'includes/navbar.php'; ?>
 
-  <div class="container-fluid " style="height: 100%;">
+  <div class="container" style="height: 100%;">
     <?php 
     /*session_start();
     if(isset($_SESSION['login'])) {
@@ -19,7 +19,7 @@
       include 'views/login.php';
       //die();
     };*/
-      include 'views/login.php';
+      include 'views/forms.php';
     ?>
 
   </div>
