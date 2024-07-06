@@ -16,7 +16,7 @@ DROP DATABASE IF EXISTS `aqua-world`;
 CREATE DATABASE IF NOT EXISTS `aqua-world` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `aqua-world`;
 
-SET FOREIGN_KEY_CHECKS=0;
+/*SET FOREIGN_KEY_CHECKS=0;*/
 
 DROP TABLE IF EXISTS cat_roles;
 CREATE TABLE IF NOT EXISTS cat_roles(
@@ -47,10 +47,17 @@ CREATE TABLE IF NOT EXISTS usuarios(
   CONSTRAINT FK_usuario_rol FOREIGN KEY (rol_id) REFERENCES cat_roles(id)
 ) COLLATE='utf8_bin';
 
+INSERT INTO usuarios (username, password, nombre, rol_id, status)
+VALUES ('usuario_adulto', 'password_seguro', 'Nombre del Adulto', 3, 1);
+
+SET @idUsuarioAdulto = LAST_INSERT_ID();
+
+
 DROP TABLE IF EXISTS adulto;
 CREATE TABLE IF NOT EXISTS adulto (
   id INT(11) NOT NULL AUTO_INCREMENT,
   usuario_id INT(11) NOT NULL,  -- Referencia al usuario
+  nombre VARCHAR(255) NOT NULL,
   edad INT(11) NOT NULL,
   telefono VARCHAR(15) NOT NULL,
   nacionalidad VARCHAR(255) NOT NULL,
@@ -86,6 +93,25 @@ CREATE TABLE IF NOT EXISTS adulto (
   PRIMARY KEY (id),
   CONSTRAINT FK_adulto_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 ) COLLATE='utf8_bin';
+
+INSERT INTO adulto (
+    usuario_id,nombre, edad, telefono, nacionalidad, fechaDeNacimiento, domicilio, 
+    alergiaOtrosRequerimientos, nombreTelefonoEmergencia, antecedentesMedicos, grupoSanguineo, 
+    enfermedadCardiologica, cualEnfermedadCardiologica, medicoPrivadoPublico, cualMedicoPrivadoPublico, 
+    otraActividadDeportiva, cualOtraActividadDeportiva, autorizacionFotos, recibirClasesEnAgua, 
+    cualrecibirClasesEnAgua, experienciaDesagradableConAgua, cualexperienciaDesagradableConAgua, 
+    temorAguaNadar, cualtemorAguaNadar, experienciaAcuatica, aceptaAguaCara, temorAgua, 
+    practicaNadando, tipoServicioAdquirido, firmaUsuario, selloAquaWorld
+) VALUES (
+    @idUsuarioAdulto,'Ramon',30, '5551234567', 'Mexicana', '1990-01-01', 'Domicilio Ejemplo', 
+    'No', 'Nombre Emergencia, 5558765432', 'Ninguno', 'O+', 
+    0, '', 0, '', 
+    0, '', 0, 0, 
+    '', 0, '', 
+    0, '', 2, 1, 0, 
+    5, 'Servicio Básico', 'Firma del Usuario', 'Sello de AquaWorld'
+);
+
 
 DROP TABLE IF EXISTS nino;
 CREATE TABLE IF NOT EXISTS nino (

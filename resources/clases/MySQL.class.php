@@ -15,7 +15,7 @@ class MySQL extends Main
     public function conect()
     {
 
-        $this->dbCon = new mysqli('localhost', 'root', 'x7QAReLo6u3A6uv4Ve4AkuWoCObA6i', 'sode_test');
+        $this->dbCon = new mysqli('localhost', 'root', '12345678', 'aqua-world');
         $this->dbCon->set_charset("utf8");
 
         if (!$this->dbCon) {

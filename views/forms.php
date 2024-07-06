@@ -1,3 +1,12 @@
+<div id="tableContainer" class="table-responsive">
+      <table class="table table-sm table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead id="thead">
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </div>
+
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="adulto-tab" data-bs-toggle="tab" data-bs-target="#adulto" type="button"
@@ -11,7 +20,7 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="adulto" role="tabpanel" aria-labelledby="adulto-tab">
     <h1 class="text-center">Ficha de Inscripción - Adulto</h1>
-    <form action="/ruta-de-envio" method="POST">
+    <form id="formAdulto">
       <input type="hidden" name="rol_id" value="3">
       <!-- Datos Personales -->
       <h2 class="mt-4">Datos Personales</h2>
@@ -73,7 +82,7 @@
             <label class="form-check-label" for="enfermedadNo">No</label>
           </div>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6" id="detalleEnfermedad">
           <label for="cualEnfermedad" class="form-label">¿Cuál?</label>
           <input type="text" class="form-control" id="cualEnfermedad" name="cualEnfermedadCardiologica">
         </div>
@@ -90,7 +99,7 @@
             <label class="form-check-label" for="tratamientoNo">No</label>
           </div>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6" id="detalleTratamiento">
           <label for="descripcionTratamiento" class="form-label">Describa en qué consiste</label>
           <textarea class="form-control" id="descripcionTratamiento" name="cualMedicoPrivadoPublico"
             rows="2"></textarea>
@@ -110,7 +119,7 @@
             <label class="form-check-label" for="servicioMedicoNo">No</label>
           </div>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6" id="detallePrivado">
           <label for="cualServicio" class="form-label">¿Cuál?</label>
           <input type="text" class="form-control" id="cualServicio" name="cualMedicoPrivadoPublico">
         </div>
@@ -129,7 +138,7 @@
             <label class="form-check-label" for="actividadNo">No</label>
           </div>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6" id="detalleActividadDeportiva">
           <label for="cualActividad" class="form-label">¿Cuál?</label>
           <input type="text" class="form-control" id="cualActividad" name="cualOtraActividadDeportiva">
         </div>
@@ -147,7 +156,8 @@
       </div>
       <h2 class="mt-5">Mensualidades/Paquetes</h2>
       <div class="mb-3">
-        <label for="horario" class="form-label">Escriba el horario y días acordados por administración en el servicio de
+        <label for="horario" class="form-label">Escriba el horario y días acordados por administración en el servicio
+          de
           su
           interés</label>
       </div>
@@ -261,11 +271,11 @@
             <label class="form-check-label" for="clasesAguaNo">No</label>
           </div>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6" id="detalleClasesAgua">
           <label for="tiempoClasesAgua" class="form-label">¿Por cuánto tiempo?</label>
           <input type="text" class="form-control" id="tiempoClasesAgua" name="tiempoClasesAgua">
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6 d-flex column-gap">
           <label class="form-label">¿Tiene alguna experiencia desagradable con el agua?</label>
           <div class="form-check">
             <input class="form-check-input" type="radio" id="experienciaAguaSi" name="experienciaAgua" value="1"
@@ -278,11 +288,11 @@
             <label class="form-check-label" for="experienciaAguaNo">No</label>
           </div>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6" id="detalleExperienciaDesagradable">
           <label for="motivoExperiencia" class="form-label">Motivo</label>
           <textarea class="form-control" id="motivoExperiencia" name="motivoExperienciaAgua" rows="2"></textarea>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6 d-flex column-gap">
           <label class="form-label">¿Tiene temor al agua o a nadar?</label>
           <div class="form-check">
             <input class="form-check-input" type="radio" id="temorAguaSi" name="temorAgua" value="1" required>
@@ -293,7 +303,7 @@
             <label class="form-check-label" for="temorAguaNo">No</label>
           </div>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-6" id="detalleTemorAgua">
           <label for="motivoTemorAgua" class="form-label">Motivo</label>
           <textarea class="form-control" id="motivoTemorAgua" name="motivoTemorAgua" rows="2"></textarea>
         </div>
@@ -357,7 +367,7 @@
         <canvas id="signature-canvas"></canvas>
       </div>
       <button id="clear-btn" type="button" class="btn btn-secondary">Limpiar</button>
-      <button type="submit" class="btn btn-success">Enviar</button>
+      <button type="button" id="agregarAdulto" class="btn btn-success">Enviar</button>
     </form>
   </div>
   <div class="tab-pane fade" id="nino" role="tabpanel" aria-labelledby="nino-tab">
@@ -723,7 +733,7 @@
       <!-- Datos de Envío -->
       <input type="hidden" name="rol" value="nino">
       <div class="text-center mt-4">
-        <button type="submit" class="btn btn-primary">Enviar Ficha de Inscripción</button>
+        <button type="button" class="btn btn-primary">Enviar Ficha de Inscripción</button>
       </div>
     </form>
   </div>

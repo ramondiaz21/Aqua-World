@@ -31,6 +31,7 @@
   <?php include 'includes/scripts.html'; ?>
 
   <script src="resources/js/signature.js"></script>
+  <script src="resources/js/adultos.js"></script>
 </body>
 
 </html>
