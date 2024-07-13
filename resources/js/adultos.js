@@ -71,7 +71,7 @@ $(document).ready(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const canvas = document.getElementById("signature-canvas");
+  const canvas = document.getElementById("firmaUsuario");
   const clearBtn = document.getElementById("clear-btn");
   const saveBtn = document.getElementById("save-btn");
   const ctx = canvas.getContext("2d");
@@ -119,13 +119,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Adaptar canvas al tamaño de la pantalla
   window.addEventListener("resize", resizeCanvas);
 
-  // Obtener la firma como base64 al guardar
   saveBtn.addEventListener("click", function () {
-    const firmaBase64 = canvas.toDataURL("image/png");
-    document.getElementById("firmaUsuario").value = firmaBase64;
+    signatureDataURL = canvas.toDataURL(); // Captura la firma
+    agregaAdultos(); // Llama a agregaAdultos con la firma
   });
 });
-
+let signatureDataURL;
 function agregaAdultos($info) {
   var datosAdulto = {
     nombre: $("#nombre").val(),
@@ -226,7 +225,7 @@ function agregaAdultos($info) {
     temorAgua: $("input[name='temorAguaGeneral']:checked").val(),
     practicaNadando: $("#nivelPractica").val(),
     tipoServicioAdquirido: $("#tipoServicio").val(),
-    firmaUsuario: $("#firmaUsuario").val(),
+    firmaUsuario: signatureDataURL,
   };
 
   $.ajax({

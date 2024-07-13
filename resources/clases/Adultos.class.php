@@ -100,6 +100,7 @@ class Adultos {
     $temorAgua = $info['temorAgua'];
     $practicaNadando = $info['practicaNadando'];
     $tipoServicioAdquirido = $info['tipoServicioAdquirido'];
+    $firmaUsuario = $info['firmaUsuario'];
 
     // Consulta SQL para insertar datos en la base de datos
     $consulta = "INSERT INTO adulto (
@@ -125,7 +126,7 @@ class Adultos {
         servicio_otro,especificarPaquete, recibirClasesEnAgua, 
         cualrecibirClasesEnAgua, experienciaDesagradableConAgua, cualexperienciaDesagradableConAgua, 
         temorAguaNadar, cualtemorAguaNadar, experienciaAcuatica, aceptaAguaCara, temorAgua, 
-        practicaNadando, tipoServicioAdquirido
+        practicaNadando, tipoServicioAdquirido,firmaUsuario
     ) VALUES (
         1, '$nombre', '$edad', '$telefono', '$nacionalidad', '$fechaDeNacimiento', '$domicilio', 
         '$alergiaOtrosRequerimientos', '$nombreTelefonoEmergencia', '$antecedentesMedicos', '$grupoSanguineo', 
@@ -149,9 +150,9 @@ class Adultos {
         '$servicio_otro', '$especificarPaquete', '$recibirClasesEnAgua', 
         '$cualrecibirClasesEnAgua', '$experienciaDesagradableConAgua', '$cualexperienciaDesagradableConAgua', 
         '$temorAguaNadar', '$cualtemorAguaNadar', '$experienciaAcuatica', '$aceptaAguaCara', '$temorAgua', 
-        '$practicaNadando', '$tipoServicioAdquirido'
+        '$practicaNadando', '$tipoServicioAdquirido','$tipoServicioAdquirido'
     )";      
-    //var_dump($consulta);exit;
+    var_dump($consulta);exit;
     return DBConnection::query($consulta);
 }
 }
