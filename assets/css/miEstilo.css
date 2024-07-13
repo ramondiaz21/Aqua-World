@@ -115,7 +115,7 @@
 }
 
 .scroll-to-top {
-  position: absolute;
+  position: fixed;
   right: 15px;
   bottom: 10px;
   border-radius: 100px;
@@ -164,4 +164,13 @@
 #detalleExperienciaDesagradable,
 #detalleTemorAgua {
   display: none;
+}
+
+.signature-pad {
+  padding: 10px;
+}
+
+#firmaUsuario {
+  width: 380px;
+  height: 180px;
 }
