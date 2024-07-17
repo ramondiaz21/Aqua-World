@@ -6,12 +6,12 @@ $(document).ready(function () {
     agregaAdultos();
   });
 
-  $("input[name='enfermedadCardiologica']").change(function () {
+  $("input[name='enfermedadSi']").change(function () {
     if ($(this).val() === "1") {
       $("#detalleEnfermedad").show();
     } else {
       $("#detalleEnfermedad").hide();
-      $("#cualEnfermedad").val(""); // Clear the value if "No" is selected
+      $("#enfermedadCual").val(""); // Clear the value if "No" is selected
     }
   });
 

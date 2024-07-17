@@ -126,7 +126,7 @@ class Adultos {
         servicio_otro,especificarPaquete, recibirClasesEnAgua, 
         cualrecibirClasesEnAgua, experienciaDesagradableConAgua, cualexperienciaDesagradableConAgua, 
         temorAguaNadar, cualtemorAguaNadar, experienciaAcuatica, aceptaAguaCara, temorAgua, 
-        practicaNadando, tipoServicioAdquirido,firmaUsuario
+        practicaNadando, tipoServicioAdquirido
     ) VALUES (
         1, '$nombre', '$edad', '$telefono', '$nacionalidad', '$fechaDeNacimiento', '$domicilio', 
         '$alergiaOtrosRequerimientos', '$nombreTelefonoEmergencia', '$antecedentesMedicos', '$grupoSanguineo', 
@@ -150,7 +150,7 @@ class Adultos {
         '$servicio_otro', '$especificarPaquete', '$recibirClasesEnAgua', 
         '$cualrecibirClasesEnAgua', '$experienciaDesagradableConAgua', '$cualexperienciaDesagradableConAgua', 
         '$temorAguaNadar', '$cualtemorAguaNadar', '$experienciaAcuatica', '$aceptaAguaCara', '$temorAgua', 
-        '$practicaNadando', '$tipoServicioAdquirido','$tipoServicioAdquirido'
+        '$practicaNadando', '$tipoServicioAdquirido'
     )";      
    // var_dump($consulta);exit;
     return DBConnection::query($consulta);

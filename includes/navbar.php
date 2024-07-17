@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Niños</a>
+          <a class="nav-link" href="ninos.php">Niños</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Adultos</a>
+          <a class="nav-link" href="index.php">Adultos</a>
         </li>
       </ul>
     </div>

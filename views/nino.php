@@ -80,10 +80,12 @@
         <label class="form-check-label" for="enfermedadNo">No</label>
       </div>
     </div>
-    <div class="mb-3 d-flex column-gap col-md-6">
+    <div class="mb-3 column-gap col-md-6" id="detalleEnfermedadNino">
       <label for="enfermedadCual" class="form-label">¿Cuál?</label>
       <textarea class="form-control" id="enfermedadCual" name="enfermedadCual" rows="2"></textarea>
     </div>
+  </div>
+  <div class="row">
     <div class="mb-3 d-flex column-gap col-md-6">
       <label class="form-label">¿Está con tratamiento médico?</label>
       <div class="form-check">
@@ -95,10 +97,12 @@
         <label class="form-check-label" for="tratamientoNo">No</label>
       </div>
     </div>
-    <div class="mb-3 d-flex column-gap col-md-6">
+    <div class="mb-3 column-gap col-md-6" id="detalleTratamientoConsiste">
       <label for="tratamientoConsiste" class="form-label">Describa en qué consiste</label>
       <textarea class="form-control" id="tratamientoConsiste" name="tratamientoConsiste" rows="2"></textarea>
     </div>
+  </div>
+  <div class="row">
     <div class="mb-3 d-flex column-gap col-md-6">
       <label class="form-label">¿Tiene algún tipo de servicio médico privado o público?</label>
       <div class="form-check">
@@ -110,10 +114,12 @@
         <label class="form-check-label" for="servicioMedicoNo">No</label>
       </div>
     </div>
-    <div class="mb-3 d-flex column-gap col-md-6">
+    <div class="mb-3 column-gap col-md-6" id="detallePrivadoNino">
       <label for="servicioMedicoCual" class="form-label">¿Cuál?</label>
       <textarea class="form-control" id="servicioMedicoCual" name="servicioMedicoCual" rows="2"></textarea>
     </div>
+  </div>
+  <div class="row">
     <div class="mb-3 d-flex column-gap col-md-6">
       <label class="form-label">¿Está dado de alta en alguna otra actividad deportiva?</label>
       <div class="form-check">
@@ -125,10 +131,12 @@
         <label class="form-check-label" for="actividadDeportivaNo">No</label>
       </div>
     </div>
-    <div class="mb-3 d-flex column-gap col-md-6">
+    <div class="mb-3 column-gap col-md-6" id="detalleActividadDeportivaNino">
       <label for="actividadDeportivaCual" class="form-label">¿Cuál?</label>
       <textarea class="form-control" id="actividadDeportivaCual" name="actividadDeportivaCual" rows="2"></textarea>
     </div>
+  </div>
+  <div class="row">
     <div class="mb-3 d-flex column-gap col-md-6">
       <label class="form-label">¿Autoriza que sus fotos aparezcan en nuestras publicaciones?</label>
       <div class="form-check">
@@ -268,7 +276,6 @@
       </div>
     </div>
     <div class="mb-3 col-md-12">
-
 
     </div>
     <div class="mb-3 col-md-6">

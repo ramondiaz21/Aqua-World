@@ -157,9 +157,13 @@
 }
 
 #detalleEnfermedad,
+#detalleEnfermedadNino,
+#detalleTratamientoConsiste,
 #detalleTratamiento,
 #detallePrivado,
+#detallePrivadoNino,
 #detalleActividadDeportiva,
+#detalleActividadDeportivaNino,
 #detalleClasesAgua,
 #detalleExperienciaDesagradable,
 #detalleTemorAgua {

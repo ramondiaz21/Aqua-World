@@ -15,142 +15,205 @@ class Ninos {
 
     // Asegurarse de que todos los campos existan en el arreglo
     $nombre = $info['nombre'];
-    $edad = $info['edad'];
-    $telefono = $info['telefono'];
-    $nacionalidad = $info['nacionalidad'];
     $fechaDeNacimiento = $info['fechaDeNacimiento'];
+    $edad = $info['edad'];
     $domicilio = $info['domicilio'];
-    $alergiaOtrosRequerimientos = $info['alergiaOtrosRequerimientos'];
-    $nombreTelefonoEmergencia = $info['nombreTelefonoEmergencia'];
+    $escuelaProcedencia = $info['escuelaProcedencia'];
+    $escolaridad = $info['escolaridad'];
+    $grado = $info['grado'];
+    $tipoSangre = $info['tipoSangre'];
+    $alergiasOtrosRequerimientos = $info['alergiasOtrosRequerimientos'];
+    $recomendacionesEspeciales = $info['recomendacionesEspeciales'];
     $antecedentesMedicos = $info['antecedentesMedicos'];
     $grupoSanguineo = $info['grupoSanguineo'];
     $enfermedadCardiologica = $info['enfermedadCardiologica'];
     $cualEnfermedadCardiologica = $info['cualEnfermedadCardiologica'];
-
     $tratamientoMedico = $info['tratamientoMedico'];
-    $cualtratamientoMedico = $info['cualtratamientoMedico'];
 
-    $medicoPrivadoPublico = $info['medicoPrivadoPublico'];
-    $cualMedicoPrivadoPublico = $info['cualMedicoPrivadoPublico'];
-    $otraActividadDeportiva = $info['otraActividadDeportiva'];
-    $cualOtraActividadDeportiva = $info['cualOtraActividadDeportiva'];
+
+
+    $descripcionTratamientoMedico = $info['descripcionTratamientoMedico'];
+    $servicioMedico = $info['servicioMedico'];
+    $cualServicioMedico = $info['cualServicioMedico'];
+    $altaActividadDeportiva = $info['altaActividadDeportiva'];
+    $cualActividadDeportiva = $info['cualActividadDeportiva'];
     $autorizacionFotos = $info['autorizacionFotos'];
-
-    // Campos de servicios acuáticos
-    $servicio_aquaerobic_lunes = $info['servicio_aquaerobic_lunes'];
-    $servicio_aquaerobic_martes = $info['servicio_aquaerobic_martes'];
-    $servicio_aquaerobic_miercoles = $info['servicio_aquaerobic_miercoles'];
-    $servicio_aquaerobic_jueves = $info['servicio_aquaerobic_jueves'];
-    $servicio_aquaerobic_viernes = $info['servicio_aquaerobic_viernes'];
-    $servicio_aquaerobic_sabado = $info['servicio_aquaerobic_sabado'];
-
-    $servicio_nado_libre_lunes = $info['servicio_nado_libre_lunes'];
-    $servicio_nado_libre_martes = $info['servicio_nado_libre_martes'];
-    $servicio_nado_libre_miercoles = $info['servicio_nado_libre_miercoles'];
-    $servicio_nado_libre_jueves = $info['servicio_nado_libre_jueves'];
-    $servicio_nado_libre_viernes = $info['servicio_nado_libre_viernes'];
-    $servicio_nado_libre_sabado = $info['servicio_nado_libre_sabado'];
-
-    $servicio_aquafitness_lunes = $info['servicio_aquafitness_lunes'];
-    $servicio_aquafitness_martes = $info['servicio_aquafitness_martes'];
-    $servicio_aquafitness_miercoles = $info['servicio_aquafitness_miercoles'];
-    $servicio_aquafitness_jueves = $info['servicio_aquafitness_jueves'];
-    $servicio_aquafitness_viernes = $info['servicio_aquafitness_viernes'];
-    $servicio_aquafitness_sabado = $info['servicio_aquafitness_sabado'];
-
-    $servicio_water_spinning_lunes = $info['servicio_water_spinning_lunes'];
-    $servicio_water_spinning_martes = $info['servicio_water_spinning_martes'];
-    $servicio_water_spinning_miercoles = $info['servicio_water_spinning_miercoles'];
-    $servicio_water_spinning_jueves = $info['servicio_water_spinning_jueves'];
-    $servicio_water_spinning_viernes = $info['servicio_water_spinning_viernes'];
-    $servicio_water_spinning_sabado = $info['servicio_water_spinning_sabado'];
-
-    $servicio_aquatic_pole_lunes = $info['servicio_aquatic_pole_lunes'];
-    $servicio_aquatic_pole_martes = $info['servicio_aquatic_pole_martes'];
-    $servicio_aquatic_pole_miercoles = $info['servicio_aquatic_pole_miercoles'];
-    $servicio_aquatic_pole_jueves = $info['servicio_aquatic_pole_jueves'];
-    $servicio_aquatic_pole_viernes = $info['servicio_aquatic_pole_viernes'];
-    $servicio_aquatic_pole_sabado = $info['servicio_aquatic_pole_sabado'];
-
-    $servicio_rehabilitacion_lunes = $info['servicio_rehabilitacion_lunes'];
-    $servicio_rehabilitacion_martes = $info['servicio_rehabilitacion_martes'];
-    $servicio_rehabilitacion_miercoles = $info['servicio_rehabilitacion_miercoles'];
-    $servicio_rehabilitacion_jueves = $info['servicio_rehabilitacion_jueves'];
-    $servicio_rehabilitacion_viernes = $info['servicio_rehabilitacion_viernes'];
-    $servicio_rehabilitacion_sabado = $info['servicio_rehabilitacion_sabado'];
-
-    $servicio_aqua_yoga_lunes = $info['servicio_aqua_yoga_lunes'];
-    $servicio_aqua_yoga_martes = $info['servicio_aqua_yoga_martes'];
-    $servicio_aqua_yoga_miercoles = $info['servicio_aqua_yoga_miercoles'];
-    $servicio_aqua_yoga_jueves = $info['servicio_aqua_yoga_jueves'];
-    $servicio_aqua_yoga_viernes = $info['servicio_aqua_yoga_viernes'];
-    $servicio_aqua_yoga_sabado = $info['servicio_aqua_yoga_sabado'];
-
-    $servicio_otro = $info['servicio_otro'];
-    $especificarPaquete = $info['especificarPaquete'];
-
-    $recibirClasesEnAgua = $info['recibirClasesEnAgua'];
-    $cualrecibirClasesEnAgua = $info['cualrecibirClasesEnAgua'];
-    $experienciaDesagradableConAgua = $info['experienciaDesagradableConAgua'];
-    $cualexperienciaDesagradableConAgua = $info['cualexperienciaDesagradableConAgua'];
+    $tipoProgramaInicio = $info['tipoProgramaInicio'];
+    $experienciaClasesAgua = $info['experienciaClasesAgua'];
+    $tiempoExperienciaClasesAgua = $info['tiempoExperienciaClasesAgua'];
+    $experienciaDesagradableAgua = $info['experienciaDesagradableAgua'];
+    $motivoExperienciaDesagradableAgua = $info['motivoExperienciaDesagradableAgua'];
     $temorAguaNadar = $info['temorAguaNadar'];
-    $cualtemorAguaNadar = $info['cualtemorAguaNadar'];
-    $experienciaAcuatica = $info['experienciaAcuatica'];
+    $motivoTemorAguaNadar = $info['motivoTemorAguaNadar'];
+    $tiempoClasesNatacion = $info['tiempoClasesNatacion'];
     $aceptaAguaCara = $info['aceptaAguaCara'];
-    $temorAgua = $info['temorAgua'];
-    $practicaNadando = $info['practicaNadando'];
+    $playaActitud = $info['playaActitud'];
+    $rioActitud = $info['rioActitud'];
+    $albercaActitud = $info['albercaActitud'];
     $tipoServicioAdquirido = $info['tipoServicioAdquirido'];
-    $firmaUsuario = $info['firmaUsuario'];
+
+    /*$firmaAutorizacionCliente = $info['firmaAutorizacionCliente'];
+    $selloAquaWorld = $info['selloAquaWorld'];*/
+
+    $nombrePapa = $info['nombrePapa'];
+    $nacionalidadPapa = $info['nacionalidadPapa'];
+    $telefonoPapa = $info['telefonoPapa'];
+    $emailPapa = $info['emailPapa'];
+    $nombreMama = $info['nombreMama'];
+    $nacionalidadMama = $info['nacionalidadMama'];
+    $telefonoMama = $info['telefonoMama'];
+    $emailMama = $info['emailMama'];
+    $nombreTelefonoEmergencia = $info['nombreTelefonoEmergencia'];
+    $personasAutorizadasRecoger = $info['personasAutorizadasRecoger'];
+    $tieneHermanos = $info['tieneHermanos'];
+    $autorizacionApoyoAdulto = $info['autorizacionApoyoAdulto'];
+
+    $natacion_ninos_3dias_lunes = $info['natacion_ninos_3dias_lunes'];
+    $natacion_ninos_3dias_martes = $info['natacion_ninos_3dias_martes'];
+    $natacion_ninos_3dias_miercoles = $info['natacion_ninos_3dias_miercoles'];
+    $natacion_ninos_3dias_jueves = $info['natacion_ninos_3dias_jueves'];
+    $natacion_ninos_3dias_viernes = $info['natacion_ninos_3dias_viernes'];
+    $natacion_ninos_3dias_sabado = $info['natacion_ninos_3dias_sabado'];
+
+    $natacion_ninos_2dias_lunes = $info['natacion_ninos_2dias_lunes'];
+    $natacion_ninos_2dias_martes = $info['natacion_ninos_2dias_martes'];
+    $natacion_ninos_2dias_miercoles = $info['natacion_ninos_2dias_miercoles'];
+    $natacion_ninos_2dias_jueves = $info['natacion_ninos_2dias_jueves'];
+    $natacion_ninos_2dias_viernes = $info['natacion_ninos_2dias_viernes'];
+    $natacion_ninos_2dias_sabado = $info['natacion_ninos_2dias_sabado'];
+
+    $natacion_ninos_1dia_lunes = $info['natacion_ninos_1dia_lunes'];
+    $natacion_ninos_1dia_martes = $info['natacion_ninos_1dia_martes'];
+    $natacion_ninos_1dia_miercoles = $info['natacion_ninos_1dia_miercoles'];
+    $natacion_ninos_1dia_jueves = $info['natacion_ninos_1dia_jueves'];
+    $natacion_ninos_1dia_viernes = $info['natacion_ninos_1dia_viernes'];
+    $natacion_ninos_1dia_sabado = $info['natacion_ninos_1dia_sabado'];
+
+    $natacion_grupal_3dias_lunes = $info['natacion_grupal_3dias_lunes'];
+    $natacion_grupal_3dias_martes = $info['natacion_grupal_3dias_martes'];
+    $natacion_grupal_3dias_miercoles = $info['natacion_grupal_3dias_miercoles'];
+    $natacion_grupal_3dias_jueves = $info['natacion_grupal_3dias_jueves'];
+    $natacion_grupal_3dias_viernes = $info['natacion_grupal_3dias_viernes'];
+    $natacion_grupal_3dias_sabado = $info['natacion_grupal_3dias_sabado'];
+
+    $natacion_grupal_2dias_lunes = $info['natacion_grupal_2dias_lunes'];
+    $natacion_grupal_2dias_martes = $info['natacion_grupal_2dias_martes'];
+    $natacion_grupal_2dias_miercoles = $info['natacion_grupal_2dias_miercoles'];
+    $natacion_grupal_2dias_jueves = $info['natacion_grupal_2dias_jueves'];
+    $natacion_grupal_2dias_viernes = $info['natacion_grupal_2dias_viernes'];
+    $natacion_grupal_2dias_sabado = $info['natacion_grupal_2dias_sabado'];
+
+    $otro_paquete = $info['otro_paquete'];
+    $especificarPaquete = $info['especificarPaquete'];
+    $inicioPrimeraMensualidad = $info['inicioPrimeraMensualidad'];
 
     // Consulta SQL para insertar datos en la base de datos
     $consulta = "INSERT INTO nino (
-        usuario_id, nombre, edad, telefono, nacionalidad, fechaDeNacimiento, domicilio, 
-        alergiaOtrosRequerimientos, nombreTelefonoEmergencia, antecedentesMedicos, grupoSanguineo, 
-        enfermedadCardiologica, cualEnfermedadCardiologica,tratamientoMedico, cualtratamientoMedico,
-        medicoPrivadoPublico, cualMedicoPrivadoPublico, 
-        otraActividadDeportiva, cualOtraActividadDeportiva, autorizacionFotos, 
-        servicio_aquaerobic_lunes, servicio_aquaerobic_martes, servicio_aquaerobic_miercoles, 
-        servicio_aquaerobic_jueves, servicio_aquaerobic_viernes, servicio_aquaerobic_sabado,
-        servicio_nado_libre_lunes, servicio_nado_libre_martes, servicio_nado_libre_miercoles, 
-        servicio_nado_libre_jueves, servicio_nado_libre_viernes, servicio_nado_libre_sabado,
-        servicio_aquafitness_lunes, servicio_aquafitness_martes, servicio_aquafitness_miercoles, 
-        servicio_aquafitness_jueves, servicio_aquafitness_viernes, servicio_aquafitness_sabado,
-        servicio_water_spinning_lunes, servicio_water_spinning_martes, servicio_water_spinning_miercoles, 
-        servicio_water_spinning_jueves, servicio_water_spinning_viernes, servicio_water_spinning_sabado,
-        servicio_aquatic_pole_lunes, servicio_aquatic_pole_martes, servicio_aquatic_pole_miercoles, 
-        servicio_aquatic_pole_jueves, servicio_aquatic_pole_viernes, servicio_aquatic_pole_sabado,
-        servicio_rehabilitacion_lunes, servicio_rehabilitacion_martes, servicio_rehabilitacion_miercoles, 
-        servicio_rehabilitacion_jueves, servicio_rehabilitacion_viernes, servicio_rehabilitacion_sabado,
-        servicio_aqua_yoga_lunes, servicio_aqua_yoga_martes, servicio_aqua_yoga_miercoles, 
-        servicio_aqua_yoga_jueves, servicio_aqua_yoga_viernes, servicio_aqua_yoga_sabado,
-        servicio_otro,especificarPaquete, recibirClasesEnAgua, 
-        cualrecibirClasesEnAgua, experienciaDesagradableConAgua, cualexperienciaDesagradableConAgua, 
-        temorAguaNadar, cualtemorAguaNadar, experienciaAcuatica, aceptaAguaCara, temorAgua, 
-        practicaNadando, tipoServicioAdquirido,firmaUsuario
+        usuario_id, nombre, fechaDeNacimiento, edad, domicilio, escuelaProcedencia, 
+        escolaridad, 
+        grado, tipoSangre, alergiasOtrosRequerimientos, recomendacionesEspeciales, 
+        antecedentesMedicos, 
+        grupoSanguineo, 
+        enfermedadCardiologica, 
+        cualEnfermedadCardiologica, 
+        tratamientoMedico, 
+        descripcionTratamientoMedico, 
+        servicioMedico, 
+        cualServicioMedico, 
+        altaActividadDeportiva, 
+        cualActividadDeportiva, 
+        autorizacionFotos, 
+        tipoProgramaInicio, 
+        experienciaClasesAgua, 
+        tiempoExperienciaClasesAgua, 
+        experienciaDesagradableAgua,
+        motivoExperienciaDesagradableAgua,
+        temorAguaNadar,
+        motivoTemorAguaNadar,
+        tiempoClasesNatacion,
+        aceptaAguaCara,
+        playaActitud,
+        rioActitud,
+        albercaActitud,
+        tipoServicioAdquirido,
+        nombrePapa,
+        nacionalidadPapa,
+        telefonoPapa,
+        emailPapa,
+        nombreMama,
+        nacionalidadMama,
+        telefonoMama,
+        emailMama,
+        nombreTelefonoEmergencia,
+        personasAutorizadasRecoger,
+        autorizacionApoyoAdulto,
+
+
+        natacion_ninos_3dias_lunes, natacion_ninos_3dias_martes, natacion_ninos_3dias_miercoles, 
+        natacion_ninos_3dias_jueves, natacion_ninos_3dias_viernes, natacion_ninos_3dias_sabado,
+        natacion_ninos_2dias_lunes, natacion_ninos_2dias_martes, natacion_ninos_2dias_miercoles, 
+        natacion_ninos_2dias_jueves, natacion_ninos_2dias_viernes, natacion_ninos_2dias_sabado,
+        natacion_ninos_1dia_lunes, natacion_ninos_1dia_martes, natacion_ninos_1dia_miercoles, 
+        natacion_ninos_1dia_jueves, natacion_ninos_1dia_viernes, natacion_ninos_1dia_sabado,
+        natacion_grupal_3dias_lunes, natacion_grupal_3dias_martes, natacion_grupal_3dias_miercoles, 
+        natacion_grupal_3dias_jueves, natacion_grupal_3dias_viernes, natacion_grupal_3dias_sabado,
+        natacion_grupal_2dias_lunes, natacion_grupal_2dias_martes, natacion_grupal_2dias_miercoles, 
+        natacion_grupal_2dias_jueves, natacion_grupal_2dias_viernes, natacion_grupal_2dias_sabado,
+        otro_paquete, especificarPaquete, inicioPrimeraMensualidad
+
     ) VALUES (
-        1, '$nombre', '$edad', '$telefono', '$nacionalidad', '$fechaDeNacimiento', '$domicilio', 
-        '$alergiaOtrosRequerimientos', '$nombreTelefonoEmergencia', '$antecedentesMedicos', '$grupoSanguineo', 
-        '$enfermedadCardiologica', '$cualEnfermedadCardiologica', '$tratamientoMedico','$cualtratamientoMedico'
-        ,'$medicoPrivadoPublico', '$cualMedicoPrivadoPublico', 
-        '$otraActividadDeportiva', '$cualOtraActividadDeportiva', '$autorizacionFotos', 
-        '$servicio_aquaerobic_lunes', '$servicio_aquaerobic_martes', '$servicio_aquaerobic_miercoles', 
-        '$servicio_aquaerobic_jueves', '$servicio_aquaerobic_viernes', '$servicio_aquaerobic_sabado',
-        '$servicio_nado_libre_lunes', '$servicio_nado_libre_martes', '$servicio_nado_libre_miercoles', 
-        '$servicio_nado_libre_jueves', '$servicio_nado_libre_viernes', '$servicio_nado_libre_sabado',
-        '$servicio_aquafitness_lunes', '$servicio_aquafitness_martes', '$servicio_aquafitness_miercoles', 
-        '$servicio_aquafitness_jueves', '$servicio_aquafitness_viernes', '$servicio_aquafitness_sabado',
-        '$servicio_water_spinning_lunes', '$servicio_water_spinning_martes', '$servicio_water_spinning_miercoles', 
-        '$servicio_water_spinning_jueves', '$servicio_water_spinning_viernes', '$servicio_water_spinning_sabado',
-        '$servicio_aquatic_pole_lunes', '$servicio_aquatic_pole_martes', '$servicio_aquatic_pole_miercoles', 
-        '$servicio_aquatic_pole_jueves', '$servicio_aquatic_pole_viernes', '$servicio_aquatic_pole_sabado',
-        '$servicio_rehabilitacion_lunes', '$servicio_rehabilitacion_martes', '$servicio_rehabilitacion_miercoles', 
-        '$servicio_rehabilitacion_jueves', '$servicio_rehabilitacion_viernes', '$servicio_rehabilitacion_sabado',
-        '$servicio_aqua_yoga_lunes', '$servicio_aqua_yoga_martes', '$servicio_aqua_yoga_miercoles', 
-        '$servicio_aqua_yoga_jueves', '$servicio_aqua_yoga_viernes', '$servicio_aqua_yoga_sabado',
-        '$servicio_otro', '$especificarPaquete', '$recibirClasesEnAgua', 
-        '$cualrecibirClasesEnAgua', '$experienciaDesagradableConAgua', '$cualexperienciaDesagradableConAgua', 
-        '$temorAguaNadar', '$cualtemorAguaNadar', '$experienciaAcuatica', '$aceptaAguaCara', '$temorAgua', 
-        '$practicaNadando', '$tipoServicioAdquirido','$tipoServicioAdquirido'
+        1, '$nombre', '$fechaDeNacimiento', '$edad', '$domicilio', '$escuelaProcedencia', 
+        '$escolaridad', 
+        '$grado', '$tipoSangre', '$alergiasOtrosRequerimientos', '$recomendacionesEspeciales', 
+        '$antecedentesMedicos', 
+        '$grupoSanguineo', 
+        '$enfermedadCardiologica', 
+        '$cualEnfermedadCardiologica', 
+        '$tratamientoMedico', 
+        '$descripcionTratamientoMedico', 
+        '$servicioMedico', 
+        '$cualServicioMedico', 
+        '$altaActividadDeportiva', 
+        '$cualActividadDeportiva', 
+        '$autorizacionFotos', 
+        '$tipoProgramaInicio', 
+        '$experienciaClasesAgua', 
+        '$tiempoExperienciaClasesAgua', 
+        '$experienciaDesagradableAgua',
+        '$motivoExperienciaDesagradableAgua',
+        '$temorAguaNadar',
+        '$motivoTemorAguaNadar',
+        '$tiempoClasesNatacion',
+        '$aceptaAguaCara',
+        '$playaActitud',
+        '$rioActitud',
+        '$albercaActitud',
+        '$tipoServicioAdquirido',
+        '$nombrePapa',
+        '$nacionalidadPapa',
+        '$telefonoPapa',
+        '$emailPapa',
+        '$nombreMama',
+        '$nacionalidadMama',
+        '$telefonoMama',
+        '$emailMama',
+        '$nombreTelefonoEmergencia',
+        '$personasAutorizadasRecoger',
+        '$autorizacionApoyoAdulto',
+
+
+        '$natacion_ninos_3dias_lunes', '$natacion_ninos_3dias_martes', '$natacion_ninos_3dias_miercoles', 
+        '$natacion_ninos_3dias_jueves', '$natacion_ninos_3dias_viernes', '$natacion_ninos_3dias_sabado',
+        '$natacion_ninos_2dias_lunes', '$natacion_ninos_2dias_martes', '$natacion_ninos_2dias_miercoles', 
+        '$natacion_ninos_2dias_jueves', '$natacion_ninos_2dias_viernes', '$natacion_ninos_2dias_sabado',
+        '$natacion_ninos_1dia_lunes', '$natacion_ninos_1dia_martes', '$natacion_ninos_1dia_miercoles', 
+        '$natacion_ninos_1dia_jueves', '$natacion_ninos_1dia_viernes', '$natacion_ninos_1dia_sabado',
+        '$natacion_grupal_3dias_lunes', '$natacion_grupal_3dias_martes', '$natacion_grupal_3dias_miercoles', 
+        '$natacion_grupal_3dias_jueves', '$natacion_grupal_3dias_viernes', '$natacion_grupal_3dias_sabado',
+        '$natacion_grupal_2dias_lunes', '$natacion_grupal_2dias_martes', '$natacion_grupal_2dias_miercoles', 
+        '$natacion_grupal_2dias_jueves', '$natacion_grupal_2dias_viernes', '$natacion_grupal_2dias_sabado',
+        '$otro_paquete', '$especificarPaquete', '$inicioPrimeraMensualidad'
+        
     )";      
     var_dump($consulta);exit;
     return DBConnection::query($consulta);

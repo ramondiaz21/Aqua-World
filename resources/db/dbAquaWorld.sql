@@ -207,7 +207,7 @@ nacionalidadMama VARCHAR(255) ,
 telefonoMama VARCHAR(15) ,
 emailMama VARCHAR(255) ,
 nombreTelefonoEmergencia VARCHAR(510) ,
-personasAutorizadasRecoger TEXT,
+personasAutorizadasRecoger VARCHAR(510),
 tieneHermanos VARCHAR(11) ,
 autorizacionApoyoAdulto TINYINT(1)  DEFAULT 0,
 

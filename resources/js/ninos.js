@@ -6,66 +6,39 @@ $(document).ready(function () {
     agregaNinos();
   });
 
-  $("input[name='enfermedadCardiologica']").change(function () {
+  $("input[name='enfermedad']").change(function () {
     if ($(this).val() === "1") {
-      $("#detalleEnfermedad").show();
+      $("#detalleEnfermedadNino").show();
     } else {
-      $("#detalleEnfermedad").hide();
-      $("#cualEnfermedad").val(""); // Clear the value if "No" is selected
+      $("#detalleEnfermedadNino").hide();
+      $("#enfermedadCual").val(""); // Clear the value if "No" is selected
     }
   });
 
-  $("input[name='tratamientoMedico']").change(function () {
+  $("input[name='tratamiento']").change(function () {
     if ($(this).val() === "1") {
-      $("#detalleTratamiento").show();
+      $("#detalleTratamientoConsiste").show();
     } else {
-      $("#detalleTratamiento").hide();
-      $("#descripcionTratamiento").val(""); // Clear the value if "No" is selected
+      $("#detalleTratamientoConsiste").hide();
+      $("#tratamientoConsiste").val(""); // Clear the value if "No" is selected
     }
   });
 
-  $("input[name='medicoPrivadoPublico']").change(function () {
+  $("input[name='servicioMedico']").change(function () {
     if ($(this).val() === "1") {
-      $("#detallePrivado").show();
+      $("#detallePrivadoNino").show();
     } else {
-      $("#detallePrivado").hide();
-      $("#cualServicio").val(""); // Clear the value if "No" is selected
+      $("#detallePrivadoNino").hide();
+      $("#servicioMedicoCual").val(""); // Clear the value if "No" is selected
     }
   });
 
-  $("input[name='otraActividadDeportiva']").change(function () {
+  $("input[name='actividadDeportiva']").change(function () {
     if ($(this).val() === "1") {
-      $("#detalleActividadDeportiva").show();
+      $("#detalleActividadDeportivaNino").show();
     } else {
-      $("#detalleActividadDeportiva").hide();
-      $("#cualActividad").val(""); // Clear the value if "No" is selected
-    }
-  });
-
-  $("input[name='clasesAgua']").change(function () {
-    if ($(this).val() === "1") {
-      $("#detalleClasesAgua").show();
-    } else {
-      $("#detalleClasesAgua").hide();
-      $("#tiempoClasesAgua").val(""); // Clear the value if "No" is selected
-    }
-  });
-
-  $("input[name='experienciaAgua']").change(function () {
-    if ($(this).val() === "1") {
-      $("#detalleExperienciaDesagradable").show();
-    } else {
-      $("#detalleExperienciaDesagradable").hide();
-      $("#motivoExperiencia").val(""); // Clear the value if "No" is selected
-    }
-  });
-
-  $("input[name='temorAgua']").change(function () {
-    if ($(this).val() === "1") {
-      $("#detalleTemorAgua").show();
-    } else {
-      $("#detalleTemorAgua").hide();
-      $("#motivoTemorAgua").val(""); // Clear the value if "No" is selected
+      $("#detalleActividadDeportivaNino").hide();
+      $("#actividadDeportivaCual").val(""); // Clear the value if "No" is selected
     }
   });
 });
