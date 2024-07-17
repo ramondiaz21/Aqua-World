@@ -152,7 +152,7 @@ class Adultos {
         '$temorAguaNadar', '$cualtemorAguaNadar', '$experienciaAcuatica', '$aceptaAguaCara', '$temorAgua', 
         '$practicaNadando', '$tipoServicioAdquirido','$tipoServicioAdquirido'
     )";      
-    var_dump($consulta);exit;
+   // var_dump($consulta);exit;
     return DBConnection::query($consulta);
 }
 }
