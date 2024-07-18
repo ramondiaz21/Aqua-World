@@ -171,7 +171,7 @@
         <label class="form-check-label" for="clasesAguaNo">No</label>
       </div>
     </div>
-    <div class="mb-3 col-md-6 d-flex column-gap">
+    <div class="mb-3 col-md-6 column-gap" id="detalleClasesAguaTiempo">
       <label for="clasesAguaTiempo" class="form-label">¿Por cuánto tiempo?</label>
       <input type="text" class="form-control" id="clasesAguaTiempo" name="clasesAguaTiempo">
     </div>
@@ -186,7 +186,7 @@
         <label class="form-check-label" for="experienciaAguaNo">No</label>
       </div>
     </div>
-    <div class="mb-3 col-md-6 d-flex column-gap">
+    <div class="mb-3 col-md-6 column-gap" id="detalleMotivoExperienciaAgua">
       <label for="motivoExperienciaAgua" class="form-label">Motivo</label>
       <textarea class="form-control" id="motivoExperienciaAgua" name="motivoExperienciaAgua" rows="2"></textarea>
     </div>
@@ -201,10 +201,13 @@
         <label class="form-check-label" for="temorAguaNo">No</label>
       </div>
     </div>
-    <div class="mb-3 col-md-6 d-flex column-gap">
+    <div class="mb-3 col-md-6 column-gap" id="detalleMotivoTemorAgua">
       <label for="motivoTemorAgua" class="form-label">Motivo</label>
       <textarea class="form-control" id="motivoTemorAgua" name="motivoTemorAgua" rows="3"></textarea>
     </div>
+
+  </div>
+  <div class="row">
     <div class="mb-3 col-md-6">
       <label for="nivelPracticaNino" class="form-label">¿Qué nivel de práctica tiene nadando?</label>
       <select class="form-select" id="nivelPracticaNino" name="nivelPracticaNino">
@@ -215,7 +218,6 @@
         <option value="4">Técnica</option>
       </select>
     </div>
-
   </div>
   <div class="row">
     <div class="mb-3 col-md-6 d-flex column-gap">
@@ -229,11 +231,14 @@
         <label class="form-check-label" for="clasesNatacionNo">No</label>
       </div>
     </div>
-    <div class="mb-3 col-md-6 d-flex column-gap">
+    <div class="mb-3 col-md-6 column-gap" id="detalleMotivoclasesNatacion">
       <label for="motivoclasesNatacion" class="form-label">¿Por cuánto tiempo?</label>
       <textarea class="form-control" id="motivoclasesNatacion" name="motivoclasesNatacion" rows="3"></textarea>
     </div>
 
+  </div>
+
+  <div class="row">
     <div class="mb-3 col-md-6 d-flex column-gap">
       <label class="form-label">¿Acepta que le caiga agua en la cara?</label>
       <div class="form-check">
@@ -245,7 +250,6 @@
         <label class="form-check-label" for="aguaEnLaCaraNo">No</label>
       </div>
     </div>
-
   </div>
 
   <div class="row">
@@ -328,12 +332,8 @@
     <label for="personasAutorizadas" class="form-label">Personas autorizadas para recoger a su hijo y
       parentesco</label>
     <div class="row">
-      <div class="col">
-        <input type="text" class="form-control mb-2" id="personaAutorizada1" name="personaAutorizada1">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control mb-2" id="personaAutorizada2" name="personaAutorizada2">
-      </div>
+      <input type="text" class="form-control mb-2" id="personaAutorizada1" name="personaAutorizada1">
+
     </div>
   </div>
   <div class="mb-3">
@@ -375,55 +375,86 @@
         <tbody>
           <tr>
             <td>Natación niños 3 días</td>
-            <td><input type="text" name="natacion_ninos_3dias_lunes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_3dias_martes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_3dias_miercoles" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_3dias_jueves" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_3dias_viernes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_3dias_sabado" class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_3dias_lunes" id="natacion_ninos_3dias_lunes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_3dias_martes" id="natacion_ninos_3dias_martes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_3dias_miercoles" id="natacion_ninos_3dias_miercoles"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_3dias_jueves" id="natacion_ninos_3dias_jueves"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_3dias_viernes" id="natacion_ninos_3dias_viernes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_3dias_sabado" id="natacion_ninos_3dias_sabado"
+                class="form-control"></td>
           </tr>
           <tr>
             <td>Natación niños 2 días</td>
-            <td><input type="text" name="natacion_ninos_2dias_lunes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_2dias_martes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_2dias_miercoles" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_2dias_jueves" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_2dias_viernes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_2dias_sabado" class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_2dias_lunes" id="natacion_ninos_2dias_lunes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_2dias_martes" id="natacion_ninos_2dias_martes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_2dias_miercoles" id="natacion_ninos_2dias_miercoles"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_2dias_jueves" id="natacion_ninos_2dias_jueves"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_2dias_viernes" id="natacion_ninos_2dias_viernes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_2dias_sabado" id="natacion_ninos_2dias_sabado"
+                class="form-control"></td>
           </tr>
           <tr>
             <td>Natación niños 1 día</td>
-            <td><input type="text" name="natacion_ninos_1dia_lunes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_1dia_martes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_1dia_miercoles" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_1dia_jueves" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_1dia_viernes" class="form-control"></td>
-            <td><input type="text" name="natacion_ninos_1dia_sabado" class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_1dia_lunes" id="natacion_ninos_1dia_lunes" class="form-control">
+            </td>
+            <td><input type="text" name="natacion_ninos_1dia_martes" id="natacion_ninos_1dia_martes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_1dia_miercoles" id="natacion_ninos_1dia_miercoles"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_1dia_jueves" id="natacion_ninos_1dia_jueves"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_1dia_viernes" id="natacion_ninos_1dia_viernes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_ninos_1dia_sabado" id="natacion_ninos_1dia_sabado"
+                class="form-control"></td>
           </tr>
           <tr>
             <td>Natación grupal 3 días</td>
-            <td><input type="text" name="natacion_grupal_3dias_lunes" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_3dias_martes" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_3dias_miercoles" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_3dias_jueves" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_3dias_viernes" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_3dias_sabado" class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_3dias_lunes" id="natacion_grupal_3dias_lunes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_3dias_martes" id="natacion_grupal_3dias_martes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_3dias_miercoles" id="natacion_grupal_3dias_miercoles"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_3dias_jueves" id="natacion_grupal_3dias_jueves"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_3dias_viernes" id="natacion_grupal_3dias_viernes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_3dias_sabado" id="natacion_grupal_3dias_sabado"
+                class="form-control"></td>
           </tr>
           <tr>
             <td>Natación grupal 2 días</td>
-            <td><input type="text" name="natacion_grupal_2dias_lunes" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_2dias_martes" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_2dias_miercoles" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_2dias_jueves" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_2dias_viernes" class="form-control"></td>
-            <td><input type="text" name="natacion_grupal_2dias_sabado" class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_2dias_lunes" id="natacion_grupal_2dias_lunes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_2dias_martes" id="natacion_grupal_2dias_martes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_2dias_miercoles" id="natacion_grupal_2dias_miercoles"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_2dias_jueves" id="natacion_grupal_2dias_jueves"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_2dias_viernes" id="natacion_grupal_2dias_viernes"
+                class="form-control"></td>
+            <td><input type="text" name="natacion_grupal_2dias_sabado" id="natacion_grupal_2dias_sabado"
+                class="form-control"></td>
           </tr>
           <tr>
             <td>OTRO</td>
-            <td colspan="6"><input type="text" name="otro_paquete" class="form-control"
+            <td colspan="6"><input type="text" name="otro_paquete" id="otro_paquete" class="form-control"
                 placeholder="Especificar otro servicio y horarios"></td>
           </tr>
         </tbody>
+
       </table>
     </div>
 
@@ -439,6 +470,6 @@
   <!-- Datos de Envío -->
   <input type="hidden" name="rol" value="nino">
   <div class="text-center mt-4">
-    <button type="button" class="btn btn-primary">Enviar Ficha de Inscripción</button>
+    <button type="button" class="btn btn-primary" id="agregarNino">Enviar Ficha de Inscripción</button>
   </div>
 </form>

@@ -45,7 +45,11 @@ class Ninos {
     $motivoExperienciaDesagradableAgua = $info['motivoExperienciaDesagradableAgua'];
     $temorAguaNadar = $info['temorAguaNadar'];
     $motivoTemorAguaNadar = $info['motivoTemorAguaNadar'];
+
+    $nivelPracticaNino = $info['nivelPracticaNino'];
+
     $tiempoClasesNatacion = $info['tiempoClasesNatacion'];
+    $motivoclasesNatacion = $info['motivoclasesNatacion'];
     $aceptaAguaCara = $info['aceptaAguaCara'];
     $playaActitud = $info['playaActitud'];
     $rioActitud = $info['rioActitud'];
@@ -130,7 +134,9 @@ class Ninos {
         motivoExperienciaDesagradableAgua,
         temorAguaNadar,
         motivoTemorAguaNadar,
+        nivelPracticaNino,
         tiempoClasesNatacion,
+        motivoclasesNatacion,
         aceptaAguaCara,
         playaActitud,
         rioActitud,
@@ -146,6 +152,7 @@ class Ninos {
         emailMama,
         nombreTelefonoEmergencia,
         personasAutorizadasRecoger,
+        tieneHermanos,
         autorizacionApoyoAdulto,
 
 
@@ -183,7 +190,9 @@ class Ninos {
         '$motivoExperienciaDesagradableAgua',
         '$temorAguaNadar',
         '$motivoTemorAguaNadar',
+        '$nivelPracticaNino',
         '$tiempoClasesNatacion',
+        '$motivoclasesNatacion',
         '$aceptaAguaCara',
         '$playaActitud',
         '$rioActitud',
@@ -199,6 +208,7 @@ class Ninos {
         '$emailMama',
         '$nombreTelefonoEmergencia',
         '$personasAutorizadasRecoger',
+        '$tieneHermanos',
         '$autorizacionApoyoAdulto',
 
 

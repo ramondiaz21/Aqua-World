@@ -184,9 +184,9 @@ motivoExperienciaDesagradableAgua VARCHAR(255),
 temorAguaNadar TINYINT(1)  DEFAULT 0,
 motivoTemorAguaNadar VARCHAR(255),
 
-nivelPracticaNadando INT(11)  DEFAULT 0,
-clasesNatacion TINYINT(1)  DEFAULT 0,
+nivelPracticaNino INT(11)  DEFAULT 0,
 tiempoClasesNatacion VARCHAR(255),
+motivoclasesNatacion VARCHAR(255),
 
 aceptaAguaCara TINYINT(1)  DEFAULT 0,
 

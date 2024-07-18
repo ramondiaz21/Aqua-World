@@ -166,7 +166,11 @@
 #detalleActividadDeportivaNino,
 #detalleClasesAgua,
 #detalleExperienciaDesagradable,
-#detalleTemorAgua {
+#detalleTemorAgua,
+#detalleMotivoExperienciaAgua,
+#detalleMotivoTemorAgua,
+#detalleMotivoclasesNatacion,
+#detalleClasesAguaTiempo {
   display: none;
 }
 
