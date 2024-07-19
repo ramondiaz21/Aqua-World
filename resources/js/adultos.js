@@ -6,7 +6,7 @@ $(document).ready(function () {
     agregaAdultos();
   });
 
-  $("input[name='enfermedadSi']").change(function () {
+  $("input[name='enfermedadCardiologica']").change(function () {
     if ($(this).val() === "1") {
       $("#detalleEnfermedad").show();
     } else {
@@ -144,7 +144,7 @@ function agregaAdultos($info) {
     tratamientoMedico: $("input[name='tratamientoMedico']:checked").val(),
     cualtratamientoMedico: $("#descripcionTratamiento").val(),
     medicoPrivadoPublico: $("input[name='medicoPrivadoPublico']:checked").val(),
-    cualMedicoPrivadoPublico: $("#cualMedicoPrivadoPublico").val(),
+    cualMedicoPrivadoPublico: $("#cualServicio").val(),
     otraActividadDeportiva: $(
       "input[name='otraActividadDeportiva']:checked"
     ).val(),
@@ -241,7 +241,7 @@ function agregaAdultos($info) {
     },
     error: function (error) {
       console.error("Error:", error);
-      //alert("Hubo un error al agregar el adulto. Inténtalo nuevamente.");
+      alert("Hubo un error al agregar el adulto. Inténtalo nuevamente.");
     },
     success: function (data) {
       if (data != "") {

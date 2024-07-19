@@ -100,7 +100,6 @@ class Adultos {
     $temorAgua = $info['temorAgua'];
     $practicaNadando = $info['practicaNadando'];
     $tipoServicioAdquirido = $info['tipoServicioAdquirido'];
-    $firmaUsuario = $info['firmaUsuario'];
 
     // Consulta SQL para insertar datos en la base de datos
     $consulta = "INSERT INTO adulto (
@@ -152,7 +151,7 @@ class Adultos {
         '$temorAguaNadar', '$cualtemorAguaNadar', '$experienciaAcuatica', '$aceptaAguaCara', '$temorAgua', 
         '$practicaNadando', '$tipoServicioAdquirido'
     )";      
-   // var_dump($consulta);exit;
+   //var_dump($consulta);exit;
     return DBConnection::query($consulta);
 }
 }
