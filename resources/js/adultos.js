@@ -70,61 +70,6 @@ $(document).ready(function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const canvas = document.getElementById("firmaUsuario");
-  const clearBtn = document.getElementById("clear-btn");
-  const saveBtn = document.getElementById("save-btn");
-  const ctx = canvas.getContext("2d");
-  let drawing = false;
-
-  // Ajustar canvas a la pantalla y establecer tamaño adecuado
-  function resizeCanvas() {
-    const ratio = Math.max(window.devicePixelRatio || 1, 1);
-    canvas.width = canvas.offsetWidth * ratio;
-    canvas.height = canvas.offsetHeight * ratio;
-    canvas.getContext("2d").scale(ratio, ratio);
-  }
-
-  // Llamar a la función para redimensionar el canvas
-  resizeCanvas();
-
-  // Funciones de dibujo
-  function startDrawing(event) {
-    drawing = true;
-    ctx.beginPath();
-    ctx.moveTo(event.offsetX, event.offsetY);
-  }
-
-  function draw(event) {
-    if (!drawing) return;
-    ctx.lineTo(event.offsetX, event.offsetY);
-    ctx.stroke();
-  }
-
-  function stopDrawing() {
-    drawing = false;
-  }
-
-  // Eventos del canvas
-  canvas.addEventListener("mousedown", startDrawing);
-  canvas.addEventListener("mousemove", draw);
-  canvas.addEventListener("mouseup", stopDrawing);
-  canvas.addEventListener("mouseleave", stopDrawing);
-
-  // Limpiar el canvas
-  clearBtn.addEventListener("click", function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  });
-
-  // Adaptar canvas al tamaño de la pantalla
-  window.addEventListener("resize", resizeCanvas);
-
-  saveBtn.addEventListener("click", function () {
-    signatureDataURL = canvas.toDataURL(); // Captura la firma
-    agregaAdultos(); // Llama a agregaAdultos con la firma
-  });
-});
-let signatureDataURL;
 function agregaAdultos($info) {
   var datosAdulto = {
     nombre: $("#nombre").val(),
@@ -225,7 +170,6 @@ function agregaAdultos($info) {
     temorAgua: $("input[name='temorAguaGeneral']:checked").val(),
     practicaNadando: $("#nivelPractica").val(),
     tipoServicioAdquirido: $("#tipoServicio").val(),
-    firmaUsuario: signatureDataURL,
   };
 
   $.ajax({
@@ -245,7 +189,7 @@ function agregaAdultos($info) {
     },
     success: function (data) {
       if (data != "") {
-        loadData();
+        //loadData();
         alert("Éxito", "Se agregó correctamente", 8000, "success");
       } else {
         //$('tbody').empty();

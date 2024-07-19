@@ -371,12 +371,12 @@
       <textarea class="form-control" id="tipoServicio" name="tipoServicio" rows="2"></textarea>
     </div>
   </div>
-  <h5>DATOS ADICIONALES</h5>
+  <!-- <h5>DATOS ADICIONALES</h5>
   <div class="signature-pad" id="signature-pad">
     <input type="hidden" id="firmaUsuarioInput" name="firmaUsuarioInput">
     <canvas id="firmaUsuario"></canvas>
-  </div>
-  <button id="clear-btn" type="button" class="btn btn-secondary">Limpiar</button>
+  </div> -->
+  <!-- <button id="clear-btn" type="button" class="btn btn-secondary">Limpiar</button> -->
   <button type="submit" id="agregarAdulto" class="btn btn-success">Enviar</button>
 </form>
 
