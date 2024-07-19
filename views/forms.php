@@ -403,3 +403,7 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <h3>Ficha de inscripcion</h3>
+</div>

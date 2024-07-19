@@ -209,45 +209,169 @@ function agregaAdultos() {
     },
     success: function (data) {
       if (data != "") {
-        var contrato = `
-          <p>Nombre del alumno: ${datosAdulto.nombre}</p>
-          <p>Edad: ${datosAdulto.edad}</p>
-          <p>Telefono: ${datosAdulto.telefono}</p>
-          <p>Nacionalidad: ${datosAdulto.nacionalidad}</p>
-          <p>Fecha de nacimiento: ${datosAdulto.fechaDeNacimiento}</p>
-          <p>Domicilio: ${datosAdulto.domicilio}</p>
-          <p>Alergia u otros requerimiento de salud: ${
-            datosAdulto.alergiaOtrosRequerimientos
-          }</p>
-          <p>Nombre y telefono de emergencia: ${
-            datosAdulto.nombreTelefonoEmergencia
-          }</p>
-          <p>Antecedentes medicos: ${datosAdulto.antecedentesMedicos}</p>
-          <p>Grupo sanguineo: ${datosAdulto.grupoSanguineo}</p>
-          <p>¿Pose alguna enfermedad cardiologica, neurologica o de vias respiratorias? ${
-            datosAdulto.enfermedadCardiologica === "1" ? "SI" : "NO"
-          }</p>
-          <p>¿Cuál? ${datosAdulto.cualEnfermedadCardiologica}</p>
-          <p>¿Està con tratamiento medico? ${
-            datosAdulto.tratamientoMedico === "1" ? "SI" : "NO"
-          }</p>
-          <p>Describa en que consiste: ${datosAdulto.cualtratamientoMedico}</p>
-          <p>¿Tiene algun tipo de servicio medico privado o publico? ${
-            datosAdulto.medicoPrivadoPublico === "1" ? "SI" : "NO"
-          }</p>
-          <p>¿Cuál? ${datosAdulto.cualMedicoPrivadoPublico}</p>
-          <p>¿Esta dado de alta en alguna otra actividad deportiva? ${
-            datosAdulto.otraActividadDeportiva === "1" ? "SI" : "NO"
-          }</p>
-          <p>¿Cuál? ${datosAdulto.cualOtraActividadDeportiva}</p>
-          <p>¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ${
-            datosAdulto.autorizacionFotos === "1" ? "SI" : "NO"
-          }</p>
-          <!-- Agrega los demás datos del contrato -->
-        `;
+        var docDefinition = {
+          content: [
+            { text: "Contrato", style: "header" },
+            {
+              text: `Nombre del alumno: ${datosAdulto.nombre}`,
+              style: "subheader",
+            },
+            { text: `Edad: ${datosAdulto.edad}` },
+            { text: `Teléfono: ${datosAdulto.telefono}` },
+            { text: `Nacionalidad: ${datosAdulto.nacionalidad}` },
+            { text: `Fecha de nacimiento: ${datosAdulto.fechaDeNacimiento}` },
+            { text: `Domicilio: ${datosAdulto.domicilio}` },
+            {
+              text: `Alergia u otros requerimientos de salud: ${datosAdulto.alergiaOtrosRequerimientos}`,
+            },
+            {
+              text: `Nombre y teléfono de emergencia: ${datosAdulto.nombreTelefonoEmergencia}`,
+            },
+            {
+              text: `Antecedentes médicos: ${datosAdulto.antecedentesMedicos}`,
+            },
+            { text: `Grupo sanguíneo: ${datosAdulto.grupoSanguineo}` },
+            {
+              text: `¿Posee alguna enfermedad cardiológica, neurológica o de vías respiratorias? ${
+                datosAdulto.enfermedadCardiologica === "1" ? "Sí" : "No"
+              }`,
+            },
+            { text: `¿Cuál? ${datosAdulto.cualEnfermedadCardiologica}` },
+            {
+              text: `¿Está con tratamiento médico? ${
+                datosAdulto.tratamientoMedico === "1" ? "Sí" : "No"
+              }`,
+            },
+            {
+              text: `Describa en qué consiste: ${datosAdulto.cualtratamientoMedico}`,
+            },
+            {
+              text: `¿Tiene algún tipo de servicio médico privado o público? ${
+                datosAdulto.medicoPrivadoPublico === "1" ? "Sí" : "No"
+              }`,
+            },
+            { text: `¿Cuál? ${datosAdulto.cualMedicoPrivadoPublico}` },
+            {
+              text: `¿Está dado de alta en alguna otra actividad deportiva? ${
+                datosAdulto.otraActividadDeportiva === "1" ? "Sí" : "No"
+              }`,
+            },
+            { text: `¿Cuál? ${datosAdulto.cualOtraActividadDeportiva}` },
+            {
+              text: `¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ${
+                datosAdulto.autorizacionFotos === "1" ? "Sí" : "No"
+              }`,
+            },
 
-        $("#modalBody").html(contrato);
-        $("#contratoModal").modal("show");
+            // Tabla de servicios
+            {
+              text: "Servicios:",
+              style: "subheader",
+            },
+            {
+              table: {
+                headerRows: 1,
+                widths: [150, "*", "*", "*", "*", "*", "*"],
+                body: [
+                  [
+                    "MENSUALIDADES/PAQUETES",
+                    "Lunes",
+                    "Martes",
+                    "Miércoles",
+                    "Jueves",
+                    "Viernes",
+                    "Sábado",
+                  ],
+                  [
+                    "Aquaerobic",
+                    datosAdulto.servicio_aquaerobic_lunes,
+                    datosAdulto.servicio_aquaerobic_martes,
+                    datosAdulto.servicio_aquaerobic_miercoles,
+                    datosAdulto.servicio_aquaerobic_jueves,
+                    datosAdulto.servicio_aquaerobic_viernes,
+                    datosAdulto.servicio_aquaerobic_sabado,
+                  ],
+                  [
+                    "Nado libre",
+                    datosAdulto.servicio_nado_libre_lunes,
+                    datosAdulto.servicio_nado_libre_martes,
+                    datosAdulto.servicio_nado_libre_miercoles,
+                    datosAdulto.servicio_nado_libre_jueves,
+                    datosAdulto.servicio_nado_libre_viernes,
+                    datosAdulto.servicio_nado_libre_sabado,
+                  ],
+                  [
+                    "Aquafitness",
+                    datosAdulto.servicio_aquafitness_lunes,
+                    datosAdulto.servicio_aquafitness_martes,
+                    datosAdulto.servicio_aquafitness_miercoles,
+                    datosAdulto.servicio_aquafitness_jueves,
+                    datosAdulto.servicio_aquafitness_viernes,
+                    datosAdulto.servicio_aquafitness_sabado,
+                  ],
+                  [
+                    "Water Spinning",
+                    datosAdulto.servicio_water_spinning_lunes,
+                    datosAdulto.servicio_water_spinning_martes,
+                    datosAdulto.servicio_water_spinning_miercoles,
+                    datosAdulto.servicio_water_spinning_jueves,
+                    datosAdulto.servicio_water_spinning_viernes,
+                    datosAdulto.servicio_water_spinning_sabado,
+                  ],
+                  [
+                    "Aquatic Pole",
+                    datosAdulto.servicio_aquatic_pole_lunes,
+                    datosAdulto.servicio_aquatic_pole_martes,
+                    datosAdulto.servicio_aquatic_pole_miercoles,
+                    datosAdulto.servicio_aquatic_pole_jueves,
+                    datosAdulto.servicio_aquatic_pole_viernes,
+                    datosAdulto.servicio_aquatic_pole_sabado,
+                  ],
+                  [
+                    "Rehabilitación",
+                    datosAdulto.servicio_rehabilitacion_lunes,
+                    datosAdulto.servicio_rehabilitacion_martes,
+                    datosAdulto.servicio_rehabilitacion_miercoles,
+                    datosAdulto.servicio_rehabilitacion_jueves,
+                    datosAdulto.servicio_rehabilitacion_viernes,
+                    datosAdulto.servicio_rehabilitacion_sabado,
+                  ],
+                  [
+                    "Aqua Yoga",
+                    datosAdulto.servicio_aqua_yoga_lunes,
+                    datosAdulto.servicio_aqua_yoga_martes,
+                    datosAdulto.servicio_aqua_yoga_miercoles,
+                    datosAdulto.servicio_aqua_yoga_jueves,
+                    datosAdulto.servicio_aqua_yoga_viernes,
+                    datosAdulto.servicio_aqua_yoga_sabado,
+                  ],
+                  ["Otro", datosAdulto.servicio_otro, "", "", "", "", ""],
+                ],
+              },
+            },
+            {
+              text: "Nota: Su actividad está sujeta a algún cambio o modificación en caso de inconvenientes con el maestro asignado. No se permiten reposiciones o alargamientos de mensualidad por inasistencia voluntaria o cuestiones de clima.",
+              margin: [0, 20, 0, 0],
+            },
+          ],
+          styles: {
+            header: {
+              fontSize: 18,
+              bold: true,
+              margin: [0, 0, 0, 10],
+            },
+            subheader: {
+              fontSize: 16,
+              bold: true,
+              margin: [0, 10, 0, 5],
+            },
+          },
+        };
+
+        pdfMake.createPdf(docDefinition).download("contrato.pdf");
+
+        // $("#modalBody").html(contrato);
+        // $("#contratoModal").modal("show");
       } else {
         //$('tbody').empty();
         alert(
