@@ -177,3 +177,10 @@
 .signature-pad {
   padding: 10px;
 }
+
+.close {
+  border: none;
+  background: none;
+  font-size: 28px;
+  padding: 0;
+}

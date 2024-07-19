@@ -225,7 +225,7 @@ class Ninos {
         '$otro_paquete', '$especificarPaquete', '$inicioPrimeraMensualidad'
         
     )";      
-    var_dump($consulta);exit;
+    //var_dump($consulta);exit;
     return DBConnection::query($consulta);
 }
 }

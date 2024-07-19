@@ -6,6 +6,14 @@ $(document).ready(function () {
     agregaNinos();
   });
 
+  $("#printButton").on("click", function () {
+    var printContents = document.getElementById("modalBody").innerHTML;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+  });
+
   $("input[name='enfermedad']").change(function () {
     if ($(this).val() === "1") {
       $("#detalleEnfermedadNino").show();
@@ -81,100 +89,113 @@ $(document).ready(function () {
 
 function agregaNinos($info) {
   var datosNino = {
-    nombre: $("#nombreAlumno").val(),
-    fechaDeNacimiento: $("#fechaNacimiento").val(),
-    edad: $("#edad").val(),
-    domicilio: $("#domicilio").val(),
-    escuelaProcedencia: $("#escuelaProcedencia").val(),
-    escolaridad: $("#escolaridad").val(),
-    grado: $("#grado").val(),
-    tipoSangre: $("#tipoSangre").val(),
-    alergiasOtrosRequerimientos: $("#alergiasRequerimientos").val(),
-    recomendacionesEspeciales: $("#recomendacionesEspeciales").val(),
-    antecedentesMedicos: $("#antecedentesMedicos").val(),
-    grupoSanguineo: $("#grupoSanguineo").val(),
-    enfermedadCardiologica: $("input[name='enfermedad']:checked").val(),
-    cualEnfermedadCardiologica: $("#enfermedadCual").val(),
-    tratamientoMedico: $("input[name='tratamiento']:checked").val(),
-    descripcionTratamientoMedico: $("#tratamientoConsiste").val(),
-    servicioMedico: $("input[name='servicioMedico']:checked").val(),
-    cualServicioMedico: $("#servicioMedicoCual").val(),
-    altaActividadDeportiva: $("input[name='actividadDeportiva']:checked").val(),
-    cualActividadDeportiva: $("#actividadDeportivaCual").val(),
-    autorizacionFotos: $("input[name='autorizaFotos']:checked").val(),
-    tipoProgramaInicio: $("#programaInicio").val(),
-    experienciaClasesAgua: $("input[name='clasesAgua']:checked").val(),
-    tiempoExperienciaClasesAgua: $("#clasesAguaTiempo").val(),
-    experienciaDesagradableAgua: $(
-      "input[name='experienciaAgua']:checked"
-    ).val(),
-    motivoExperienciaDesagradableAgua: $("#motivoExperienciaAgua").val(),
-    temorAguaNadar: $("input[name='temorAgua']:checked").val(),
-    motivoTemorAguaNadar: $("#motivoTemorAgua").val(),
-    nivelPracticaNino: $("#nivelPracticaNino").val(),
-    tiempoClasesNatacion: $("input[name='clasesNatacion']:checked").val(),
-    motivoclasesNatacion: $("#motivoclasesNatacion").val(),
-    aceptaAguaCara: $("input[name='aguaEnLaCara']:checked").val(),
-    playaActitud: $("#playaActitud").val(),
-    rioActitud: $("#playaActitud").val(),
-    albercaActitud: $("#playaActitud").val(),
-    tipoServicioAdquirido: $("#tipoServicio").val(),
+    nombre: $("#nombreAlumno").val() || "",
+    fechaDeNacimiento: $("#fechaNacimiento").val() || "",
+    edad: $("#edad").val() || "",
+    domicilio: $("#domicilio").val() || "",
+    escuelaProcedencia: $("#escuelaProcedencia").val() || "",
+    escolaridad: $("#escolaridad").val() || "",
+    grado: $("#grado").val() || "",
+    tipoSangre: $("#tipoSangre").val() || "",
+    alergiasOtrosRequerimientos: $("#alergiasRequerimientos").val() || "",
+    recomendacionesEspeciales: $("#recomendacionesEspeciales").val() || "",
+    antecedentesMedicos: $("#antecedentesMedicos").val() || "",
+    grupoSanguineo: $("#grupoSanguineo").val() || "",
+    enfermedadCardiologica: $("input[name='enfermedad']:checked").val() || "0",
+    cualEnfermedadCardiologica: $("#enfermedadCual").val() || "",
+    tratamientoMedico: $("input[name='tratamiento']:checked").val() || "0",
+    descripcionTratamientoMedico: $("#tratamientoConsiste").val() || "",
+    servicioMedico: $("input[name='servicioMedico']:checked").val() || "0",
+    cualServicioMedico: $("#servicioMedicoCual").val() || "",
+    altaActividadDeportiva:
+      $("input[name='actividadDeportiva']:checked").val() || "0",
+    cualActividadDeportiva: $("#actividadDeportivaCual").val() || "",
+    autorizacionFotos: $("input[name='autorizaFotos']:checked").val() || "0",
+    tipoProgramaInicio: $("#programaInicio").val() || "",
+    experienciaClasesAgua: $("input[name='clasesAgua']:checked").val() || "0",
+    tiempoExperienciaClasesAgua: $("#clasesAguaTiempo").val() || "",
+    experienciaDesagradableAgua:
+      $("input[name='experienciaAgua']:checked").val() || "",
+    motivoExperienciaDesagradableAgua: $("#motivoExperienciaAgua").val() || "",
+    temorAguaNadar: $("input[name='temorAgua']:checked").val() || "0",
+    motivoTemorAguaNadar: $("#motivoTemorAgua").val() || "",
+    nivelPracticaNino: $("#nivelPracticaNino").val() || "",
+    tiempoClasesNatacion:
+      $("input[name='clasesNatacion']:checked").val() || "0",
+    motivoclasesNatacion: $("#motivoclasesNatacion").val() || "",
+    aceptaAguaCara: $("input[name='aguaEnLaCara']:checked").val() || "0",
+    playaActitud: $("#playaActitud").val() || "",
+    rioActitud: $("#playaActitud").val() || "",
+    albercaActitud: $("#playaActitud").val() || "",
+    tipoServicioAdquirido: $("#tipoServicio").val() || "",
 
-    nombrePapa: $("#nombrePapa").val(),
-    nacionalidadPapa: $("#nacionalidadPapa").val(),
-    telefonoPapa: $("#telefonoPapa").val(),
-    emailPapa: $("#emailPapa").val(),
-    nombreMama: $("#nombreMama").val(),
-    nacionalidadMama: $("#nacionalidadMama").val(),
-    telefonoMama: $("#telefonoMama").val(),
-    emailMama: $("#emailMama").val(),
-    nombreTelefonoEmergencia: $("#nombreEmergencia").val(),
-    personasAutorizadasRecoger: $("#personaAutorizada1").val(),
-    tieneHermanos: $("#cantidadHermanos").val(),
-    autorizacionApoyoAdulto: $("input[name='autorizaCambio']:checked").val(),
+    nombrePapa: $("#nombrePapa").val() || "",
+    nacionalidadPapa: $("#nacionalidadPapa").val() || "",
+    telefonoPapa: $("#telefonoPapa").val() || "",
+    emailPapa: $("#emailPapa").val() || "",
+    nombreMama: $("#nombreMama").val() || "",
+    nacionalidadMama: $("#nacionalidadMama").val() || "",
+    telefonoMama: $("#telefonoMama").val() || "",
+    emailMama: $("#emailMama").val() || "",
+    nombreTelefonoEmergencia: $("#nombreEmergencia").val() || "",
+    personasAutorizadasRecoger: $("#personaAutorizada1").val() || "",
+    tieneHermanos: $("#cantidadHermanos").val() || "",
+    autorizacionApoyoAdulto:
+      $("input[name='autorizaCambio']:checked").val() || "0",
 
-    natacion_ninos_3dias_lunes: $("#natacion_ninos_3dias_lunes").val(),
-    natacion_ninos_3dias_martes: $("#natacion_ninos_3dias_martes").val(),
-    natacion_ninos_3dias_miercoles: $("#natacion_ninos_3dias_miercoles").val(),
-    natacion_ninos_3dias_jueves: $("#natacion_ninos_3dias_jueves").val(),
-    natacion_ninos_3dias_viernes: $("#natacion_ninos_3dias_viernes").val(),
-    natacion_ninos_3dias_sabado: $("#natacion_ninos_3dias_sabado").val(),
+    natacion_ninos_3dias_lunes: $("#natacion_ninos_3dias_lunes").val() || "",
+    natacion_ninos_3dias_martes: $("#natacion_ninos_3dias_martes").val() || "",
+    natacion_ninos_3dias_miercoles:
+      $("#natacion_ninos_3dias_miercoles").val() || "",
+    natacion_ninos_3dias_jueves: $("#natacion_ninos_3dias_jueves").val() || "",
+    natacion_ninos_3dias_viernes:
+      $("#natacion_ninos_3dias_viernes").val() || "",
+    natacion_ninos_3dias_sabado: $("#natacion_ninos_3dias_sabado").val() || "",
 
-    natacion_ninos_2dias_lunes: $("#natacion_ninos_2dias_lunes").val(),
-    natacion_ninos_2dias_martes: $("#natacion_ninos_2dias_martes").val(),
-    natacion_ninos_2dias_miercoles: $("#natacion_ninos_2dias_miercoles").val(),
-    natacion_ninos_2dias_jueves: $("#natacion_ninos_2dias_jueves").val(),
-    natacion_ninos_2dias_viernes: $("#natacion_ninos_2dias_viernes").val(),
-    natacion_ninos_2dias_sabado: $("#natacion_ninos_2dias_sabado").val(),
+    natacion_ninos_2dias_lunes: $("#natacion_ninos_2dias_lunes").val() || "",
+    natacion_ninos_2dias_martes: $("#natacion_ninos_2dias_martes").val() || "",
+    natacion_ninos_2dias_miercoles:
+      $("#natacion_ninos_2dias_miercoles").val() || "",
+    natacion_ninos_2dias_jueves: $("#natacion_ninos_2dias_jueves").val() || "",
+    natacion_ninos_2dias_viernes:
+      $("#natacion_ninos_2dias_viernes").val() || "",
+    natacion_ninos_2dias_sabado: $("#natacion_ninos_2dias_sabado").val() || "",
 
-    natacion_ninos_1dia_lunes: $("#natacion_ninos_1dia_lunes").val(),
-    natacion_ninos_1dia_martes: $("#natacion_ninos_1dia_martes").val(),
-    natacion_ninos_1dia_miercoles: $("#natacion_ninos_1dia_miercoles").val(),
-    natacion_ninos_1dia_jueves: $("#natacion_ninos_1dia_jueves").val(),
-    natacion_ninos_1dia_viernes: $("#natacion_ninos_1dia_viernes").val(),
-    natacion_ninos_1dia_sabado: $("#natacion_ninos_1dia_sabado").val(),
+    natacion_ninos_1dia_lunes: $("#natacion_ninos_1dia_lunes").val() || "",
+    natacion_ninos_1dia_martes: $("#natacion_ninos_1dia_martes").val() || "",
+    natacion_ninos_1dia_miercoles:
+      $("#natacion_ninos_1dia_miercoles").val() || "",
+    natacion_ninos_1dia_jueves: $("#natacion_ninos_1dia_jueves").val() || "",
+    natacion_ninos_1dia_viernes: $("#natacion_ninos_1dia_viernes").val() || "",
+    natacion_ninos_1dia_sabado: $("#natacion_ninos_1dia_sabado").val() || "",
 
-    natacion_grupal_3dias_lunes: $("#natacion_grupal_3dias_lunes").val(),
-    natacion_grupal_3dias_martes: $("#natacion_grupal_3dias_martes").val(),
-    natacion_grupal_3dias_miercoles: $(
-      "#natacion_grupal_3dias_miercoles"
-    ).val(),
-    natacion_grupal_3dias_jueves: $("#natacion_grupal_3dias_jueves").val(),
-    natacion_grupal_3dias_viernes: $("#natacion_grupal_3dias_viernes").val(),
-    natacion_grupal_3dias_sabado: $("#natacion_grupal_3dias_sabado").val(),
+    natacion_grupal_3dias_lunes: $("#natacion_grupal_3dias_lunes").val() || "",
+    natacion_grupal_3dias_martes:
+      $("#natacion_grupal_3dias_martes").val() || "",
+    natacion_grupal_3dias_miercoles:
+      $("#natacion_grupal_3dias_miercoles").val() || "",
+    natacion_grupal_3dias_jueves:
+      $("#natacion_grupal_3dias_jueves").val() || "",
+    natacion_grupal_3dias_viernes:
+      $("#natacion_grupal_3dias_viernes").val() || "",
+    natacion_grupal_3dias_sabado:
+      $("#natacion_grupal_3dias_sabado").val() || "",
 
-    natacion_grupal_2dias_lunes: $("#natacion_grupal_2dias_lunes").val(),
-    natacion_grupal_2dias_martes: $("#natacion_grupal_2dias_martes").val(),
-    natacion_grupal_2dias_miercoles: $(
-      "#natacion_grupal_2dias_miercoles"
-    ).val(),
-    natacion_grupal_2dias_jueves: $("#natacion_grupal_2dias_jueves").val(),
-    natacion_grupal_2dias_viernes: $("#natacion_grupal_2dias_viernes").val(),
-    natacion_grupal_2dias_sabado: $("#natacion_grupal_2dias_sabado").val(),
+    natacion_grupal_2dias_lunes: $("#natacion_grupal_2dias_lunes").val() || "",
+    natacion_grupal_2dias_martes:
+      $("#natacion_grupal_2dias_martes").val() || "",
+    natacion_grupal_2dias_miercoles:
+      $("#natacion_grupal_2dias_miercoles").val() || "",
+    natacion_grupal_2dias_jueves:
+      $("#natacion_grupal_2dias_jueves").val() || "",
+    natacion_grupal_2dias_viernes:
+      $("#natacion_grupal_2dias_viernes").val() || "",
+    natacion_grupal_2dias_sabado:
+      $("#natacion_grupal_2dias_sabado").val() || "",
 
-    otro_paquete: $("#otro_paquete").val(),
-    especificarPaquete: $("#especificarPaquete").val(),
-    inicioPrimeraMensualidad: $("#fechaInicio").val(),
+    otro_paquete: $("#otro_paquete").val() || "",
+    especificarPaquete: $("#especificarPaquete").val() || "",
+    inicioPrimeraMensualidad: $("#fechaInicio").val() || "",
   };
 
   $.ajax({
@@ -190,12 +211,49 @@ function agregaNinos($info) {
     },
     error: function (error) {
       console.error("Error:", error);
-      //alert("Hubo un error al agregar el Nino. Inténtalo nuevamente.");
+      alert("Hubo un error al agregar el Nino. Inténtalo nuevamente.");
     },
     success: function (data) {
       if (data != "") {
-        loadData();
-        alert("Éxito", "Se agregó correctamente", 8000, "success");
+        var contrato = `
+          <p>Nombre del alumno: ${datosNino.nombre}</p>
+          <p>Edad: ${datosNino.edad}</p>
+          <p>Telefono: ${datosNino.telefono}</p>
+          <p>Nacionalidad: ${datosNino.nacionalidad}</p>
+          <p>Fecha de nacimiento: ${datosNino.fechaDeNacimiento}</p>
+          <p>Domicilio: ${datosNino.domicilio}</p>
+          <p>Alergia u otros requerimiento de salud: ${
+            datosNino.alergiaOtrosRequerimientos
+          }</p>
+          <p>Nombre y telefono de emergencia: ${
+            datosNino.nombreTelefonoEmergencia
+          }</p>
+          <p>Antecedentes medicos: ${datosNino.antecedentesMedicos}</p>
+          <p>Grupo sanguineo: ${datosNino.grupoSanguineo}</p>
+          <p>¿Pose alguna enfermedad cardiologica, neurologica o de vias respiratorias? ${
+            datosNino.enfermedadCardiologica === "1" ? "SI" : "NO"
+          }</p>
+          <p>¿Cuál? ${datosNino.cualEnfermedadCardiologica}</p>
+          <p>¿Està con tratamiento medico? ${
+            datosNino.tratamientoMedico === "1" ? "SI" : "NO"
+          }</p>
+          <p>Describa en que consiste: ${datosNino.cualtratamientoMedico}</p>
+          <p>¿Tiene algun tipo de servicio medico privado o publico? ${
+            datosNino.medicoPrivadoPublico === "1" ? "SI" : "NO"
+          }</p>
+          <p>¿Cuál? ${datosNino.cualMedicoPrivadoPublico}</p>
+          <p>¿Esta dado de alta en alguna otra actividad deportiva? ${
+            datosNino.otraActividadDeportiva === "1" ? "SI" : "NO"
+          }</p>
+          <p>¿Cuál? ${datosNino.cualOtraActividadDeportiva}</p>
+          <p>¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ${
+            datosNino.autorizacionFotos === "1" ? "SI" : "NO"
+          }</p>
+          <!-- Agrega los demás datos del contrato -->
+        `;
+
+        $("#modalBody").html(contrato);
+        $("#contratoModal").modal("show");
       } else {
         //$('tbody').empty();
         alert(
