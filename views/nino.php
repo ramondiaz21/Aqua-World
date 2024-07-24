@@ -212,10 +212,10 @@
       <label for="nivelPracticaNino" class="form-label">¿Qué nivel de práctica tiene nadando?</label>
       <select class="form-select" id="nivelPracticaNino" name="nivelPracticaNino">
         <option value="">Seleccione una opción</option>
-        <option value="1">Ninguna</option>
-        <option value="2">Inicial</option>
-        <option value="3">Media</option>
-        <option value="4">Técnica</option>
+        <option value="Ninguna">Ninguna</option>
+        <option value="Inicial">Inicial</option>
+        <option value="Media">Media</option>
+        <option value="Técnica">Técnica</option>
       </select>
     </div>
   </div>

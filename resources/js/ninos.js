@@ -215,45 +215,462 @@ function agregaNinos($info) {
     },
     success: function (data) {
       if (data != "") {
-        var contrato = `
-          <p>Nombre del alumno: ${datosNino.nombre}</p>
-          <p>Edad: ${datosNino.edad}</p>
-          <p>Telefono: ${datosNino.telefono}</p>
-          <p>Nacionalidad: ${datosNino.nacionalidad}</p>
-          <p>Fecha de nacimiento: ${datosNino.fechaDeNacimiento}</p>
-          <p>Domicilio: ${datosNino.domicilio}</p>
-          <p>Alergia u otros requerimiento de salud: ${
-            datosNino.alergiaOtrosRequerimientos
-          }</p>
-          <p>Nombre y telefono de emergencia: ${
-            datosNino.nombreTelefonoEmergencia
-          }</p>
-          <p>Antecedentes medicos: ${datosNino.antecedentesMedicos}</p>
-          <p>Grupo sanguineo: ${datosNino.grupoSanguineo}</p>
-          <p>¿Pose alguna enfermedad cardiologica, neurologica o de vias respiratorias? ${
-            datosNino.enfermedadCardiologica === "1" ? "SI" : "NO"
-          }</p>
-          <p>¿Cuál? ${datosNino.cualEnfermedadCardiologica}</p>
-          <p>¿Està con tratamiento medico? ${
-            datosNino.tratamientoMedico === "1" ? "SI" : "NO"
-          }</p>
-          <p>Describa en que consiste: ${datosNino.cualtratamientoMedico}</p>
-          <p>¿Tiene algun tipo de servicio medico privado o publico? ${
-            datosNino.medicoPrivadoPublico === "1" ? "SI" : "NO"
-          }</p>
-          <p>¿Cuál? ${datosNino.cualMedicoPrivadoPublico}</p>
-          <p>¿Esta dado de alta en alguna otra actividad deportiva? ${
-            datosNino.otraActividadDeportiva === "1" ? "SI" : "NO"
-          }</p>
-          <p>¿Cuál? ${datosNino.cualOtraActividadDeportiva}</p>
-          <p>¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ${
-            datosNino.autorizacionFotos === "1" ? "SI" : "NO"
-          }</p>
-          <!-- Agrega los demás datos del contrato -->
-        `;
+        var docDefinition = {
+          // header: function (currentPage, pageCount) {
+          //   return {
+          //     columns: [
+          //       { text: "", width: "*" },
+          //       {
+          //         width: 100,
+          //         alignment: "right",
+          //         margin: [0, 10, 10, 0], // [left, top, right, bottom]
+          //       },
+          //     ],
+          //   };
+          // },
+          pageMargins: [40, 80, 40, 80],
+          content: [
+            {
+              text: "Ficha de Inscripción",
+              style: "header",
+              alignment: "center",
+            },
+            {
+              text: `Nombre del alumno: ${datosNino.nombre}`,
+              margin: [0, 10],
+            },
+            {
+              columns: [
+                {
+                  text: `Fecha de nacimiento: ${datosNino.fechaDeNacimiento}`,
+                  width: "80%",
+                },
+                { text: `Edad: ${datosNino.edad}`, width: "20%" },
+              ],
+              margin: [0, 5],
+            },
+            {
+              text: `Domicilio: ${datosNino.domicilio}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `Escuela de procedencia: ${datosNino.escuelaProcedencia}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              columns: [
+                { text: `Escolaridad: ${datosNino.escolaridad}`, width: "33%" },
+                { text: `Grado: ${datosNino.grado}`, width: "33%" },
+                {
+                  text: `Tipo de sangre: ${datosNino.tipoSangre}`,
+                  width: "33%",
+                },
+              ],
+              margin: [0, 5],
+            },
+            {
+              text: `Alergias u otros requerimientos de salud: ${datosNino.alergiasOtrosRequerimientos}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `Recomendaciones especiales para el cuidado del niño: ${datosNino.recomendacionesEspeciales}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              columns: [
+                {
+                  text: `Antecedentes médicos: ${datosNino.antecedentesMedicos}`,
+                  width: "80%",
+                },
+                {
+                  text: `Grupo sanguíneo: ${datosNino.grupoSanguineo}`,
+                  width: "20%",
+                },
+              ],
+              margin: [0, 5],
+            },
+            {
+              text: `¿Pose alguna enfermedad cardiológica, neurológica o de vías respiratorias? ${
+                datosNino.enfermedadCardiologica === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Cuál? ${datosNino.cualEnfermedadCardiologica}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Está con tratamiento médico? ${
+                datosNino.tratamientoMedico === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `Describa en qué consiste: ${datosNino.descripcionTratamientoMedico}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Tiene algún tipo de servicio médico privado o público? ${
+                datosNino.servicioMedico === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Cuál? ${datosNino.cualServicioMedico}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Está dado de alta en alguna otra actividad deportiva? ${
+                datosNino.altaActividadDeportiva === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Cuál? ${datosNino.cualActividadDeportiva}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ${
+                datosNino.autorizacionFotos === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `Tipo de programa de inicio: ${datosNino.tipoProgramaInicio}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Había recibido clases en el agua?: ${
+                datosNino.experienciaClasesAgua === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Por cuánto 
+tiempo?: ${datosNino.tiempoExperienciaClasesAgua}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Tiene alguna experiencia desagradable con el agua?: ${datosNino.experienciaDesagradableAgua}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `Motivo: ${datosNino.motivoExperienciaDesagradableAgua}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Tiene temor al agua o a nadar?: ${
+                datosNino.temorAguaNadar === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `Motivo: ${datosNino.motivoTemorAguaNadar}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Qué nivel de práctica tiene nadando?: ${datosNino.nivelPracticaNino}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Había recibido clases de natación?: ${
+                datosNino.tiempoClasesNatacion === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Por cuánto tiempo?: ${datosNino.motivoclasesNatacion}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Acepta que le caiga agua en la cara?: ${
+                datosNino.aceptaAguaCara === "1" ? "SI" : "NO"
+              }`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              columns: [
+                {
+                  text: `Actitud en la playa: ${datosNino.playaActitud}`,
+                  width: "33%",
+                },
+                {
+                  text: `Actitud en el río: ${datosNino.rioActitud}`,
+                  width: "33%",
+                },
+                {
+                  text: `Actitud en la alberca: ${datosNino.albercaActitud}`,
+                  width: "33%",
+                },
+              ],
+              margin: [0, 5],
+            },
+            {
+              text: `TIPO DE SERVICIO ADQUIRIDO: ${datosNino.tipoServicioAdquirido}`,
+              margin: [0, 25, 0, 25],
+            },
+            { text: "DATOS ADICIONALES:", margin: [0, 10] },
+            {
+              columns: [
+                {
+                  stack: [
+                    {
+                      text: "________________________________",
+                      margin: [0, 80, 0, 0],
+                      alignment: "center",
+                    },
+                    {
+                      text: `Firma de autorización del cliente de datos para su uso exclusivo emergente`,
+                      alignment: "center",
+                      margin: [0, 5],
+                    },
+                  ],
+                  width: "50%",
+                },
+                {
+                  stack: [
+                    {
+                      text: "________________________________",
+                      margin: [0, 80, 0, 0],
+                      alignment: "center",
+                    },
+                    {
+                      text: `Sello de AquaworldClub`,
+                      alignment: "center",
+                      margin: [0, 5],
+                    },
+                  ],
+                  width: "50%",
+                },
+              ],
+            },
+            {
+              text: "Información de papá",
+              margin: [15, 20, 0, 5],
+              bold: true,
+              decoration: "underline",
+              style: "subheader",
+            },
+            {
+              columns: [
+                {
+                  text: `Nombre: ${datosNino.nombrePapa}`,
+                  width: "60%",
+                },
+                {
+                  text: `Nacionalidad: ${datosNino.nacionalidadPapa}`,
+                  width: "40%",
+                },
+              ],
+              margin: [0, 5],
+            },
+            {
+              columns: [
+                {
+                  text: `Teléfono: ${datosNino.telefonoPapa}`,
+                  width: "50%",
+                },
+                {
+                  text: `Email: ${datosNino.emailPapa}`,
+                  width: "50%",
+                },
+              ],
+              margin: [0, 5],
+            },
+            {
+              text: "Información de mamá",
+              margin: [15, 20, 0, 5],
+              bold: true,
+              decoration: "underline",
+              style: "subheader",
+            },
+            {
+              columns: [
+                {
+                  text: `Nombre: ${datosNino.nombreMama}`,
+                  width: "60%",
+                },
+                {
+                  text: `Nacionalidad: ${datosNino.nacionalidadMama}`,
+                  width: "40%",
+                },
+              ],
+              margin: [0, 5],
+            },
+            {
+              columns: [
+                {
+                  text: `Teléfono: ${datosNino.telefonoMama}`,
+                  width: "50%",
+                },
+                {
+                  text: `Email: ${datosNino.emailMama}`,
+                  width: "50%",
+                },
+              ],
+              margin: [0, 5],
+            },
+            {
+              text: `Nombre y teléfono de emergencia: ${datosNino.nombreTelefonoEmergencia}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `Personas autorizadas para recoger al niño: ${datosNino.personasAutorizadasRecoger}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Tiene hermanos?¿Cuántos?: ${datosNino.tieneHermanos}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `¿Autoriza que en un momento dado que no se encuentre presente el tutor o encargado del menor, pueda apoyar al menor de edad a cambiarlo un adulto de su mismo sexo perteneciente al club 
+aquaworld?: ${datosNino.autorizacionApoyoAdulto === "1" ? "SI" : "NO"}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: "Inscripción a mensualidad",
+              margin: [15, 15, 0, 20],
+              bold: true,
+              decoration: "underline",
+              style: "subheader",
+            },
+            {
+              text: `(Escribir el horario en los días acordados por administración y padres)`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              table: {
+                headerRows: 1,
+                widths: [120, "*", "*", "*", "*", "*", "*"],
+                body: [
+                  [
+                    "MENSUALIDADES/PAQUETES",
+                    "Lunes",
+                    "Martes",
+                    "Miércoles",
+                    "Jueves",
+                    "Viernes",
+                    "Sábado",
+                  ],
+                  [
+                    "Natación niños 3 días",
+                    datosNino.natacion_ninos_3dias_lunes,
+                    datosNino.natacion_ninos_3dias_martes,
+                    datosNino.natacion_ninos_3dias_miercoles,
+                    datosNino.natacion_ninos_3dias_jueves,
+                    datosNino.natacion_ninos_3dias_viernes,
+                    datosNino.natacion_ninos_3dias_sabado,
+                  ],
+                  [
+                    "Natación niños 2 días",
+                    datosNino.natacion_ninos_2dias_lunes,
+                    datosNino.natacion_ninos_2dias_martes,
+                    datosNino.natacion_ninos_2dias_miercoles,
+                    datosNino.natacion_ninos_2dias_jueves,
+                    datosNino.natacion_ninos_2dias_viernes,
+                    datosNino.natacion_ninos_2dias_sabado,
+                  ],
+                  [
+                    "Natación niños 1 día",
+                    datosNino.natacion_ninos_1dia_lunes,
+                    datosNino.natacion_ninos_1dia_martes,
+                    datosNino.natacion_ninos_1dia_miercoles,
+                    datosNino.natacion_ninos_1dia_jueves,
+                    datosNino.natacion_ninos_1dia_viernes,
+                    datosNino.natacion_ninos_1dia_sabado,
+                  ],
+                  [
+                    "Natación niños grupal 3 días",
+                    datosNino.natacion_grupal_3dias_lunes,
+                    datosNino.natacion_grupal_3dias_martes,
+                    datosNino.natacion_grupal_3dias_miercoles,
+                    datosNino.natacion_grupal_3dias_jueves,
+                    datosNino.natacion_grupal_3dias_viernes,
+                    datosNino.natacion_grupal_3dias_sabado,
+                  ],
+                  [
+                    "Natación niños grupal 2 días",
+                    datosNino.natacion_grupal_2dias_lunes,
+                    datosNino.natacion_grupal_2dias_martes,
+                    datosNino.natacion_grupal_2dias_miercoles,
+                    datosNino.natacion_grupal_2dias_jueves,
+                    datosNino.natacion_grupal_2dias_viernes,
+                    datosNino.natacion_grupal_2dias_sabado,
+                  ],
+                  [
+                    {
+                      text: "Otro",
+                    },
+                    {
+                      text: `${datosNino.otro_paquete}`,
+                      colSpan: 6,
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {}, // Empty cells for colSpan
+                  ],
+                ],
+              },
+            },
+            {
+              text: `Especificar paquete: ${datosNino.especificarPaquete}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+            {
+              text: `Inicio de la primera mensualidad: ${datosNino.inicioPrimeraMensualidad}`,
+              margin: [0, 5],
+              alignment: "left",
+            },
+          ],
+          styles: {
+            header: {
+              fontSize: 14,
+              bold: true,
+              margin: [0, 10],
+            },
+            subheader: {
+              fontSize: 12,
+              bold: true,
+              margin: [0, 5],
+            },
+          },
+        };
 
-        $("#modalBody").html(contrato);
-        $("#contratoModal").modal("show");
+        pdfMake
+          .createPdf(docDefinition)
+          .download("contrato " + datosNino.nombre + ".pdf");
       } else {
         //$('tbody').empty();
         alert(
