@@ -213,14 +213,40 @@ function agregaAdultos() {
     success: function (data) {
       if (data != "") {
         var docDefinition = {
+          header: function (currentPage, pageCount) {
+            return {
+              columns: [
+                { text: "", width: "*" },
+                {
+                  image:
+                    "data:image/jpeg;base64,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", // Reemplaza con tu imagen en base64 o URL
+                  width: 100,
+                  alignment: "right",
+                  margin: [0, 10, 10, 0], // [left, top, right, bottom]
+                },
+              ],
+            };
+          },
+          pageMargins: [40, 80, 40, 80],
           content: [
-            { text: "Ficha de Inscripción", style: "header" },
+            {
+              text: "Ficha de Inscripción",
+              style: "header",
+              alignment: "center",
+            },
             {
               text: `Nombre del alumno: ${datosAdulto.nombre}`,
               margin: [0, 10],
             },
             {
-              text: `Edad: ${datosAdulto.edad}   Teléfono: ${datosAdulto.telefono}   Nacionalidad: ${datosAdulto.nacionalidad}`,
+              columns: [
+                { text: `Edad: ${datosAdulto.edad}`, width: "33%" },
+                { text: `Teléfono: ${datosAdulto.telefono}`, width: "33%" },
+                {
+                  text: `Nacionalidad: ${datosAdulto.nacionalidad}`,
+                  width: "33%",
+                },
+              ],
               margin: [0, 5],
             },
             {
@@ -237,8 +263,17 @@ function agregaAdultos() {
               margin: [0, 10],
             },
             {
-              text: `Antecedentes médicos: ${datosAdulto.antecedentesMedicos}  Grupo sanguíneo: ${datosAdulto.grupoSanguineo}`,
-              margin: [0, 10],
+              columns: [
+                {
+                  text: `Antecedentes médicos: ${datosAdulto.antecedentesMedicos}`,
+                  width: "50%",
+                },
+                {
+                  text: `Grupo sanguíneo: ${datosAdulto.grupoSanguineo}`,
+                  width: "50%",
+                },
+              ],
+              margin: [0, 5],
             },
             {
               text: `¿Posee alguna enfermedad cardiológica, neurológica o de vías respiratorias? ${
@@ -293,7 +328,7 @@ function agregaAdultos() {
             {
               table: {
                 headerRows: 1,
-                widths: [150, "*", "*", "*", "*", "*", "*"],
+                widths: [120, "*", "*", "*", "*", "*", "*"],
                 body: [
                   [
                     "MENSUALIDADES/PAQUETES",
@@ -367,9 +402,21 @@ function agregaAdultos() {
                     datosAdulto.servicio_aqua_yoga_viernes,
                     datosAdulto.servicio_aqua_yoga_sabado,
                   ],
-                  ["Otro", datosAdulto.servicio_otro, "", "", "", "", ""],
+                  [
+                    {
+                      text: "Otro",
+                    },
+                    {
+                      text: `${datosAdulto.servicio_otro}`,
+                      colSpan: 6,
+                    }, // Celdas vacías para completar el colSpan
+                  ],
                 ],
               },
+            },
+            {
+              text: "(Su actividad esta sujeta a algun cambio o modificacion al presentarse un inconveniente con el maestro asignado en su momento, no entran reposiciones o alargamientos de mensualidad por inasistencia voluntaria o cuestiones de clima)",
+              margin: [0, 10],
             },
             {
               text: `Especificar paquete: ${datosAdulto.especificarPaquete}`,
@@ -379,7 +426,7 @@ function agregaAdultos() {
             {
               text: `¿Había recibido clases en el agua? ${
                 datosAdulto.recibirClasesEnAgua === "1" ? "Sí" : "No"
-              } ${datosAdulto.cualrecibirClasesEnAgua}`,
+              } ¿Por cuánto tiempo? ${datosAdulto.cualrecibirClasesEnAgua}`,
               margin: [0, 5],
             },
             {
@@ -393,10 +440,6 @@ function agregaAdultos() {
                 datosAdulto.temorAguaNadar === "1" ? "Sí" : "No"
               } MOTIVO: ${datosAdulto.cualtemorAguaNadar}`,
               margin: [0, 5],
-            },
-            {
-              text: "SELECCIONE LA RESPUESTA DE SU AGRADO",
-              style: "subheader",
             },
             {
               text: `Experiencia acuática: ${datosAdulto.experienciaAcuatica}`,
@@ -420,77 +463,130 @@ function agregaAdultos() {
             },
             {
               text: `TIPO DE SERVICIO ADQUIRIDO: ${datosAdulto.tipoServicioAdquirido}`,
-              margin: [0, 10],
+              margin: [0, 25, 0, 25],
             },
             { text: "DATOS ADICIONALES:", margin: [0, 10] },
             {
-              text: `Firma de autorización del cliente_______________________________ Sello de AquaworldClub`,
-              margin: [0, 10],
+              columns: [
+                {
+                  stack: [
+                    {
+                      text: "________________________________",
+                      margin: [0, 80, 0, 0],
+                      alignment: "center",
+                    },
+                    {
+                      text: `Firma de autorización del cliente de datos para su uso exclusivo emergente`,
+                      alignment: "center",
+                      margin: [0, 5],
+                    },
+                  ],
+                  width: "50%",
+                },
+                {
+                  stack: [
+                    {
+                      text: "________________________________",
+                      margin: [0, 80, 0, 0],
+                      alignment: "center",
+                    },
+                    {
+                      text: `Sello de AquaworldClub`,
+                      alignment: "center",
+                      margin: [0, 5],
+                    },
+                  ],
+                  width: "50%",
+                },
+              ],
             },
             {
               text: "CARTA DE SESIÓN DE DERECHOS DE IMAGEN / ESTUDIANTE MENOR DE EDAD",
               style: "header",
+              alignment: "center",
+              margin: [0, 80, 0, 10],
             },
             {
               text: `Lugar y fecha: ${lugar} ${fechaRegistro}`,
               margin: [0, 10],
             },
             {
-              text: `El/la que suscribe ${datosAdulto.nombre}, en su calidad de padre, madre o tutor/a, autoriza a AQUAWORLDCLUB a realizar registro de imagen fotográfica y/o audiovisual del/la estudiante: ${datosAdulto.nombre} con el fin de promover y difundir la 
-cultura en los medios físicos y electrónicos que las referidas instancias consideren 
-necesarias, en donde pueda comunicar públicamente y distribuir las imágenes para los 
-fines que lo requieran bajo las siguientes:`,
+              text: [
+                "El/la que suscribe ",
+                { text: `${datosAdulto.nombre}`, bold: false },
+                ", en su calidad de padre, madre o tutor/a, autoriza a ",
+                { text: "AQUAWORLDCLUB", bold: true },
+                " a realizar registro de imagen fotográfica y/o audiovisual del/la estudiante: ",
+                { text: `${datosAdulto.nombre}`, bold: false },
+                " con el fin de promover y difundir la cultura en los medios físicos y electrónicos que las referidas instancias consideren necesarias, en donde pueda comunicar públicamente y distribuir las imágenes para los fines que lo requieran bajo las siguientes:",
+              ],
               margin: [0, 10],
             },
-            { text: "CONSIDERACIONES:", margin: [0, 10] },
+            {
+              text: "CONSIDERACIONES",
+              margin: [0, 10],
+              alignment: "center",
+              bold: true,
+            },
             {
               text: "1. Que es una autorización para la grabación y reproducción en los medios físicos y electrónicos, páginas o sitios de internet de la escuela y del club deportivo AQUAWORLD, además de los que éstos consideren.",
-              margin: [0, 5],
+              margin: [20, 0, 5, 0],
             },
             {
               text: "2. La edición y reproducción de la imagen tendrá como fin principal la difusión de la cultura y generar un acervo de las actividades académicas y artísticas. La edición y reproducción de la imagen no tendrá fines de lucro.",
-              margin: [0, 5],
+              margin: [20, 0, 5, 0],
             },
             {
               text: "3. La escuela y la administración se hacen responsables de la difusión del material fotográfico y/o audiovisual en tanto tenga el control desde sus páginas de Internet y medios físicos y/o electrónicos. Cualquier uso indebido que se hiciera de dicho material será exclusivamente responsabilidad de quien las obre, contraviniendo los intereses de los mencionados.",
-              margin: [0, 5],
+              margin: [20, 0, 5, 0],
             },
             {
               text: "4. La escuela será propietaria de los derechos del material fotográfico y/o audiovisual producido para hacer uso de ellos exclusivamente para los fines de interés general e institucional que le es propio.",
-              margin: [0, 5],
+              margin: [20, 0, 5, 0],
             },
             {
               text: "5. La autorización no fija ningún límite de tiempo para su concesión ni para el uso del material fotográfico y/o audiovisual, o parte de este, en los que aparece el/la estudiante, por lo que la presente autorización se considera concedida por un plazo de tiempo ilimitado.",
-              margin: [0, 5],
+              margin: [20, 0, 5, 0],
             },
             {
               text: "Se autoriza el levantamiento y utilización de la imagen en los siguientes términos:",
-              margin: [0, 10],
+              margin: [10, 0],
             },
             {
               text: "Levantamiento de material fotográfico y/o audiovisual",
               margin: [0, 5],
+              bold: true,
             },
-            { text: "Autorización", margin: [0, 10] },
-            { text: "Grabación total", margin: [0, 5] },
-            { text: "Para difusión y promoción", margin: [0, 5] },
-            { text: "Para página web y redes sociales", margin: [0, 5] },
-            { text: "Para material para archivo", margin: [0, 5] },
-            { text: "Para transmisión en TV parcial o total", margin: [0, 5] },
-            { text: "Para transmisión por internet en vivo", margin: [0, 10] },
+            { text: "Autorización", margin: [0, 0] },
+            { text: "Grabación total", margin: [0, 0] },
+            { text: "Para difusión y promoción", margin: [0, 0] },
+            { text: "Para página web y redes sociales", margin: [0, 0] },
+            { text: "Para material para archivo", margin: [0, 0] },
+            { text: "Para transmisión en TV parcial o total", margin: [0, 0] },
+            { text: "Para transmisión por internet en vivo", margin: [0, 0] },
             {
               text: "___________________________________________________________",
-              margin: [0, 50, 0, 0],
+              margin: [0, 80, 0, 0],
+              alignment: "center",
             },
             {
               text: "Nombre y firma del padre, madre o tutor",
-              margin: [0, 10],
+              margin: [0, 0],
+              alignment: "center",
             },
             {
               text: "*Nuestra práctica de privacidad es coherente con la Ley Federal de Protección de Datos Personales en Posesión de Particulares.",
               margin: [0, 10],
+              italics: true,
+              bold: true,
+              fontSize: 9,
+              alignment: "center",
             },
-            { text: "REGLAMENTO DE CLASES DE NATACIÓN", style: "header" },
+            {
+              text: "REGLAMENTO DE CLASES DE NATACIÓN",
+              style: "header",
+              alignment: "center",
+            },
             {
               text: "1. Presentarse a su clase con traje de baño, gorro, goggles y sandalias (no se permite ningún tipo de short o ropa interior).",
               margin: [0, 5],
@@ -568,10 +664,10 @@ fines que lo requieran bajo las siguientes:`,
               text: "20. Se aplicará una multa por los siguientes percances en la alberca:",
               margin: [0, 5],
             },
-            { text: "a. Vómito $300.", margin: [0, 5] },
+            { text: "a. Vómito $300.", margin: [30, 5, 0, 0] },
             {
               text: "b. Defecación $1,500 (podría evitarlo colocándolo con pañal de agua) ya que se hace un choque clorhídrico para la limpieza profunda de la alberca y se suspenderían las clases restantes.",
-              margin: [0, 5],
+              margin: [30, 5, 0, 0],
             },
             {
               text: "Si presenta síntomas de diarrea o vómito, preferible no acudir a clases.",
@@ -595,15 +691,15 @@ fines que lo requieran bajo las siguientes:`,
             },
             {
               text: "a. Traer su bolsita para el excremento, su papel o toalla para el pipí.",
-              margin: [0, 5],
+              margin: [30, 5, 0, 0],
             },
             {
               text: "b. No se le permite ingresar a la alberca a la mascota (de hacerlo, se cobrará multa de $300 pesos).",
-              margin: [0, 5],
+              margin: [30, 5, 0, 0],
             },
             {
               text: "c. En caso de morder o lastimar a alguno de nuestros socios, se hará responsable de los gastos médicos de la persona lesionada y de alguna indemnización que pida el socio activo. Aquaworld se deslinda de la responsabilidad.",
-              margin: [0, 5],
+              margin: [30, 5, 0, 0],
             },
             {
               text: "25. Está prohibido correr o aventarse clavados sin autorización de un docente.",
@@ -623,21 +719,28 @@ fines que lo requieran bajo las siguientes:`,
             },
             {
               text: "a. Derecho a faltar 3 veces por mensualidad sin un justificante médico; con justificante médico tiene derecho a faltar las veces que lo indique el médico pero deberá mandar la receta médica para justificar todas las faltas. De no mandarla, solo se justificarán 3 faltas de las cuales tiene derecho.",
-              margin: [0, 5],
+              margin: [30, 5, 0, 0],
             },
             {
               text: "b. Sus clases de reposición se mandarán a agenda de reposiciones, la cual será adicional a sus días asegurados de su semana (no se alarga su mensualidad). Deberá consultar disponibilidad de agenda para su clase de repuesto; esta no se asegura con su mismo maestro ni con su mismo horario ya que es a disposición (lea el inciso a).",
-              margin: [0, 5],
+              margin: [30, 5, 0, 0],
             },
             {
               text: "Este reglamento es para su seguridad, higiene y salud, así como para el mantenimiento adecuado del área. Solicitamos su apoyo cumpliendo cada uno de los puntos.",
-              margin: [0, 5],
+              margin: [20, 5, 0, 0],
+              bold: true,
+              italics: true,
             },
             {
               text: "___________________________________________________________",
-              margin: [0, 50, 0, 0],
+              margin: [0, 80, 0, 0],
+              alignment: "center",
             },
-            { text: "Nombre y firma de conformidad", margin: [0, 10] },
+            {
+              text: "Nombre y firma de conformidad",
+              margin: [0, 10],
+              alignment: "center",
+            },
           ],
           styles: {
             header: {

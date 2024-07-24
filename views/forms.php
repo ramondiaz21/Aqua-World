@@ -328,9 +328,9 @@
       <label for="experienciaAcuatica" class="form-label">Experiencia acuática</label>
       <select class="form-select" id="experienciaAcuatica" name="experienciaAcuatica">
         <option value="">Seleccione una opción</option>
-        <option value="1">Ninguna</option>
-        <option value="2">Ocasional</option>
-        <option value="3">Frecuente</option>
+        <option value="Ninguna">Ninguna</option>
+        <option value="Ocasional">Ocasional</option>
+        <option value="Frecuente">Frecuente</option>
       </select>
     </div>
 
@@ -360,10 +360,10 @@
       <label for="nivelPractica" class="form-label">¿Qué nivel de práctica tiene nadando?</label>
       <select class="form-select" id="nivelPractica" name="nivelPractica">
         <option value="">Seleccione una opción</option>
-        <option value="1">Ninguna</option>
-        <option value="2">Inicial</option>
-        <option value="3">Media</option>
-        <option value="4">Técnica</option>
+        <option value="Ninguna">Ninguna</option>
+        <option value="Inicial">Inicial</option>
+        <option value="Media">Media</option>
+        <option value="Técnica">Técnica</option>
       </select>
     </div>
     <div class="mb-3 col-md-6">
