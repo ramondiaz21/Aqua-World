@@ -1,11 +1,4 @@
-<div id="tableContainer" class="table-responsive">
-  <table class="table table-sm table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <thead id="thead">
-    </thead>
-    <tbody id="tbody">
-    </tbody>
-  </table>
-</div>
+
 
 <h1 class="text-center">Ficha de Inscripción - Adulto</h1>
 <form id="formAdulto">
@@ -377,7 +370,10 @@
     <canvas id="firmaUsuario"></canvas>
   </div> -->
   <!-- <button id="clear-btn" type="button" class="btn btn-secondary">Limpiar</button> -->
-  <button type="submit" id="agregarAdulto" class="btn btn-success">Enviar</button>
+  <div class="text-center mt-4">
+    <button type="button" class="btn btn-success" id="agregarAdulto">Enviar Ficha de Inscripción</button>
+  </div>
+
 </form>
 
 </div>

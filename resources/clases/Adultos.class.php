@@ -6,10 +6,42 @@ require_once '../utilities/Session.class.php';
 
 class Adultos {
 
-    public static function mostrarAdultos() {
-        $consulta = "SELECT * FROM adulto";
-        return DBConnection::query_row($consulta);
-    }
+   public static function mostrarAdultos() {
+    $consulta = "SELECT 
+        nombre, edad, telefono, nacionalidad, fechaDeNacimiento, domicilio, 
+        alergiaOtrosRequerimientos, nombreTelefonoEmergencia, antecedentesMedicos, grupoSanguineo, 
+        enfermedadCardiologica, cualEnfermedadCardiologica,tratamientoMedico, cualtratamientoMedico,
+        medicoPrivadoPublico, cualMedicoPrivadoPublico, 
+        otraActividadDeportiva, cualOtraActividadDeportiva, autorizacionFotos, 
+        servicio_aquaerobic_lunes, servicio_aquaerobic_martes, servicio_aquaerobic_miercoles, 
+        servicio_aquaerobic_jueves, servicio_aquaerobic_viernes, servicio_aquaerobic_sabado,
+        servicio_nado_libre_lunes, servicio_nado_libre_martes, servicio_nado_libre_miercoles, 
+        servicio_nado_libre_jueves, servicio_nado_libre_viernes, servicio_nado_libre_sabado,
+        servicio_aquafitness_lunes, servicio_aquafitness_martes, servicio_aquafitness_miercoles, 
+        servicio_aquafitness_jueves, servicio_aquafitness_viernes, servicio_aquafitness_sabado,
+        servicio_water_spinning_lunes, servicio_water_spinning_martes, servicio_water_spinning_miercoles, 
+        servicio_water_spinning_jueves, servicio_water_spinning_viernes, servicio_water_spinning_sabado,
+        servicio_aquatic_pole_lunes, servicio_aquatic_pole_martes, servicio_aquatic_pole_miercoles, 
+        servicio_aquatic_pole_jueves, servicio_aquatic_pole_viernes, servicio_aquatic_pole_sabado,
+        servicio_rehabilitacion_lunes, servicio_rehabilitacion_martes, servicio_rehabilitacion_miercoles, 
+        servicio_rehabilitacion_jueves, servicio_rehabilitacion_viernes, servicio_rehabilitacion_sabado,
+        servicio_aqua_yoga_lunes, servicio_aqua_yoga_martes, servicio_aqua_yoga_miercoles, 
+        servicio_aqua_yoga_jueves, servicio_aqua_yoga_viernes, servicio_aqua_yoga_sabado,
+        servicio_otro,especificarPaquete, recibirClasesEnAgua, 
+        cualrecibirClasesEnAgua, experienciaDesagradableConAgua, cualexperienciaDesagradableConAgua, 
+        temorAguaNadar, cualtemorAguaNadar, experienciaAcuatica, aceptaAguaCara, temorAgua, 
+        practicaNadando, tipoServicioAdquirido
+    FROM adulto";
+    return DBConnection::query_row($consulta);
+}
+
+ public static function mostrarTabla() {
+    $consulta = "SELECT 
+         nombre, edad, telefono, nacionalidad, fechaDeNacimiento, domicilio, 
+         nombreTelefonoEmergencia
+    FROM adulto";
+    return DBConnection::query_row($consulta);
+}
 
     public function agregarAdultos($info) {
 

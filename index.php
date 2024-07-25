@@ -3,7 +3,7 @@
 
 <head>
   <?php include 'includes/links.html'; ?>
-  <title>Login | AQUA WORLD</title>
+  <title>Inscribir Adulto | AQUA WORLD</title>
 </head>
 
 <body id="" class="" style="background-color: #f8f9fc; position: relative; min-height: 100vh;">

@@ -470,7 +470,7 @@
   <!-- Datos de Envío -->
   <input type="hidden" name="rol" value="nino">
   <div class="text-center mt-4">
-    <button type="button" class="btn btn-primary" id="agregarNino">Enviar Ficha de Inscripción</button>
+    <button type="button" class="btn btn-success" id="agregarNino">Enviar Ficha de Inscripción</button>
   </div>
 </form>
 

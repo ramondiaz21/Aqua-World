@@ -16,6 +16,9 @@ switch ($action) {
     case 'mostrarAdultos':
         echo json_encode($Adultos->mostrarAdultos());
         break;
+    case 'mostrarTabla':
+        echo json_encode($Adultos->mostrarTabla());
+        break;
     case 'agregarAdultos':
         echo json_encode($Adultos->agregarAdultos($info));
         break;
