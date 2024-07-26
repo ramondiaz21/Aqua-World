@@ -949,66 +949,57 @@ function mostrarNinos() {
   $.ajax({
     url: "resources/routes/routeNinos.php",
     type: "POST",
-    data: {
-      action: "mostrarNinos",
-    },
+    data: { action: "mostrarTabla" },
     dataType: "json",
-    beforeSend: function () {
-      // Opcional: Muestra un spinner de carga
-    },
-    error: function (xhr, status, error) {
-      console.error("Error al obtener los datos:", status, error);
-      $("#tbody").text("Error al cargar los datos.");
-    },
     success: function (data) {
+      console.log(data); // Verificar la estructura de los datos
+
       if (Array.isArray(data) && data.length > 0) {
         var tbody = "";
-        // var thead =
-        //   "<tr>" +
-        //   "<th>NO.</th>" +
-        //   "<th>USUARIO</th>" +
-        //   "<th>CLAVE</th>" +
-        //   "<th>NOMBRE</th>" +
-        //   "<th>DOMICILIO</th>" +
-        //   "<th>ESTADO / MUNICIPIO</th>" +
-        //   "<th>TELÉFONO</th>" +
-        //   "<th>ESTATUS</th>" +
-        //   "<th>OPCIONES</th>" +
-        //   "</tr>";
+        var thead =
+          "<tr>" +
+          "<th>NOMBRE</th>" +
+          "<th>EDAD</th>" +
+          "<th>FECHA DE NACIMIENTO</th>" +
+          "<th>DOMICILIO</th>" +
+          "<th>DATOS PAPÁ</th>" +
+          "<th>DATOS MAMÁ</th>" +
+          "<th>CONTACTO DE EMERGENCIA</th>" +
+          "<th>PERSONAS AUTORIZADAS PARA RECOGER</th>" +
+          "<th>OPCIONES</th></tr>";
 
-        data.forEach(function (Nino, i) {
+        data.forEach(function (registro, i) {
           tbody +=
-            '<tr data-toggle="tooltip" title="" id="row_' + Nino[0] + '">';
-          tbody += "<td>" + (i + 1) + "</td>";
-
-          // Recorre todos los elementos del array 'Nino' y los agrega a las celdas
-          for (var j = 1; j < Nino.length; j++) {
-            tbody += "<td>" + Nino[j] + "</td>";
-          }
-
-          // tbody +=
-          //   "<td>" +
-          //   '<a href="#" class="btn btn-warning" onclick="editClientes(' +
-          //   Nino[0] +
-          //   ')"><i class="fas fa-edit"></i></a>' +
-          //   '<a href="#" class="btn btn-primary" onclick="detalles(' +
-          //   Nino[0] +
-          //   ')"><i class="fas fa-list"></i></a>' +
-          //   '<a href="#" class="btn btn-info" onclick="darBaja(' +
-          //   Nino[0] +
-          //   ')"><i class="fas fa-ban"></i></a>' +
-          //   '<a href="#" class="btn btn-danger" onclick="eliminar(' +
-          //   Nino[0] +
-          //   ')"><i class="fas fa-trash"></i></a>' +
-          //   "</td>";
+            '<tr data-toggle="tooltip" title="" id="row_' + registro[0] + '">';
+          tbody += "<td>" + (registro[1] || "") + "</td>";
+          tbody += "<td>" + (registro[2] || "") + "</td>";
+          tbody += "<td>" + (registro[3] || "") + "</td>";
+          tbody += "<td>" + (registro[4] || "") + "</td>";
+          tbody += "<td>" + (registro[5] || "") + "</td>";
+          tbody += "<td>" + (registro[6] || "") + "</td>";
+          tbody += "<td>" + (registro[7] || "") + "</td>";
+          tbody += "<td>" + (registro[8] || "") + "</td>";
+          tbody +=
+            "<td>" +
+            '<button type="button" class="btn btn-primary btn-sm" onclick="generarPDF(' +
+            i +
+            ')">' +
+            "Generar PDF" +
+            "</button>" +
+            "</td>";
           tbody += "</tr>";
         });
 
         $("#thead").empty().append(thead);
         $("#tbody").empty().append(tbody);
       } else {
-        $("#tbody").empty().text("No se encontraron Ninos.");
+        $("#tbody").empty();
+        alert("No se encontraron registros.");
       }
+    },
+    error: function (xhr, status, error) {
+      console.error("Error al obtener los datos:", status, error);
+      $("#tbody").text("Error al cargar los datos.");
     },
   });
 }

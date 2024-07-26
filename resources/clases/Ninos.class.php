@@ -7,9 +7,73 @@ require_once '../utilities/Session.class.php';
 class Ninos {
 
     public static function mostrarNinos() {
-        $consulta = "SELECT * FROM nino";
+        $consulta = "SELECT id,nombre, fechaDeNacimiento, edad, domicilio, escuelaProcedencia, 
+        escolaridad, 
+        grado, tipoSangre, alergiasOtrosRequerimientos, recomendacionesEspeciales, 
+        antecedentesMedicos, 
+        grupoSanguineo, 
+        enfermedadCardiologica, 
+        cualEnfermedadCardiologica, 
+        tratamientoMedico, 
+        descripcionTratamientoMedico, 
+        servicioMedico, 
+        cualServicioMedico, 
+        altaActividadDeportiva, 
+        cualActividadDeportiva, 
+        autorizacionFotos, 
+        tipoProgramaInicio, 
+        experienciaClasesAgua, 
+        tiempoExperienciaClasesAgua, 
+        experienciaDesagradableAgua,
+        motivoExperienciaDesagradableAgua,
+        temorAguaNadar,
+        motivoTemorAguaNadar,
+        nivelPracticaNino,
+        tiempoClasesNatacion,
+        motivoclasesNatacion,
+        aceptaAguaCara,
+        playaActitud,
+        rioActitud,
+        albercaActitud,
+        tipoServicioAdquirido,
+        nombrePapa,
+        nacionalidadPapa,
+        telefonoPapa,
+        emailPapa,
+        nombreMama,
+        nacionalidadMama,
+        telefonoMama,
+        emailMama,
+        nombreTelefonoEmergencia,
+        personasAutorizadasRecoger,
+        tieneHermanos,
+        autorizacionApoyoAdulto,
+
+
+        natacion_ninos_3dias_lunes, natacion_ninos_3dias_martes, natacion_ninos_3dias_miercoles, 
+        natacion_ninos_3dias_jueves, natacion_ninos_3dias_viernes, natacion_ninos_3dias_sabado,
+        natacion_ninos_2dias_lunes, natacion_ninos_2dias_martes, natacion_ninos_2dias_miercoles, 
+        natacion_ninos_2dias_jueves, natacion_ninos_2dias_viernes, natacion_ninos_2dias_sabado,
+        natacion_ninos_1dia_lunes, natacion_ninos_1dia_martes, natacion_ninos_1dia_miercoles, 
+        natacion_ninos_1dia_jueves, natacion_ninos_1dia_viernes, natacion_ninos_1dia_sabado,
+        natacion_grupal_3dias_lunes, natacion_grupal_3dias_martes, natacion_grupal_3dias_miercoles, 
+        natacion_grupal_3dias_jueves, natacion_grupal_3dias_viernes, natacion_grupal_3dias_sabado,
+        natacion_grupal_2dias_lunes, natacion_grupal_2dias_martes, natacion_grupal_2dias_miercoles, 
+        natacion_grupal_2dias_jueves, natacion_grupal_2dias_viernes, natacion_grupal_2dias_sabado,
+        otro_paquete, especificarPaquete, inicioPrimeraMensualidad
+        
+         FROM nino";
         return DBConnection::query_row($consulta);
     }
+
+    public static function mostrarTabla() {
+    $consulta = "SELECT 
+         id,nombre, edad,  fechaDeNacimiento, domicilio, 
+         CONCAT(nombrePapa, ' - ',telefonoPapa),CONCAT(nombreMama, ' - ',telefonoMama),
+         nombreTelefonoEmergencia,personasAutorizadasRecoger
+    FROM nino";
+    return DBConnection::query_row($consulta);
+}
 
     public function agregarNinos($info) {
 
