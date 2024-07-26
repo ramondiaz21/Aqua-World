@@ -782,9 +782,10 @@ function mostrarAdultos() {
     data: { action: "mostrarTabla" },
     dataType: "json",
     success: function (data) {
-      if (data != "" && data != null) {
+      console.log(data); // Verificar la estructura de los datos
+
+      if (Array.isArray(data) && data.length > 0) {
         var tbody = "";
-        var indices = data[0].length;
         var thead =
           "<tr>" +
           "<th>NOMBRE</th>" +
@@ -795,30 +796,28 @@ function mostrarAdultos() {
           "<th>CONTACTO DE EMERGENCIA</th>" +
           "<th>OPCIONES</th></tr>";
 
-        for (var i = 0; i < data.length; i++) {
+        data.forEach(function (registro, i) {
           tbody +=
-            '<tr data-toggle="tooltip" title="" id="row_' + data[i][0] + '">';
-          for (var j = 0; j < indices; j++) {
-            tbody += "<td>" + data[i][j] + "</td>";
-          }
-
+            '<tr data-toggle="tooltip" title="" id="row_' + registro[0] + '">';
+          tbody += "<td>" + (registro[1] || "") + "</td>";
+          tbody += "<td>" + (registro[2] || "") + "</td>";
+          tbody += "<td>" + (registro[3] || "") + "</td>";
+          tbody += "<td>" + (registro[4] || "") + "</td>";
+          tbody += "<td>" + (registro[5] || "") + "</td>";
+          tbody += "<td>" + (registro[6] || "") + "</td>";
           tbody +=
             "<td>" +
             '<button type="button" class="btn btn-primary btn-sm" onclick="generarPDF(' +
-            data[i][0] +
+            i +
             ')">' +
             "Generar PDF" +
             "</button>" +
             "</td>";
-
           tbody += "</tr>";
-        }
+        });
 
-        $("#thead").empty();
-        $("#tbody").empty();
-
-        $("#thead").append(thead);
-        $("#tbody").append(tbody);
+        $("#thead").empty().append(thead);
+        $("#tbody").empty().append(tbody);
       } else {
         $("#tbody").empty();
         alert("No se encontraron registros.");
@@ -840,6 +839,8 @@ function generarPDF(index) {
     success: function (data) {
       if (Array.isArray(data) && data.length > 0) {
         var registro = data[index];
+        console.log(registro); // Verificar la estructura del registro
+
         var docDefinition = {
           header: function (currentPage, pageCount) {
             return {
@@ -863,90 +864,90 @@ function generarPDF(index) {
               alignment: "center",
             },
             {
-              text: `Nombre del alumno: ${registro.nombre}`,
+              text: "Nombre del alumno: " + registro[1],
               margin: [0, 10],
             },
             {
               columns: [
-                { text: `Edad: ${registro.edad}`, width: "33%" },
-                { text: `Teléfono: ${registro.telefono}`, width: "33%" },
+                { text: "Edad: " + registro[2], width: "33%" },
+                { text: "Teléfono: " + registro[3], width: "33%" },
                 {
-                  text: `Nacionalidad: ${registro.nacionalidad}`,
+                  text: "Nacionalidad: " + registro[4],
                   width: "33%",
                 },
               ],
               margin: [0, 5],
             },
             {
-              text: `Fecha de nacimiento: ${registro.fechaDeNacimiento}`,
+              text: "Fecha de nacimiento: " + registro[5],
               margin: [0, 5],
             },
-            { text: `Domicilio: ${registro.domicilio}`, margin: [0, 5] },
+            { text: "Domicilio: " + registro[6], margin: [0, 5] },
             {
-              text: `Alergia u otros requerimientos de salud: ${registro.alergiaOtrosRequerimientos}`,
+              text: "Alergia u otros requerimientos de salud: " + registro[7],
               margin: [0, 10],
             },
             {
-              text: `Nombre y teléfono de emergencia: ${registro.nombreTelefonoEmergencia}`,
+              text: "Nombre y teléfono de emergencia: " + registro[8],
               margin: [0, 10],
             },
             {
               columns: [
                 {
-                  text: `Antecedentes médicos: ${registro.antecedentesMedicos}`,
+                  text: "Antecedentes médicos: " + registro[9],
                   width: "50%",
                 },
                 {
-                  text: `Grupo sanguíneo: ${registro.grupoSanguineo}`,
+                  text: "Grupo sanguíneo: " + registro[10],
                   width: "50%",
                 },
               ],
               margin: [0, 5],
             },
             {
-              text: `¿Posee alguna enfermedad cardiológica, neurológica o de vías respiratorias? ${
-                registro.enfermedadCardiologica === "1" ? "Sí" : "No"
-              }`,
+              text:
+                "¿Posee alguna enfermedad cardiológica, neurológica o de vías respiratorias? " +
+                (registro[11] === "1" ? "Sí" : "No"),
               margin: [0, 5],
             },
             {
-              text: `¿Cuál? ${registro.cualEnfermedadCardiologica}`,
+              text: "¿Cuál? " + registro[12],
               margin: [0, 5],
             },
             {
-              text: `¿Está con tratamiento médico? ${
-                registro.tratamientoMedico === "1" ? "Sí" : "No"
-              }`,
+              text:
+                "¿Está con tratamiento médico? " +
+                (registro[13] === "1" ? "Sí" : "No"),
               margin: [0, 5],
             },
             {
-              text: `Describa en qué consiste: ${registro.cualtratamientoMedico}`,
+              text: "Describa en qué consiste: " + registro[14],
               margin: [0, 5],
             },
             {
-              text: `¿Tiene algún tipo de servicio médico privado o público? ${
-                registro.medicoPrivadoPublico === "1" ? "Sí" : "No"
-              }`,
+              text:
+                "¿Tiene algún tipo de servicio médico privado o público? " +
+                (registro[15] === "1" ? "Sí" : "No"),
               margin: [0, 5],
             },
             {
-              text: `¿Cuál? ${registro.cualMedicoPrivadoPublico}`,
+              text: "¿Cuál? " + registro[16],
               margin: [0, 5],
             },
             {
-              text: `¿Está dado de alta en alguna otra actividad deportiva? ${
-                registro.otraActividadDeportiva === "1" ? "Sí" : "No"
-              }`,
+              text:
+                "¿Está dado de alta en alguna otra actividad deportiva? " +
+                (registro[17] === "1" ? "Sí" : "No"),
               margin: [0, 5],
             },
             {
-              text: `¿Cuál? ${registro.cualOtraActividadDeportiva}`,
+              text: "¿Cuál? " + registro[18],
               margin: [0, 5],
             },
             {
-              text: `¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ${
-                registro.autorizacionFotos === "1" ? "Sí" : "No"
-              }`,
+              text:
+                "¿Autoriza que sus fotos aparezcan en nuestras publicaciones? " +
+                (registro[19] === "1" ? "Sí" : "No"),
               margin: [0, 10],
             },
             {
@@ -969,75 +970,80 @@ function generarPDF(index) {
                   ],
                   [
                     "Aquaerobic",
-                    registro.servicio_aquaerobic_lunes,
-                    registro.servicio_aquaerobic_martes,
-                    registro.servicio_aquaerobic_miercoles,
-                    registro.servicio_aquaerobic_jueves,
-                    registro.servicio_aquaerobic_viernes,
-                    registro.servicio_aquaerobic_sabado,
+                    registro[20],
+                    registro[21],
+                    registro[22],
+                    registro[23],
+                    registro[24],
+                    registro[25],
                   ],
                   [
                     "Nado libre",
-                    registro.servicio_nado_libre_lunes,
-                    registro.servicio_nado_libre_martes,
-                    registro.servicio_nado_libre_miercoles,
-                    registro.servicio_nado_libre_jueves,
-                    registro.servicio_nado_libre_viernes,
-                    registro.servicio_nado_libre_sabado,
+                    registro[26],
+                    registro[27],
+                    registro[28],
+                    registro[29],
+                    registro[30],
+                    registro[31],
                   ],
                   [
                     "Aquafitness",
-                    registro.servicio_aquafitness_lunes,
-                    registro.servicio_aquafitness_martes,
-                    registro.servicio_aquafitness_miercoles,
-                    registro.servicio_aquafitness_jueves,
-                    registro.servicio_aquafitness_viernes,
-                    registro.servicio_aquafitness_sabado,
+                    registro[32],
+                    registro[33],
+                    registro[34],
+                    registro[35],
+                    registro[36],
+                    registro[37],
                   ],
                   [
                     "Water Spinning",
-                    registro.servicio_water_spinning_lunes,
-                    registro.servicio_water_spinning_martes,
-                    registro.servicio_water_spinning_miercoles,
-                    registro.servicio_water_spinning_jueves,
-                    registro.servicio_water_spinning_viernes,
-                    registro.servicio_water_spinning_sabado,
+                    registro[38],
+                    registro[39],
+                    registro[40],
+                    registro[41],
+                    registro[42],
+                    registro[43],
                   ],
                   [
                     "Aquatic Pole",
-                    registro.servicio_aquatic_pole_lunes,
-                    registro.servicio_aquatic_pole_martes,
-                    registro.servicio_aquatic_pole_miercoles,
-                    registro.servicio_aquatic_pole_jueves,
-                    registro.servicio_aquatic_pole_viernes,
-                    registro.servicio_aquatic_pole_sabado,
+                    registro[44],
+                    registro[45],
+                    registro[46],
+                    registro[47],
+                    registro[48],
+                    registro[49],
                   ],
                   [
                     "Rehabilitación",
-                    registro.servicio_rehabilitacion_lunes,
-                    registro.servicio_rehabilitacion_martes,
-                    registro.servicio_rehabilitacion_miercoles,
-                    registro.servicio_rehabilitacion_jueves,
-                    registro.servicio_rehabilitacion_viernes,
-                    registro.servicio_rehabilitacion_sabado,
+                    registro[50],
+                    registro[51],
+                    registro[52],
+                    registro[53],
+                    registro[54],
+                    registro[55],
                   ],
                   [
                     "Aqua Yoga",
-                    registro.servicio_aqua_yoga_lunes,
-                    registro.servicio_aqua_yoga_martes,
-                    registro.servicio_aqua_yoga_miercoles,
-                    registro.servicio_aqua_yoga_jueves,
-                    registro.servicio_aqua_yoga_viernes,
-                    registro.servicio_aqua_yoga_sabado,
+                    registro[56],
+                    registro[57],
+                    registro[58],
+                    registro[59],
+                    registro[60],
+                    registro[61],
                   ],
                   [
                     {
                       text: "Otro",
                     },
                     {
-                      text: `${registro.servicio_otro}`,
+                      text: registro[62],
                       colSpan: 6,
-                    }, // Celdas vacías para completar el colSpan
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
                   ],
                 ],
               },
@@ -1047,50 +1053,54 @@ function generarPDF(index) {
               margin: [0, 10],
             },
             {
-              text: `Especificar paquete: ${registro.especificarPaquete}`,
+              text: "Especificar paquete: " + registro[63],
               margin: [0, 10],
             },
             { text: "ENCUESTA PARA VALORACIÓN DEL ADULTO", style: "subheader" },
             {
-              text: `¿Había recibido clases en el agua? ${
-                registro.recibirClasesEnAgua === "1" ? "Sí" : "No"
-              } ¿Por cuánto tiempo? ${registro.cualrecibirClasesEnAgua}`,
+              text:
+                "¿Había recibido clases en el agua? " +
+                (registro[64] === "1" ? "Sí" : "No") +
+                " ¿Por cuánto tiempo? " +
+                registro[65],
               margin: [0, 5],
             },
             {
-              text: `¿Tiene alguna experiencia desagradable con el agua? ${
-                registro.experienciaDesagradableConAgua === "1" ? "Sí" : "No"
-              } MOTIVO: ${registro.cualexperienciaDesagradableConAgua}`,
+              text:
+                "¿Tiene alguna experiencia desagradable con el agua? " +
+                (registro[66] === "1" ? "Sí" : "No") +
+                " MOTIVO: " +
+                registro[67],
               margin: [0, 5],
             },
             {
-              text: `¿Tiene temor al agua o a nadar? ${
-                registro.temorAguaNadar === "1" ? "Sí" : "No"
-              } MOTIVO: ${registro.cualtemorAguaNadar}`,
+              text:
+                "¿Tiene temor al agua o a nadar? " +
+                (registro[68] === "1" ? "Sí" : "No") +
+                " MOTIVO: " +
+                registro[69],
               margin: [0, 5],
             },
             {
-              text: `Experiencia acuática: ${registro.experienciaAcuatica}`,
+              text: "Experiencia acuática: " + registro[70],
               margin: [0, 5],
             },
             {
-              text: `¿Acepta que le caiga agua en la cara? ${
-                registro.aceptaAguaCara === "1" ? "Sí" : "No"
-              }`,
+              text:
+                "¿Acepta que le caiga agua en la cara? " +
+                (registro[71] === "1" ? "Sí" : "No"),
               margin: [0, 5],
             },
             {
-              text: `¿Temor al agua? ${
-                registro.temorAgua === "1" ? "Sí" : "No"
-              }`,
+              text: "¿Temor al agua? " + (registro[72] === "1" ? "Sí" : "No"),
               margin: [0, 5],
             },
             {
-              text: `¿Qué nivel de práctica tiene nadando? ${registro.practicaNadando}`,
+              text: "¿Qué nivel de práctica tiene nadando? " + registro[73],
               margin: [0, 5],
             },
             {
-              text: `TIPO DE SERVICIO ADQUIRIDO: ${registro.tipoServicioAdquirido}`,
+              text: "TIPO DE SERVICIO ADQUIRIDO: " + registro[74],
               margin: [0, 25, 0, 25],
             },
             { text: "DATOS ADICIONALES:", margin: [0, 10] },
@@ -1104,7 +1114,7 @@ function generarPDF(index) {
                       alignment: "center",
                     },
                     {
-                      text: `Firma de autorización del cliente de datos para su uso exclusivo emergente`,
+                      text: "Firma de autorización del cliente de datos para su uso exclusivo emergente",
                       alignment: "center",
                       margin: [0, 5],
                     },
@@ -1119,7 +1129,7 @@ function generarPDF(index) {
                       alignment: "center",
                     },
                     {
-                      text: `Sello de AquaworldClub`,
+                      text: "Sello de AquaworldClub",
                       alignment: "center",
                       margin: [0, 5],
                     },
@@ -1141,12 +1151,12 @@ function generarPDF(index) {
             {
               text: [
                 "El/la que suscribe ",
-                { text: `${registro.nombre}`, bold: false },
+                { text: registro[1], bold: false },
                 ", en su calidad de padre, madre o tutor/a, autoriza a ",
                 { text: "AQUAWORLDCLUB", bold: true },
                 " a realizar registro de imagen fotográfica y/o audiovisual del/la estudiante: ",
-                { text: `${registro.nombre}`, bold: false },
-                " con el fin de promover y difundir la cultura en los medios físicos y electrónicos que las referidas instancias consideren necesarias, en donde pueda comunicar públicamente y distribuir las imágenes para los fines que lo requieran bajo las siguientes:",
+                { text: registro[1], bold: false },
+                " con el fin de promover y difundir la cultura en los medios físicos y electrónicos que las referidas instancias consideren necesarias, en donde pueda aparecer de forma individual, en grupo o en situaciones recreativas y pedagógicas, autorizando así mismo a reproducir y difundir el material.",
               ],
               margin: [0, 10],
             },
@@ -1386,7 +1396,7 @@ function generarPDF(index) {
 
         pdfMake
           .createPdf(docDefinition)
-          .download("contrato " + registro.nombre + ".pdf");
+          .download("contrato " + registro[1] + ".pdf");
       } else {
         console.error("No se encontraron registros.");
       }

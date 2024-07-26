@@ -8,7 +8,7 @@ class Adultos {
 
    public static function mostrarAdultos() {
     $consulta = "SELECT 
-        nombre, edad, telefono, nacionalidad, fechaDeNacimiento, domicilio, 
+        id,nombre, edad, telefono, nacionalidad, fechaDeNacimiento, domicilio, 
         alergiaOtrosRequerimientos, nombreTelefonoEmergencia, antecedentesMedicos, grupoSanguineo, 
         enfermedadCardiologica, cualEnfermedadCardiologica,tratamientoMedico, cualtratamientoMedico,
         medicoPrivadoPublico, cualMedicoPrivadoPublico, 
@@ -37,7 +37,7 @@ class Adultos {
 
  public static function mostrarTabla() {
     $consulta = "SELECT 
-         nombre, edad, telefono, nacionalidad, fechaDeNacimiento, domicilio, 
+         id,nombre, edad, telefono, fechaDeNacimiento, domicilio, 
          nombreTelefonoEmergencia
     FROM adulto";
     return DBConnection::query_row($consulta);
