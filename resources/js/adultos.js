@@ -114,7 +114,6 @@ function agregaAdultos() {
       $("#servicio_aquaerobic_miercoles").val() || "",
     servicio_aquaerobic_jueves: $("#servicio_aquaerobic_jueves").val() || "",
     servicio_aquaerobic_viernes: $("#servicio_aquaerobic_viernes").val() || "",
-    servicio_aquaerobic_sabado: $("#servicio_aquaerobic_sabado").val() || "",
 
     servicio_nado_libre_lunes: $("#servicio_nado_libre_lunes").val() || "",
     servicio_nado_libre_martes: $("#servicio_nado_libre_martes").val() || "",
@@ -122,7 +121,6 @@ function agregaAdultos() {
       $("#servicio_nado_libre_miercoles").val() || "",
     servicio_nado_libre_jueves: $("#servicio_nado_libre_jueves").val() || "",
     servicio_nado_libre_viernes: $("#servicio_nado_libre_viernes").val() || "",
-    servicio_nado_libre_sabado: $("#servicio_nado_libre_sabado").val() || "",
 
     servicio_aquafitness_lunes: $("#servicio_aquafitness_lunes").val() || "",
     servicio_aquafitness_martes: $("#servicio_aquafitness_martes").val() || "",
@@ -131,7 +129,6 @@ function agregaAdultos() {
     servicio_aquafitness_jueves: $("#servicio_aquafitness_jueves").val() || "",
     servicio_aquafitness_viernes:
       $("#servicio_aquafitness_viernes").val() || "",
-    servicio_aquafitness_sabado: $("#servicio_aquafitness_sabado").val() || "",
 
     servicio_water_spinning_lunes:
       $("#servicio_water_spinning_lunes").val() || "",
@@ -143,8 +140,6 @@ function agregaAdultos() {
       $("#servicio_water_spinning_jueves").val() || "",
     servicio_water_spinning_viernes:
       $("#servicio_water_spinning_viernes").val() || "",
-    servicio_water_spinning_sabado:
-      $("#servicio_water_spinning_sabado").val() || "",
 
     servicio_aquatic_pole_lunes: $("#servicio_aquatic_pole_lunes").val() || "",
     servicio_aquatic_pole_martes:
@@ -155,8 +150,6 @@ function agregaAdultos() {
       $("#servicio_aquatic_pole_jueves").val() || "",
     servicio_aquatic_pole_viernes:
       $("#servicio_aquatic_pole_viernes").val() || "",
-    servicio_aquatic_pole_sabado:
-      $("#servicio_aquatic_pole_sabado").val() || "",
 
     servicio_rehabilitacion_lunes:
       $("#servicio_rehabilitacion_lunes").val() || "",
@@ -168,8 +161,6 @@ function agregaAdultos() {
       $("#servicio_rehabilitacion_jueves").val() || "",
     servicio_rehabilitacion_viernes:
       $("#servicio_rehabilitacion_viernes").val() || "",
-    servicio_rehabilitacion_sabado:
-      $("#servicio_rehabilitacion_sabado").val() || "",
 
     servicio_aqua_yoga_lunes: $("#servicio_aqua_yoga_lunes").val() || "",
     servicio_aqua_yoga_martes: $("#servicio_aqua_yoga_martes").val() || "",
@@ -177,7 +168,6 @@ function agregaAdultos() {
       $("#servicio_aqua_yoga_miercoles").val() || "",
     servicio_aqua_yoga_jueves: $("#servicio_aqua_yoga_jueves").val() || "",
     servicio_aqua_yoga_viernes: $("#servicio_aqua_yoga_viernes").val() || "",
-    servicio_aqua_yoga_sabado: $("#servicio_aqua_yoga_sabado").val() || "",
     servicio_otro: $("#servicio_otro").val() || "",
     especificarPaquete: $("#especificarPaquete").val() || "",
 
@@ -436,8 +426,8 @@ function agregaAdultos() {
             },
             {
               table: {
-                headerRows: 1,
-                widths: [120, "*", "*", "*", "*", "*", "*"],
+                headerRows: 0,
+                widths: [120, "*", "*", "*", "*", "*"],
                 body: [
                   [
                     {
@@ -450,209 +440,214 @@ function agregaAdultos() {
                     { text: "Miércoles", bold: true, fontSize: 13 },
                     { text: "Jueves", bold: true, fontSize: 13 },
                     { text: "Viernes", bold: true, fontSize: 13 },
-                    { text: "Sábado", bold: true, fontSize: 13 },
                   ],
                   [
-                    { text: "Aquaerobic", bold: true, fontSize: 13 },
+                    { text: "Aquaerobic", bold: true, fontSize: 11 },
                     {
-                      text: datosAdulto.servicio_aquaerobic_lunes,
+                      text: datosAdulto.servicio_aquaerobic_lunes || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquaerobic_martes,
+                      text: datosAdulto.servicio_aquaerobic_martes || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquaerobic_miercoles,
+                      text: datosAdulto.servicio_aquaerobic_miercoles || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquaerobic_jueves,
+                      text: datosAdulto.servicio_aquaerobic_jueves || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquaerobic_viernes,
+                      text: datosAdulto.servicio_aquaerobic_viernes || "",
                       fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_aquaerobic_sabado,
-                      fontSize: 11,
-                    },
-                  ],
-                  [
-                    { text: "Nado libre", bold: true, fontSize: 13 },
-                    {
-                      text: datosAdulto.servicio_nado_libre_lunes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_nado_libre_martes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_nado_libre_miercoles,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_nado_libre_jueves,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_nado_libre_viernes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_nado_libre_sabado,
-                      fontSize: 11,
+                      overflow: "hidden",
                     },
                   ],
                   [
-                    { text: "Aquafitness", bold: true, fontSize: 13 },
+                    { text: "Nado libre", bold: true, fontSize: 11 },
                     {
-                      text: datosAdulto.servicio_aquafitness_lunes,
+                      text: datosAdulto.servicio_nado_libre_lunes || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquafitness_martes,
+                      text: datosAdulto.servicio_nado_libre_martes || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquafitness_miercoles,
+                      text: datosAdulto.servicio_nado_libre_miercoles || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquafitness_jueves,
+                      text: datosAdulto.servicio_nado_libre_jueves || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquafitness_viernes,
+                      text: datosAdulto.servicio_nado_libre_viernes || "",
                       fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_aquafitness_sabado,
-                      fontSize: 11,
-                    },
-                  ],
-                  [
-                    { text: "Water Spinning", bold: true, fontSize: 13 },
-                    {
-                      text: datosAdulto.servicio_water_spinning_lunes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_water_spinning_martes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_water_spinning_miercoles,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_water_spinning_jueves,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_water_spinning_viernes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_water_spinning_sabado,
-                      fontSize: 11,
+                      overflow: "hidden",
                     },
                   ],
                   [
-                    { text: "Aquatic Pole", bold: true, fontSize: 13 },
+                    { text: "Aquafitness", bold: true, fontSize: 11 },
                     {
-                      text: datosAdulto.servicio_aquatic_pole_lunes,
+                      text: datosAdulto.servicio_aquafitness_lunes || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquatic_pole_martes,
+                      text: datosAdulto.servicio_aquafitness_martes || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquatic_pole_miercoles,
+                      text: datosAdulto.servicio_aquafitness_miercoles || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquatic_pole_jueves,
+                      text: datosAdulto.servicio_aquafitness_jueves || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aquatic_pole_viernes,
+                      text: datosAdulto.servicio_aquafitness_viernes || "",
                       fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_aquatic_pole_sabado,
-                      fontSize: 11,
-                    },
-                  ],
-                  [
-                    { text: "Rehabilitación", bold: true, fontSize: 13 },
-                    {
-                      text: datosAdulto.servicio_rehabilitacion_lunes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_rehabilitacion_martes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_rehabilitacion_miercoles,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_rehabilitacion_jueves,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_rehabilitacion_viernes,
-                      fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_rehabilitacion_sabado,
-                      fontSize: 11,
+                      overflow: "hidden",
                     },
                   ],
                   [
-                    { text: "Aqua Yoga", bold: true, fontSize: 13 },
+                    { text: "Water Spinning", bold: true, fontSize: 11 },
                     {
-                      text: datosAdulto.servicio_aqua_yoga_lunes,
+                      text: datosAdulto.servicio_water_spinning_lunes || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aqua_yoga_martes,
+                      text: datosAdulto.servicio_water_spinning_martes || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aqua_yoga_miercoles,
+                      text: datosAdulto.servicio_water_spinning_miercoles || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aqua_yoga_jueves,
+                      text: datosAdulto.servicio_water_spinning_jueves || "",
                       fontSize: 11,
+                      overflow: "hidden",
                     },
                     {
-                      text: datosAdulto.servicio_aqua_yoga_viernes,
+                      text: datosAdulto.servicio_water_spinning_viernes || "",
                       fontSize: 11,
-                    },
-                    {
-                      text: datosAdulto.servicio_aqua_yoga_sabado,
-                      fontSize: 11,
+                      overflow: "hidden",
                     },
                   ],
                   [
-                    { text: "Otro", bold: true, fontSize: 13 },
+                    { text: "Aquatic Pole", bold: true, fontSize: 11 },
                     {
-                      text: `${datosAdulto.servicio_otro}`,
+                      text: datosAdulto.servicio_aquatic_pole_lunes || "",
                       fontSize: 11,
-                      colSpan: 6,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_martes || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_miercoles || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_jueves || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_viernes || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                  ],
+                  [
+                    { text: "Rehabilitación", bold: true, fontSize: 11 },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_lunes || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_martes || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_miercoles || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_jueves || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_viernes || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                  ],
+                  [
+                    { text: "Aqua Yoga", bold: true, fontSize: 11 },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_lunes || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_martes || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_miercoles || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_jueves || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_viernes || "",
+                      fontSize: 11,
+                      overflow: "hidden",
+                    },
+                  ],
+                  [
+                    { text: "Otro", bold: true, fontSize: 11 },
+                    {
+                      text: datosAdulto.servicio_otro || "",
+                      fontSize: 11,
+                      colSpan: 5,
                     },
                     {},
                     {},
                     {},
                     {},
-                    {}, // Celdas vacías para completar el colSpan
                   ],
                 ],
               },
@@ -776,7 +771,7 @@ function agregaAdultos() {
               ],
               margin: [0, 25, 0, 25],
             },
-            { text: "DATOS ADICIONALES:", margin: [0, 10],bold:true },
+            { text: "DATOS ADICIONALES:", margin: [0, 10], bold: true },
             {
               columns: [
                 {
@@ -1405,17 +1400,20 @@ function generarPDF(index) {
             },
             {
               table: {
-                headerRows: 1,
+                headerRows: 0,
                 widths: [120, "*", "*", "*", "*", "*", "*"],
                 body: [
                   [
-                    { text: "MENSUALIDADES/PAQUETES", bold: true, fontSize: 13 },
+                    {
+                      text: "MENSUALIDADES/PAQUETES",
+                      bold: true,
+                      fontSize: 13,
+                    },
                     { text: "Lunes", bold: true, fontSize: 13 },
                     { text: "Martes", bold: true, fontSize: 13 },
                     { text: "Miércoles", bold: true, fontSize: 13 },
                     { text: "Jueves", bold: true, fontSize: 13 },
                     { text: "Viernes", bold: true, fontSize: 13 },
-                    { text: "Sábado", bold: true, fontSize: 13 }
                   ],
                   [
                     { text: "Aquaerobic", fontSize: 11 },
@@ -1424,71 +1422,66 @@ function generarPDF(index) {
                     { text: registro[22], fontSize: 11 },
                     { text: registro[23], fontSize: 11 },
                     { text: registro[24], fontSize: 11 },
-                    { text: registro[25], fontSize: 11 }
                   ],
                   [
                     { text: "Nado libre", fontSize: 11 },
+                    { text: registro[25], fontSize: 11 },
                     { text: registro[26], fontSize: 11 },
                     { text: registro[27], fontSize: 11 },
                     { text: registro[28], fontSize: 11 },
                     { text: registro[29], fontSize: 11 },
-                    { text: registro[30], fontSize: 11 },
-                    { text: registro[31], fontSize: 11 }
                   ],
                   [
                     { text: "Aquafitness", fontSize: 11 },
+                    { text: registro[30], fontSize: 11 },
+                    { text: registro[31], fontSize: 11 },
                     { text: registro[32], fontSize: 11 },
                     { text: registro[33], fontSize: 11 },
                     { text: registro[34], fontSize: 11 },
-                    { text: registro[35], fontSize: 11 },
-                    { text: registro[36], fontSize: 11 },
-                    { text: registro[37], fontSize: 11 }
                   ],
                   [
                     { text: "Water Spinning", fontSize: 11 },
+                    { text: registro[35], fontSize: 11 },
+                    { text: registro[36], fontSize: 11 },
+                    { text: registro[37], fontSize: 11 },
                     { text: registro[38], fontSize: 11 },
                     { text: registro[39], fontSize: 11 },
-                    { text: registro[40], fontSize: 11 },
-                    { text: registro[41], fontSize: 11 },
-                    { text: registro[42], fontSize: 11 },
-                    { text: registro[43], fontSize: 11 }
                   ],
                   [
                     { text: "Aquatic Pole", fontSize: 11 },
+                    { text: registro[40], fontSize: 11 },
+                    { text: registro[41], fontSize: 11 },
+                    { text: registro[42], fontSize: 11 },
+                    { text: registro[43], fontSize: 11 },
                     { text: registro[44], fontSize: 11 },
+                  ],
+                  [
+                    { text: "Rehabilitación", fontSize: 11 },
                     { text: registro[45], fontSize: 11 },
                     { text: registro[46], fontSize: 11 },
                     { text: registro[47], fontSize: 11 },
                     { text: registro[48], fontSize: 11 },
-                    { text: registro[49], fontSize: 11 }
+                    { text: registro[49], fontSize: 11 },
                   ],
                   [
-                    { text: "Rehabilitación", fontSize: 11 },
+                    { text: "Aqua Yoga", fontSize: 11 },
                     { text: registro[50], fontSize: 11 },
                     { text: registro[51], fontSize: 11 },
                     { text: registro[52], fontSize: 11 },
                     { text: registro[53], fontSize: 11 },
                     { text: registro[54], fontSize: 11 },
-                    { text: registro[55], fontSize: 11 }
-                  ],
-                  [
-                    { text: "Aqua Yoga", fontSize: 11 },
-                    { text: registro[56], fontSize: 11 },
-                    { text: registro[57], fontSize: 11 },
-                    { text: registro[58], fontSize: 11 },
-                    { text: registro[59], fontSize: 11 },
-                    { text: registro[60], fontSize: 11 },
-                    { text: registro[61], fontSize: 11 }
                   ],
                   [
                     { text: "Otro", fontSize: 13 },
-                    { text: registro[62], fontSize: 11, colSpan: 6 },
-                    {}, {}, {}, {}, {}, // Celdas vacías para completar el colSpan
+                    { text: registro[55], fontSize: 11, colSpan: 5 },
+                    {},
+                    {},
+                    {},
+                    {}, // Celdas vacías para completar el colSpan
                   ],
-                ]
-              }
-            }
-            ,
+                ],
+              },
+            },
             {
               text: "(Su actividad esta sujeta a algun cambio o modificacion al presentarse un inconveniente con el maestro asignado en su momento, no entran reposiciones o alargamientos de mensualidad por inasistencia voluntaria o cuestiones de clima)",
               margin: [0, 10],
@@ -1496,7 +1489,7 @@ function generarPDF(index) {
             {
               text: [
                 { text: "Especificar paquete: ", bold: true, fontSize: 13 },
-                { text: registro[63], fontSize: 11 },
+                { text: registro[56], fontSize: 11 },
               ],
               margin: [0, 10],
             },
@@ -1508,9 +1501,9 @@ function generarPDF(index) {
                   bold: true,
                   fontSize: 13,
                 },
-                { text: registro[64] === "1" ? "Sí" : "No", fontSize: 11 },
+                { text: registro[57] === "1" ? "Sí" : "No", fontSize: 11 },
                 { text: " ¿Por cuánto tiempo? ", bold: true, fontSize: 13 },
-                { text: registro[65], fontSize: 11 },
+                { text: registro[58], fontSize: 11 },
               ],
               margin: [0, 5],
             },
@@ -1521,9 +1514,9 @@ function generarPDF(index) {
                   bold: true,
                   fontSize: 13,
                 },
-                { text: registro[66] === "1" ? "Sí" : "No", fontSize: 11 },
+                { text: registro[59] === "1" ? "Sí" : "No", fontSize: 11 },
                 { text: " MOTIVO: ", bold: true, fontSize: 13 },
-                { text: registro[67], fontSize: 11 },
+                { text: registro[60], fontSize: 11 },
               ],
               margin: [0, 5],
             },
@@ -1534,16 +1527,16 @@ function generarPDF(index) {
                   bold: true,
                   fontSize: 13,
                 },
-                { text: registro[68] === "1" ? "Sí" : "No", fontSize: 11 },
+                { text: registro[61] === "1" ? "Sí" : "No", fontSize: 11 },
                 { text: " MOTIVO: ", bold: true, fontSize: 13 },
-                { text: registro[69], fontSize: 11 },
+                { text: registro[62], fontSize: 11 },
               ],
               margin: [0, 5],
             },
             {
               text: [
                 { text: "Experiencia acuática: ", bold: true, fontSize: 13 },
-                { text: registro[70], fontSize: 11 },
+                { text: registro[63], fontSize: 11 },
               ],
               margin: [0, 5],
             },
@@ -1554,14 +1547,14 @@ function generarPDF(index) {
                   bold: true,
                   fontSize: 13,
                 },
-                { text: registro[71] === "1" ? "Sí" : "No", fontSize: 11 },
+                { text: registro[64] === "1" ? "Sí" : "No", fontSize: 11 },
               ],
               margin: [0, 5],
             },
             {
               text: [
                 { text: "¿Temor al agua? ", bold: true, fontSize: 13 },
-                { text: registro[72] === "1" ? "Sí" : "No", fontSize: 11 },
+                { text: registro[65] === "1" ? "Sí" : "No", fontSize: 11 },
               ],
               margin: [0, 5],
             },
@@ -1572,7 +1565,7 @@ function generarPDF(index) {
                   bold: true,
                   fontSize: 13,
                 },
-                { text: registro[73], fontSize: 11 },
+                { text: registro[66], fontSize: 11 },
               ],
               margin: [0, 5],
             },
@@ -1583,11 +1576,11 @@ function generarPDF(index) {
                   bold: true,
                   fontSize: 13,
                 },
-                { text: registro[74], fontSize: 11 },
+                { text: registro[67], fontSize: 11 },
               ],
               margin: [0, 25, 0, 25],
             },
-            { text: "DATOS ADICIONALES:", margin: [0, 10],bold:true },
+            { text: "DATOS ADICIONALES:", margin: [0, 10], bold: true },
             {
               columns: [
                 {

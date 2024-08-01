@@ -14,19 +14,19 @@ class Adultos {
         medicoPrivadoPublico, cualMedicoPrivadoPublico, 
         otraActividadDeportiva, cualOtraActividadDeportiva, autorizacionFotos, 
         servicio_aquaerobic_lunes, servicio_aquaerobic_martes, servicio_aquaerobic_miercoles, 
-        servicio_aquaerobic_jueves, servicio_aquaerobic_viernes, servicio_aquaerobic_sabado,
+        servicio_aquaerobic_jueves, servicio_aquaerobic_viernes,
         servicio_nado_libre_lunes, servicio_nado_libre_martes, servicio_nado_libre_miercoles, 
-        servicio_nado_libre_jueves, servicio_nado_libre_viernes, servicio_nado_libre_sabado,
+        servicio_nado_libre_jueves, servicio_nado_libre_viernes,
         servicio_aquafitness_lunes, servicio_aquafitness_martes, servicio_aquafitness_miercoles, 
-        servicio_aquafitness_jueves, servicio_aquafitness_viernes, servicio_aquafitness_sabado,
+        servicio_aquafitness_jueves, servicio_aquafitness_viernes,
         servicio_water_spinning_lunes, servicio_water_spinning_martes, servicio_water_spinning_miercoles, 
-        servicio_water_spinning_jueves, servicio_water_spinning_viernes, servicio_water_spinning_sabado,
+        servicio_water_spinning_jueves, servicio_water_spinning_viernes,
         servicio_aquatic_pole_lunes, servicio_aquatic_pole_martes, servicio_aquatic_pole_miercoles, 
-        servicio_aquatic_pole_jueves, servicio_aquatic_pole_viernes, servicio_aquatic_pole_sabado,
+        servicio_aquatic_pole_jueves, servicio_aquatic_pole_viernes,
         servicio_rehabilitacion_lunes, servicio_rehabilitacion_martes, servicio_rehabilitacion_miercoles, 
-        servicio_rehabilitacion_jueves, servicio_rehabilitacion_viernes, servicio_rehabilitacion_sabado,
+        servicio_rehabilitacion_jueves, servicio_rehabilitacion_viernes,
         servicio_aqua_yoga_lunes, servicio_aqua_yoga_martes, servicio_aqua_yoga_miercoles, 
-        servicio_aqua_yoga_jueves, servicio_aqua_yoga_viernes, servicio_aqua_yoga_sabado,
+        servicio_aqua_yoga_jueves, servicio_aqua_yoga_viernes,
         servicio_otro,especificarPaquete, recibirClasesEnAgua, 
         cualrecibirClasesEnAgua, experienciaDesagradableConAgua, cualexperienciaDesagradableConAgua, 
         temorAguaNadar, cualtemorAguaNadar, experienciaAcuatica, aceptaAguaCara, temorAgua, 
@@ -74,49 +74,42 @@ class Adultos {
     $servicio_aquaerobic_miercoles = $info['servicio_aquaerobic_miercoles'];
     $servicio_aquaerobic_jueves = $info['servicio_aquaerobic_jueves'];
     $servicio_aquaerobic_viernes = $info['servicio_aquaerobic_viernes'];
-    $servicio_aquaerobic_sabado = $info['servicio_aquaerobic_sabado'];
 
     $servicio_nado_libre_lunes = $info['servicio_nado_libre_lunes'];
     $servicio_nado_libre_martes = $info['servicio_nado_libre_martes'];
     $servicio_nado_libre_miercoles = $info['servicio_nado_libre_miercoles'];
     $servicio_nado_libre_jueves = $info['servicio_nado_libre_jueves'];
     $servicio_nado_libre_viernes = $info['servicio_nado_libre_viernes'];
-    $servicio_nado_libre_sabado = $info['servicio_nado_libre_sabado'];
 
     $servicio_aquafitness_lunes = $info['servicio_aquafitness_lunes'];
     $servicio_aquafitness_martes = $info['servicio_aquafitness_martes'];
     $servicio_aquafitness_miercoles = $info['servicio_aquafitness_miercoles'];
     $servicio_aquafitness_jueves = $info['servicio_aquafitness_jueves'];
     $servicio_aquafitness_viernes = $info['servicio_aquafitness_viernes'];
-    $servicio_aquafitness_sabado = $info['servicio_aquafitness_sabado'];
 
     $servicio_water_spinning_lunes = $info['servicio_water_spinning_lunes'];
     $servicio_water_spinning_martes = $info['servicio_water_spinning_martes'];
     $servicio_water_spinning_miercoles = $info['servicio_water_spinning_miercoles'];
     $servicio_water_spinning_jueves = $info['servicio_water_spinning_jueves'];
     $servicio_water_spinning_viernes = $info['servicio_water_spinning_viernes'];
-    $servicio_water_spinning_sabado = $info['servicio_water_spinning_sabado'];
 
     $servicio_aquatic_pole_lunes = $info['servicio_aquatic_pole_lunes'];
     $servicio_aquatic_pole_martes = $info['servicio_aquatic_pole_martes'];
     $servicio_aquatic_pole_miercoles = $info['servicio_aquatic_pole_miercoles'];
     $servicio_aquatic_pole_jueves = $info['servicio_aquatic_pole_jueves'];
     $servicio_aquatic_pole_viernes = $info['servicio_aquatic_pole_viernes'];
-    $servicio_aquatic_pole_sabado = $info['servicio_aquatic_pole_sabado'];
 
     $servicio_rehabilitacion_lunes = $info['servicio_rehabilitacion_lunes'];
     $servicio_rehabilitacion_martes = $info['servicio_rehabilitacion_martes'];
     $servicio_rehabilitacion_miercoles = $info['servicio_rehabilitacion_miercoles'];
     $servicio_rehabilitacion_jueves = $info['servicio_rehabilitacion_jueves'];
     $servicio_rehabilitacion_viernes = $info['servicio_rehabilitacion_viernes'];
-    $servicio_rehabilitacion_sabado = $info['servicio_rehabilitacion_sabado'];
 
     $servicio_aqua_yoga_lunes = $info['servicio_aqua_yoga_lunes'];
     $servicio_aqua_yoga_martes = $info['servicio_aqua_yoga_martes'];
     $servicio_aqua_yoga_miercoles = $info['servicio_aqua_yoga_miercoles'];
     $servicio_aqua_yoga_jueves = $info['servicio_aqua_yoga_jueves'];
     $servicio_aqua_yoga_viernes = $info['servicio_aqua_yoga_viernes'];
-    $servicio_aqua_yoga_sabado = $info['servicio_aqua_yoga_sabado'];
 
     $servicio_otro = $info['servicio_otro'];
     $especificarPaquete = $info['especificarPaquete'];
@@ -141,19 +134,19 @@ class Adultos {
         medicoPrivadoPublico, cualMedicoPrivadoPublico, 
         otraActividadDeportiva, cualOtraActividadDeportiva, autorizacionFotos, 
         servicio_aquaerobic_lunes, servicio_aquaerobic_martes, servicio_aquaerobic_miercoles, 
-        servicio_aquaerobic_jueves, servicio_aquaerobic_viernes, servicio_aquaerobic_sabado,
+        servicio_aquaerobic_jueves, servicio_aquaerobic_viernes,
         servicio_nado_libre_lunes, servicio_nado_libre_martes, servicio_nado_libre_miercoles, 
-        servicio_nado_libre_jueves, servicio_nado_libre_viernes, servicio_nado_libre_sabado,
+        servicio_nado_libre_jueves, servicio_nado_libre_viernes, 
         servicio_aquafitness_lunes, servicio_aquafitness_martes, servicio_aquafitness_miercoles, 
-        servicio_aquafitness_jueves, servicio_aquafitness_viernes, servicio_aquafitness_sabado,
+        servicio_aquafitness_jueves, servicio_aquafitness_viernes, 
         servicio_water_spinning_lunes, servicio_water_spinning_martes, servicio_water_spinning_miercoles, 
-        servicio_water_spinning_jueves, servicio_water_spinning_viernes, servicio_water_spinning_sabado,
+        servicio_water_spinning_jueves, servicio_water_spinning_viernes,
         servicio_aquatic_pole_lunes, servicio_aquatic_pole_martes, servicio_aquatic_pole_miercoles, 
-        servicio_aquatic_pole_jueves, servicio_aquatic_pole_viernes, servicio_aquatic_pole_sabado,
+        servicio_aquatic_pole_jueves, servicio_aquatic_pole_viernes,
         servicio_rehabilitacion_lunes, servicio_rehabilitacion_martes, servicio_rehabilitacion_miercoles, 
-        servicio_rehabilitacion_jueves, servicio_rehabilitacion_viernes, servicio_rehabilitacion_sabado,
+        servicio_rehabilitacion_jueves, servicio_rehabilitacion_viernes,
         servicio_aqua_yoga_lunes, servicio_aqua_yoga_martes, servicio_aqua_yoga_miercoles, 
-        servicio_aqua_yoga_jueves, servicio_aqua_yoga_viernes, servicio_aqua_yoga_sabado,
+        servicio_aqua_yoga_jueves, servicio_aqua_yoga_viernes,
         servicio_otro,especificarPaquete, recibirClasesEnAgua, 
         cualrecibirClasesEnAgua, experienciaDesagradableConAgua, cualexperienciaDesagradableConAgua, 
         temorAguaNadar, cualtemorAguaNadar, experienciaAcuatica, aceptaAguaCara, temorAgua, 
@@ -165,19 +158,19 @@ class Adultos {
         ,'$medicoPrivadoPublico', '$cualMedicoPrivadoPublico', 
         '$otraActividadDeportiva', '$cualOtraActividadDeportiva', '$autorizacionFotos', 
         '$servicio_aquaerobic_lunes', '$servicio_aquaerobic_martes', '$servicio_aquaerobic_miercoles', 
-        '$servicio_aquaerobic_jueves', '$servicio_aquaerobic_viernes', '$servicio_aquaerobic_sabado',
+        '$servicio_aquaerobic_jueves', '$servicio_aquaerobic_viernes',
         '$servicio_nado_libre_lunes', '$servicio_nado_libre_martes', '$servicio_nado_libre_miercoles', 
-        '$servicio_nado_libre_jueves', '$servicio_nado_libre_viernes', '$servicio_nado_libre_sabado',
+        '$servicio_nado_libre_jueves', '$servicio_nado_libre_viernes', 
         '$servicio_aquafitness_lunes', '$servicio_aquafitness_martes', '$servicio_aquafitness_miercoles', 
-        '$servicio_aquafitness_jueves', '$servicio_aquafitness_viernes', '$servicio_aquafitness_sabado',
+        '$servicio_aquafitness_jueves', '$servicio_aquafitness_viernes', 
         '$servicio_water_spinning_lunes', '$servicio_water_spinning_martes', '$servicio_water_spinning_miercoles', 
-        '$servicio_water_spinning_jueves', '$servicio_water_spinning_viernes', '$servicio_water_spinning_sabado',
+        '$servicio_water_spinning_jueves', '$servicio_water_spinning_viernes',
         '$servicio_aquatic_pole_lunes', '$servicio_aquatic_pole_martes', '$servicio_aquatic_pole_miercoles', 
-        '$servicio_aquatic_pole_jueves', '$servicio_aquatic_pole_viernes', '$servicio_aquatic_pole_sabado',
+        '$servicio_aquatic_pole_jueves', '$servicio_aquatic_pole_viernes', 
         '$servicio_rehabilitacion_lunes', '$servicio_rehabilitacion_martes', '$servicio_rehabilitacion_miercoles', 
-        '$servicio_rehabilitacion_jueves', '$servicio_rehabilitacion_viernes', '$servicio_rehabilitacion_sabado',
+        '$servicio_rehabilitacion_jueves', '$servicio_rehabilitacion_viernes',
         '$servicio_aqua_yoga_lunes', '$servicio_aqua_yoga_martes', '$servicio_aqua_yoga_miercoles', 
-        '$servicio_aqua_yoga_jueves', '$servicio_aqua_yoga_viernes', '$servicio_aqua_yoga_sabado',
+        '$servicio_aqua_yoga_jueves', '$servicio_aqua_yoga_viernes',
         '$servicio_otro', '$especificarPaquete', '$recibirClasesEnAgua', 
         '$cualrecibirClasesEnAgua', '$experienciaDesagradableConAgua', '$cualexperienciaDesagradableConAgua', 
         '$temorAguaNadar', '$cualtemorAguaNadar', '$experienciaAcuatica', '$aceptaAguaCara', '$temorAgua', 
