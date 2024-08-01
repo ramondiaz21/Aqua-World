@@ -235,90 +235,199 @@ function agregaAdultos() {
               alignment: "center",
             },
             {
-              text: `Nombre del alumno: ${datosAdulto.nombre}`,
+              text: [
+                { text: "Nombre del alumno: ", bold: true, fontSize: 13 },
+                { text: `${datosAdulto.nombre}`, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             {
               columns: [
-                { text: `Edad: ${datosAdulto.edad}`, width: "33%" },
-                { text: `Teléfono: ${datosAdulto.telefono}`, width: "33%" },
                 {
-                  text: `Nacionalidad: ${datosAdulto.nacionalidad}`,
+                  text: [
+                    { text: "Edad: ", bold: true, fontSize: 13 },
+                    { text: `${datosAdulto.edad}`, fontSize: 11 },
+                  ],
+                  width: "33%",
+                },
+                {
+                  text: [
+                    { text: "Teléfono: ", bold: true, fontSize: 13 },
+                    { text: `${datosAdulto.telefono}`, fontSize: 11 },
+                  ],
+                  width: "33%",
+                },
+                {
+                  text: [
+                    { text: "Nacionalidad: ", bold: true, fontSize: 13 },
+                    { text: datosAdulto.nacionalidad, fontSize: 11 },
+                  ],
                   width: "33%",
                 },
               ],
               margin: [0, 5],
             },
             {
-              text: `Fecha de nacimiento: ${datosAdulto.fechaDeNacimiento}`,
+              text: [
+                { text: "Fecha de nacimiento: ", bold: true, fontSize: 13 },
+                { text: datosAdulto.fechaDeNacimiento, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
-            { text: `Domicilio: ${datosAdulto.domicilio}`, margin: [0, 5] },
             {
-              text: `Alergia u otros requerimientos de salud: ${datosAdulto.alergiaOtrosRequerimientos}`,
+              text: [
+                { text: "Domicilio: ", bold: true, fontSize: 13 },
+                { text: datosAdulto.domicilio, fontSize: 11 },
+              ],
+              margin: [0, 5],
+            },
+            {
+              text: [
+                {
+                  text: "Alergia u otros requerimientos de salud: ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: datosAdulto.alergiaOtrosRequerimientos, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             {
-              text: `Nombre y teléfono de emergencia: ${datosAdulto.nombreTelefonoEmergencia}`,
+              text: [
+                {
+                  text: "Nombre y teléfono de emergencia: ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: datosAdulto.nombreTelefonoEmergencia, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             {
               columns: [
                 {
-                  text: `Antecedentes médicos: ${datosAdulto.antecedentesMedicos}`,
+                  text: [
+                    {
+                      text: "Antecedentes médicos: ",
+                      bold: true,
+                      fontSize: 13,
+                    },
+                    { text: datosAdulto.antecedentesMedicos, fontSize: 11 },
+                  ],
                   width: "50%",
                 },
                 {
-                  text: `Grupo sanguíneo: ${datosAdulto.grupoSanguineo}`,
+                  text: [
+                    { text: "Grupo sanguíneo: ", bold: true, fontSize: 13 },
+                    { text: datosAdulto.grupoSanguineo, fontSize: 11 },
+                  ],
                   width: "50%",
                 },
               ],
               margin: [0, 5],
             },
             {
-              text: `¿Posee alguna enfermedad cardiológica, neurológica o de vías respiratorias? ${
-                datosAdulto.enfermedadCardiologica === "1" ? "Sí" : "No"
-              }`,
+              text: [
+                {
+                  text: "¿Posee alguna enfermedad cardiológica, neurológica o de vías respiratorias? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text:
+                    datosAdulto.enfermedadCardiologica === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Cuál? ${datosAdulto.cualEnfermedadCardiologica}`,
+              text: [
+                { text: "¿Cuál? ", bold: true, fontSize: 13 },
+                { text: datosAdulto.cualEnfermedadCardiologica, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Está con tratamiento médico? ${
-                datosAdulto.tratamientoMedico === "1" ? "Sí" : "No"
-              }`,
+              text: [
+                {
+                  text: "¿Está con tratamiento médico? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text: datosAdulto.tratamientoMedico === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+              ],
               margin: [0, 5],
             },
             {
-              text: `Describa en qué consiste: ${datosAdulto.cualtratamientoMedico}`,
+              text: [
+                {
+                  text: "Describa en qué consiste: ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: datosAdulto.cualtratamientoMedico, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Tiene algún tipo de servicio médico privado o público? ${
-                datosAdulto.medicoPrivadoPublico === "1" ? "Sí" : "No"
-              }`,
+              text: [
+                {
+                  text: "¿Tiene algún tipo de servicio médico privado o público? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text: datosAdulto.medicoPrivadoPublico === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Cuál? ${datosAdulto.cualMedicoPrivadoPublico}`,
+              text: [
+                { text: "¿Cuál? ", bold: true, fontSize: 13 },
+                { text: datosAdulto.cualMedicoPrivadoPublico, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Está dado de alta en alguna otra actividad deportiva? ${
-                datosAdulto.otraActividadDeportiva === "1" ? "Sí" : "No"
-              }`,
+              text: [
+                {
+                  text: "¿Está dado de alta en alguna otra actividad deportiva? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text:
+                    datosAdulto.otraActividadDeportiva === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Cuál? ${datosAdulto.cualOtraActividadDeportiva}`,
+              text: [
+                { text: "¿Cuál? ", bold: true, fontSize: 13 },
+                { text: datosAdulto.cualOtraActividadDeportiva, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ${
-                datosAdulto.autorizacionFotos === "1" ? "Sí" : "No"
-              }`,
+              text: [
+                {
+                  text: "¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text: datosAdulto.autorizacionFotos === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+              ],
               margin: [0, 10],
             },
             {
@@ -331,85 +440,219 @@ function agregaAdultos() {
                 widths: [120, "*", "*", "*", "*", "*", "*"],
                 body: [
                   [
-                    "MENSUALIDADES/PAQUETES",
-                    "Lunes",
-                    "Martes",
-                    "Miércoles",
-                    "Jueves",
-                    "Viernes",
-                    "Sábado",
-                  ],
-                  [
-                    "Aquaerobic",
-                    datosAdulto.servicio_aquaerobic_lunes,
-                    datosAdulto.servicio_aquaerobic_martes,
-                    datosAdulto.servicio_aquaerobic_miercoles,
-                    datosAdulto.servicio_aquaerobic_jueves,
-                    datosAdulto.servicio_aquaerobic_viernes,
-                    datosAdulto.servicio_aquaerobic_sabado,
-                  ],
-                  [
-                    "Nado libre",
-                    datosAdulto.servicio_nado_libre_lunes,
-                    datosAdulto.servicio_nado_libre_martes,
-                    datosAdulto.servicio_nado_libre_miercoles,
-                    datosAdulto.servicio_nado_libre_jueves,
-                    datosAdulto.servicio_nado_libre_viernes,
-                    datosAdulto.servicio_nado_libre_sabado,
-                  ],
-                  [
-                    "Aquafitness",
-                    datosAdulto.servicio_aquafitness_lunes,
-                    datosAdulto.servicio_aquafitness_martes,
-                    datosAdulto.servicio_aquafitness_miercoles,
-                    datosAdulto.servicio_aquafitness_jueves,
-                    datosAdulto.servicio_aquafitness_viernes,
-                    datosAdulto.servicio_aquafitness_sabado,
-                  ],
-                  [
-                    "Water Spinning",
-                    datosAdulto.servicio_water_spinning_lunes,
-                    datosAdulto.servicio_water_spinning_martes,
-                    datosAdulto.servicio_water_spinning_miercoles,
-                    datosAdulto.servicio_water_spinning_jueves,
-                    datosAdulto.servicio_water_spinning_viernes,
-                    datosAdulto.servicio_water_spinning_sabado,
-                  ],
-                  [
-                    "Aquatic Pole",
-                    datosAdulto.servicio_aquatic_pole_lunes,
-                    datosAdulto.servicio_aquatic_pole_martes,
-                    datosAdulto.servicio_aquatic_pole_miercoles,
-                    datosAdulto.servicio_aquatic_pole_jueves,
-                    datosAdulto.servicio_aquatic_pole_viernes,
-                    datosAdulto.servicio_aquatic_pole_sabado,
-                  ],
-                  [
-                    "Rehabilitación",
-                    datosAdulto.servicio_rehabilitacion_lunes,
-                    datosAdulto.servicio_rehabilitacion_martes,
-                    datosAdulto.servicio_rehabilitacion_miercoles,
-                    datosAdulto.servicio_rehabilitacion_jueves,
-                    datosAdulto.servicio_rehabilitacion_viernes,
-                    datosAdulto.servicio_rehabilitacion_sabado,
-                  ],
-                  [
-                    "Aqua Yoga",
-                    datosAdulto.servicio_aqua_yoga_lunes,
-                    datosAdulto.servicio_aqua_yoga_martes,
-                    datosAdulto.servicio_aqua_yoga_miercoles,
-                    datosAdulto.servicio_aqua_yoga_jueves,
-                    datosAdulto.servicio_aqua_yoga_viernes,
-                    datosAdulto.servicio_aqua_yoga_sabado,
-                  ],
-                  [
                     {
-                      text: "Otro",
+                      text: "MENSUALIDADES/PAQUETES",
+                      bold: true,
+                      fontSize: 13,
+                    },
+                    { text: "Lunes", bold: true, fontSize: 13 },
+                    { text: "Martes", bold: true, fontSize: 13 },
+                    { text: "Miércoles", bold: true, fontSize: 13 },
+                    { text: "Jueves", bold: true, fontSize: 13 },
+                    { text: "Viernes", bold: true, fontSize: 13 },
+                    { text: "Sábado", bold: true, fontSize: 13 },
+                  ],
+                  [
+                    { text: "Aquaerobic", bold: true, fontSize: 13 },
+                    {
+                      text: datosAdulto.servicio_aquaerobic_lunes,
+                      fontSize: 11,
                     },
                     {
+                      text: datosAdulto.servicio_aquaerobic_martes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquaerobic_miercoles,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquaerobic_jueves,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquaerobic_viernes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquaerobic_sabado,
+                      fontSize: 11,
+                    },
+                  ],
+                  [
+                    { text: "Nado libre", bold: true, fontSize: 13 },
+                    {
+                      text: datosAdulto.servicio_nado_libre_lunes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_nado_libre_martes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_nado_libre_miercoles,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_nado_libre_jueves,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_nado_libre_viernes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_nado_libre_sabado,
+                      fontSize: 11,
+                    },
+                  ],
+                  [
+                    { text: "Aquafitness", bold: true, fontSize: 13 },
+                    {
+                      text: datosAdulto.servicio_aquafitness_lunes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquafitness_martes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquafitness_miercoles,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquafitness_jueves,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquafitness_viernes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquafitness_sabado,
+                      fontSize: 11,
+                    },
+                  ],
+                  [
+                    { text: "Water Spinning", bold: true, fontSize: 13 },
+                    {
+                      text: datosAdulto.servicio_water_spinning_lunes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_water_spinning_martes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_water_spinning_miercoles,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_water_spinning_jueves,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_water_spinning_viernes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_water_spinning_sabado,
+                      fontSize: 11,
+                    },
+                  ],
+                  [
+                    { text: "Aquatic Pole", bold: true, fontSize: 13 },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_lunes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_martes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_miercoles,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_jueves,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_viernes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aquatic_pole_sabado,
+                      fontSize: 11,
+                    },
+                  ],
+                  [
+                    { text: "Rehabilitación", bold: true, fontSize: 13 },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_lunes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_martes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_miercoles,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_jueves,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_viernes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_rehabilitacion_sabado,
+                      fontSize: 11,
+                    },
+                  ],
+                  [
+                    { text: "Aqua Yoga", bold: true, fontSize: 13 },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_lunes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_martes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_miercoles,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_jueves,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_viernes,
+                      fontSize: 11,
+                    },
+                    {
+                      text: datosAdulto.servicio_aqua_yoga_sabado,
+                      fontSize: 11,
+                    },
+                  ],
+                  [
+                    { text: "Otro", bold: true, fontSize: 13 },
+                    {
                       text: `${datosAdulto.servicio_otro}`,
+                      fontSize: 11,
                       colSpan: 6,
-                    }, // Celdas vacías para completar el colSpan
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {}, // Celdas vacías para completar el colSpan
                   ],
                 ],
               },
@@ -419,53 +662,121 @@ function agregaAdultos() {
               margin: [0, 10],
             },
             {
-              text: `Especificar paquete: ${datosAdulto.especificarPaquete}`,
+              text: [
+                { text: "Especificar paquete: ", bold: true, fontSize: 13 },
+                { text: datosAdulto.especificarPaquete, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             { text: "ENCUESTA PARA VALORACIÓN DEL ADULTO", style: "subheader" },
             {
-              text: `¿Había recibido clases en el agua? ${
-                datosAdulto.recibirClasesEnAgua === "1" ? "Sí" : "No"
-              } ¿Por cuánto tiempo? ${datosAdulto.cualrecibirClasesEnAgua}`,
+              text: [
+                {
+                  text: "¿Había recibido clases en el agua? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text: datosAdulto.recibirClasesEnAgua === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+                { text: " ¿Por cuánto tiempo? ", bold: true, fontSize: 13 },
+                { text: datosAdulto.cualrecibirClasesEnAgua, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Tiene alguna experiencia desagradable con el agua? ${
-                datosAdulto.experienciaDesagradableConAgua === "1" ? "Sí" : "No"
-              } MOTIVO: ${datosAdulto.cualexperienciaDesagradableConAgua}`,
+              text: [
+                {
+                  text: "¿Tiene alguna experiencia desagradable con el agua? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text:
+                    datosAdulto.experienciaDesagradableConAgua === "1"
+                      ? "Sí"
+                      : "No",
+                  fontSize: 11,
+                },
+                { text: " MOTIVO: ", bold: true, fontSize: 13 },
+                {
+                  text: datosAdulto.cualexperienciaDesagradableConAgua,
+                  fontSize: 11,
+                },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Tiene temor al agua o a nadar? ${
-                datosAdulto.temorAguaNadar === "1" ? "Sí" : "No"
-              } MOTIVO: ${datosAdulto.cualtemorAguaNadar}`,
+              text: [
+                {
+                  text: "¿Tiene temor al agua o a nadar? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text: datosAdulto.temorAguaNadar === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+                { text: " MOTIVO: ", bold: true, fontSize: 13 },
+                { text: datosAdulto.cualtemorAguaNadar, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: `Experiencia acuática: ${datosAdulto.experienciaAcuatica}`,
+              text: [
+                { text: "Experiencia acuática: ", bold: true, fontSize: 13 },
+                { text: datosAdulto.experienciaAcuatica, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Acepta que le caiga agua en la cara? ${
-                datosAdulto.aceptaAguaCara === "1" ? "Sí" : "No"
-              }`,
+              text: [
+                {
+                  text: "¿Acepta que le caiga agua en la cara? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                {
+                  text: datosAdulto.aceptaAguaCara === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Temor al agua? ${
-                datosAdulto.temorAgua === "1" ? "Sí" : "No"
-              }`,
+              text: [
+                { text: "¿Temor al agua? ", bold: true, fontSize: 13 },
+                {
+                  text: datosAdulto.temorAgua === "1" ? "Sí" : "No",
+                  fontSize: 11,
+                },
+              ],
               margin: [0, 5],
             },
             {
-              text: `¿Qué nivel de práctica tiene nadando? ${datosAdulto.practicaNadando}`,
+              text: [
+                {
+                  text: "¿Qué nivel de práctica tiene nadando? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: datosAdulto.practicaNadando, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: `TIPO DE SERVICIO ADQUIRIDO: ${datosAdulto.tipoServicioAdquirido}`,
+              text: [
+                {
+                  text: "TIPO DE SERVICIO ADQUIRIDO: ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: datosAdulto.tipoServicioAdquirido, fontSize: 11 },
+              ],
               margin: [0, 25, 0, 25],
             },
-            { text: "DATOS ADICIONALES:", margin: [0, 10] },
+            { text: "DATOS ADICIONALES:", margin: [0, 10],bold:true },
             {
               columns: [
                 {
@@ -476,9 +787,11 @@ function agregaAdultos() {
                       alignment: "center",
                     },
                     {
-                      text: `Firma de autorización del cliente de datos para su uso exclusivo emergente`,
+                      text: "Firma de autorización del cliente de datos para su uso exclusivo emergente",
                       alignment: "center",
                       margin: [0, 5],
+                      bold: true,
+                      fontSize: 13,
                     },
                   ],
                   width: "50%",
@@ -491,9 +804,11 @@ function agregaAdultos() {
                       alignment: "center",
                     },
                     {
-                      text: `Sello de AquaworldClub`,
+                      text: "Sello de AquaworldClub",
                       alignment: "center",
                       margin: [0, 5],
+                      bold: true,
+                      fontSize: 13,
                     },
                   ],
                   width: "50%",
@@ -507,7 +822,10 @@ function agregaAdultos() {
               margin: [0, 80, 0, 10],
             },
             {
-              text: `Lugar y fecha: ${lugar} ${fechaRegistro}`,
+              text: [
+                { text: "Lugar y fecha: ", bold: true, fontSize: 13 },
+                { text: `${lugar} ${fechaRegistro}`, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             {
@@ -515,7 +833,7 @@ function agregaAdultos() {
                 "El/la que suscribe ",
                 { text: `${datosAdulto.nombre}`, bold: false },
                 ", en su calidad de padre, madre o tutor/a, autoriza a ",
-                { text: "AQUAWORLDCLUB", bold: true },
+                { text: "AQUAWORLDCLUB", bold: true, fontSize: 13 },
                 " a realizar registro de imagen fotográfica y/o audiovisual del/la estudiante: ",
                 { text: `${datosAdulto.nombre}`, bold: false },
                 " con el fin de promover y difundir la cultura en los medios físicos y electrónicos que las referidas instancias consideren necesarias, en donde pueda comunicar públicamente y distribuir las imágenes para los fines que lo requieran bajo las siguientes:",
@@ -572,6 +890,7 @@ function agregaAdultos() {
             {
               text: "Nombre y firma del padre, madre o tutor",
               margin: [0, 0],
+              bold: true,
               alignment: "center",
             },
             {
@@ -738,24 +1057,29 @@ function agregaAdultos() {
             },
             {
               text: "Nombre y firma de conformidad",
+              bold: true,
               margin: [0, 10],
               alignment: "center",
             },
           ],
           styles: {
+            defaultText: {
+              fontSize: 13,
+            },
             header: {
-              fontSize: 14,
+              fontSize: 25,
               bold: true,
               margin: [0, 10],
             },
             subheader: {
-              fontSize: 12,
+              fontSize: 14,
               bold: true,
               margin: [0, 5],
             },
           },
         };
 
+        applyFontSizeToTextElements(docDefinition.content, 13);
         pdfMake
           .createPdf(docDefinition)
           .download("contrato " + datosAdulto.nombre + ".pdf");
@@ -773,6 +1097,39 @@ function agregaAdultos() {
       }
     },
   });
+}
+
+function applyFontSizeToTextElements(content, defaultFontSize) {
+  if (Array.isArray(content)) {
+    content.forEach((item) =>
+      applyFontSizeToTextElements(item, defaultFontSize)
+    );
+  } else if (typeof content === "object") {
+    if (content.text) {
+      // Aplicar el tamaño de fuente si el elemento tiene 'text' y no tiene un tamaño de fuente definido
+      if (Array.isArray(content.text)) {
+        content.text.forEach((textItem) => {
+          if (typeof textItem === "object" && textItem.text) {
+            if (!textItem.fontSize) {
+              // Solo aplicar si no tiene tamaño de fuente definido
+              textItem.fontSize = defaultFontSize;
+            }
+          }
+        });
+      } else {
+        if (!content.fontSize) {
+          // Solo aplicar si no tiene tamaño de fuente definido
+          content.fontSize = defaultFontSize;
+        }
+      }
+    }
+    // Recorrer propiedades anidadas que puedan contener más contenido
+    Object.keys(content).forEach((key) => {
+      if (typeof content[key] === "object") {
+        applyFontSizeToTextElements(content[key], defaultFontSize);
+      }
+    });
+  }
 }
 
 function mostrarAdultos() {
@@ -820,7 +1177,7 @@ function mostrarAdultos() {
         $("#tbody").empty().append(tbody);
       } else {
         $("#tbody").empty();
-        alert("No se encontraron registros.");
+        //alert("No se encontraron registros.");
       }
     },
     error: function (xhr, status, error) {
@@ -864,90 +1221,182 @@ function generarPDF(index) {
               alignment: "center",
             },
             {
-              text: "Nombre del alumno: " + registro[1],
-              margin: [0, 10],
+              text: [
+                { text: "Nombre del alumno: ", bold: true, fontSize: 13 }, // Texto con tamaño 13px y negrita
+                { text: `${registro[1]}`, fontSize: 11 }, // Variable con tamaño 11px
+              ],
+              margin: [0, 10], // Margen superior e inferior
             },
             {
               columns: [
-                { text: "Edad: " + registro[2], width: "33%" },
-                { text: "Teléfono: " + registro[3], width: "33%" },
                 {
-                  text: "Nacionalidad: " + registro[4],
+                  text: [
+                    { text: "Edad: ", bold: true, fontSize: 13 },
+                    { text: `${registro[2]}`, fontSize: 11 },
+                  ],
+                  width: "33%",
+                },
+                {
+                  text: [
+                    { text: "Teléfono: ", bold: true, fontSize: 13 },
+                    { text: `${registro[3]}`, fontSize: 11 },
+                  ],
+                  width: "33%",
+                },
+                {
+                  text: [
+                    { text: "Nacionalidad: ", bold: true, fontSize: 13 },
+                    { text: `${registro[4]}`, fontSize: 11 },
+                  ],
                   width: "33%",
                 },
               ],
               margin: [0, 5],
             },
             {
-              text: "Fecha de nacimiento: " + registro[5],
+              text: [
+                { text: "Fecha de nacimiento: ", bold: true, fontSize: 13 },
+                { text: `${registro[5]}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
-            { text: "Domicilio: " + registro[6], margin: [0, 5] },
             {
-              text: "Alergia u otros requerimientos de salud: " + registro[7],
+              text: [
+                { text: "Domicilio: ", bold: true, fontSize: 13 },
+                { text: `${registro[6]}`, fontSize: 11 },
+              ],
+              margin: [0, 5],
+            },
+            {
+              text: [
+                {
+                  text: "Alergia u otros requerimientos de salud: ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: `${registro[7]}`, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             {
-              text: "Nombre y teléfono de emergencia: " + registro[8],
+              text: [
+                {
+                  text: "Nombre y teléfono de emergencia: ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: `${registro[8]}`, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             {
               columns: [
                 {
-                  text: "Antecedentes médicos: " + registro[9],
+                  text: [
+                    {
+                      text: "Antecedentes médicos: ",
+                      bold: true,
+                      fontSize: 13,
+                    },
+                    { text: `${registro[9]}`, fontSize: 11 },
+                  ],
                   width: "50%",
                 },
                 {
-                  text: "Grupo sanguíneo: " + registro[10],
+                  text: [
+                    { text: "Grupo sanguíneo: ", bold: true, fontSize: 13 },
+                    { text: `${registro[10]}`, fontSize: 11 },
+                  ],
                   width: "50%",
                 },
               ],
               margin: [0, 5],
             },
             {
-              text:
-                "¿Posee alguna enfermedad cardiológica, neurológica o de vías respiratorias? " +
-                (registro[11] === "1" ? "Sí" : "No"),
+              text: [
+                {
+                  text: "¿Posee alguna enfermedad cardiológica, neurológica o de vías respiratorias? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: `${registro[11] === "1" ? "Sí" : "No"}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: "¿Cuál? " + registro[12],
+              text: [
+                { text: "¿Cuál? ", bold: true, fontSize: 13 },
+                { text: `${registro[12]}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text:
-                "¿Está con tratamiento médico? " +
-                (registro[13] === "1" ? "Sí" : "No"),
+              text: [
+                {
+                  text: "¿Está con tratamiento médico? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: `${registro[13] === "1" ? "Sí" : "No"}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: "Describa en qué consiste: " + registro[14],
+              text: [
+                {
+                  text: "Describa en qué consiste: ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: `${registro[14]}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text:
-                "¿Tiene algún tipo de servicio médico privado o público? " +
-                (registro[15] === "1" ? "Sí" : "No"),
+              text: [
+                {
+                  text: "¿Tiene algún tipo de servicio médico privado o público? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: `${registro[15] === "1" ? "Sí" : "No"}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: "¿Cuál? " + registro[16],
+              text: [
+                { text: "¿Cuál? ", bold: true, fontSize: 13 },
+                { text: `${registro[16]}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text:
-                "¿Está dado de alta en alguna otra actividad deportiva? " +
-                (registro[17] === "1" ? "Sí" : "No"),
+              text: [
+                {
+                  text: "¿Está dado de alta en alguna otra actividad deportiva? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: `${registro[17] === "1" ? "Sí" : "No"}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: "¿Cuál? " + registro[18],
+              text: [
+                { text: "¿Cuál? ", bold: true, fontSize: 13 },
+                { text: `${registro[18]}`, fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text:
-                "¿Autoriza que sus fotos aparezcan en nuestras publicaciones? " +
-                (registro[19] === "1" ? "Sí" : "No"),
+              text: [
+                {
+                  text: "¿Autoriza que sus fotos aparezcan en nuestras publicaciones? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: `${registro[19] === "1" ? "Sí" : "No"}`, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             {
@@ -960,150 +1409,185 @@ function generarPDF(index) {
                 widths: [120, "*", "*", "*", "*", "*", "*"],
                 body: [
                   [
-                    "MENSUALIDADES/PAQUETES",
-                    "Lunes",
-                    "Martes",
-                    "Miércoles",
-                    "Jueves",
-                    "Viernes",
-                    "Sábado",
+                    { text: "MENSUALIDADES/PAQUETES", bold: true, fontSize: 13 },
+                    { text: "Lunes", bold: true, fontSize: 13 },
+                    { text: "Martes", bold: true, fontSize: 13 },
+                    { text: "Miércoles", bold: true, fontSize: 13 },
+                    { text: "Jueves", bold: true, fontSize: 13 },
+                    { text: "Viernes", bold: true, fontSize: 13 },
+                    { text: "Sábado", bold: true, fontSize: 13 }
                   ],
                   [
-                    "Aquaerobic",
-                    registro[20],
-                    registro[21],
-                    registro[22],
-                    registro[23],
-                    registro[24],
-                    registro[25],
+                    { text: "Aquaerobic", fontSize: 11 },
+                    { text: registro[20], fontSize: 11 },
+                    { text: registro[21], fontSize: 11 },
+                    { text: registro[22], fontSize: 11 },
+                    { text: registro[23], fontSize: 11 },
+                    { text: registro[24], fontSize: 11 },
+                    { text: registro[25], fontSize: 11 }
                   ],
                   [
-                    "Nado libre",
-                    registro[26],
-                    registro[27],
-                    registro[28],
-                    registro[29],
-                    registro[30],
-                    registro[31],
+                    { text: "Nado libre", fontSize: 11 },
+                    { text: registro[26], fontSize: 11 },
+                    { text: registro[27], fontSize: 11 },
+                    { text: registro[28], fontSize: 11 },
+                    { text: registro[29], fontSize: 11 },
+                    { text: registro[30], fontSize: 11 },
+                    { text: registro[31], fontSize: 11 }
                   ],
                   [
-                    "Aquafitness",
-                    registro[32],
-                    registro[33],
-                    registro[34],
-                    registro[35],
-                    registro[36],
-                    registro[37],
+                    { text: "Aquafitness", fontSize: 11 },
+                    { text: registro[32], fontSize: 11 },
+                    { text: registro[33], fontSize: 11 },
+                    { text: registro[34], fontSize: 11 },
+                    { text: registro[35], fontSize: 11 },
+                    { text: registro[36], fontSize: 11 },
+                    { text: registro[37], fontSize: 11 }
                   ],
                   [
-                    "Water Spinning",
-                    registro[38],
-                    registro[39],
-                    registro[40],
-                    registro[41],
-                    registro[42],
-                    registro[43],
+                    { text: "Water Spinning", fontSize: 11 },
+                    { text: registro[38], fontSize: 11 },
+                    { text: registro[39], fontSize: 11 },
+                    { text: registro[40], fontSize: 11 },
+                    { text: registro[41], fontSize: 11 },
+                    { text: registro[42], fontSize: 11 },
+                    { text: registro[43], fontSize: 11 }
                   ],
                   [
-                    "Aquatic Pole",
-                    registro[44],
-                    registro[45],
-                    registro[46],
-                    registro[47],
-                    registro[48],
-                    registro[49],
+                    { text: "Aquatic Pole", fontSize: 11 },
+                    { text: registro[44], fontSize: 11 },
+                    { text: registro[45], fontSize: 11 },
+                    { text: registro[46], fontSize: 11 },
+                    { text: registro[47], fontSize: 11 },
+                    { text: registro[48], fontSize: 11 },
+                    { text: registro[49], fontSize: 11 }
                   ],
                   [
-                    "Rehabilitación",
-                    registro[50],
-                    registro[51],
-                    registro[52],
-                    registro[53],
-                    registro[54],
-                    registro[55],
+                    { text: "Rehabilitación", fontSize: 11 },
+                    { text: registro[50], fontSize: 11 },
+                    { text: registro[51], fontSize: 11 },
+                    { text: registro[52], fontSize: 11 },
+                    { text: registro[53], fontSize: 11 },
+                    { text: registro[54], fontSize: 11 },
+                    { text: registro[55], fontSize: 11 }
                   ],
                   [
-                    "Aqua Yoga",
-                    registro[56],
-                    registro[57],
-                    registro[58],
-                    registro[59],
-                    registro[60],
-                    registro[61],
+                    { text: "Aqua Yoga", fontSize: 11 },
+                    { text: registro[56], fontSize: 11 },
+                    { text: registro[57], fontSize: 11 },
+                    { text: registro[58], fontSize: 11 },
+                    { text: registro[59], fontSize: 11 },
+                    { text: registro[60], fontSize: 11 },
+                    { text: registro[61], fontSize: 11 }
                   ],
                   [
-                    {
-                      text: "Otro",
-                    },
-                    {
-                      text: registro[62],
-                      colSpan: 6,
-                    },
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
+                    { text: "Otro", fontSize: 13 },
+                    { text: registro[62], fontSize: 11, colSpan: 6 },
+                    {}, {}, {}, {}, {}, // Celdas vacías para completar el colSpan
                   ],
-                ],
-              },
-            },
+                ]
+              }
+            }
+            ,
             {
               text: "(Su actividad esta sujeta a algun cambio o modificacion al presentarse un inconveniente con el maestro asignado en su momento, no entran reposiciones o alargamientos de mensualidad por inasistencia voluntaria o cuestiones de clima)",
               margin: [0, 10],
             },
             {
-              text: "Especificar paquete: " + registro[63],
+              text: [
+                { text: "Especificar paquete: ", bold: true, fontSize: 13 },
+                { text: registro[63], fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             { text: "ENCUESTA PARA VALORACIÓN DEL ADULTO", style: "subheader" },
             {
-              text:
-                "¿Había recibido clases en el agua? " +
-                (registro[64] === "1" ? "Sí" : "No") +
-                " ¿Por cuánto tiempo? " +
-                registro[65],
+              text: [
+                {
+                  text: "¿Había recibido clases en el agua? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: registro[64] === "1" ? "Sí" : "No", fontSize: 11 },
+                { text: " ¿Por cuánto tiempo? ", bold: true, fontSize: 13 },
+                { text: registro[65], fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text:
-                "¿Tiene alguna experiencia desagradable con el agua? " +
-                (registro[66] === "1" ? "Sí" : "No") +
-                " MOTIVO: " +
-                registro[67],
+              text: [
+                {
+                  text: "¿Tiene alguna experiencia desagradable con el agua? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: registro[66] === "1" ? "Sí" : "No", fontSize: 11 },
+                { text: " MOTIVO: ", bold: true, fontSize: 13 },
+                { text: registro[67], fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text:
-                "¿Tiene temor al agua o a nadar? " +
-                (registro[68] === "1" ? "Sí" : "No") +
-                " MOTIVO: " +
-                registro[69],
+              text: [
+                {
+                  text: "¿Tiene temor al agua o a nadar? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: registro[68] === "1" ? "Sí" : "No", fontSize: 11 },
+                { text: " MOTIVO: ", bold: true, fontSize: 13 },
+                { text: registro[69], fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: "Experiencia acuática: " + registro[70],
+              text: [
+                { text: "Experiencia acuática: ", bold: true, fontSize: 13 },
+                { text: registro[70], fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text:
-                "¿Acepta que le caiga agua en la cara? " +
-                (registro[71] === "1" ? "Sí" : "No"),
+              text: [
+                {
+                  text: "¿Acepta que le caiga agua en la cara? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: registro[71] === "1" ? "Sí" : "No", fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: "¿Temor al agua? " + (registro[72] === "1" ? "Sí" : "No"),
+              text: [
+                { text: "¿Temor al agua? ", bold: true, fontSize: 13 },
+                { text: registro[72] === "1" ? "Sí" : "No", fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: "¿Qué nivel de práctica tiene nadando? " + registro[73],
+              text: [
+                {
+                  text: "¿Qué nivel de práctica tiene nadando? ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: registro[73], fontSize: 11 },
+              ],
               margin: [0, 5],
             },
             {
-              text: "TIPO DE SERVICIO ADQUIRIDO: " + registro[74],
+              text: [
+                {
+                  text: "TIPO DE SERVICIO ADQUIRIDO: ",
+                  bold: true,
+                  fontSize: 13,
+                },
+                { text: registro[74], fontSize: 11 },
+              ],
               margin: [0, 25, 0, 25],
             },
-            { text: "DATOS ADICIONALES:", margin: [0, 10] },
+            { text: "DATOS ADICIONALES:", margin: [0, 10],bold:true },
             {
               columns: [
                 {
@@ -1116,6 +1600,7 @@ function generarPDF(index) {
                     {
                       text: "Firma de autorización del cliente de datos para su uso exclusivo emergente",
                       alignment: "center",
+                      bold: true,
                       margin: [0, 5],
                     },
                   ],
@@ -1131,6 +1616,7 @@ function generarPDF(index) {
                     {
                       text: "Sello de AquaworldClub",
                       alignment: "center",
+                      bold: true,
                       margin: [0, 5],
                     },
                   ],
@@ -1145,18 +1631,32 @@ function generarPDF(index) {
               margin: [0, 80, 0, 10],
             },
             {
-              text: `Lugar y fecha: ${lugar} ${fechaRegistro}`,
+              text: [
+                { text: "Lugar y fecha: ", bold: true, fontSize: 13 },
+                { text: lugar, fontSize: 11 },
+                { text: " ", fontSize: 11 }, // Espacio entre la variable y la siguiente
+                { text: fechaRegistro, fontSize: 11 },
+              ],
               margin: [0, 10],
             },
             {
               text: [
-                "El/la que suscribe ",
-                { text: registro[1], bold: false },
-                ", en su calidad de padre, madre o tutor/a, autoriza a ",
-                { text: "AQUAWORLDCLUB", bold: true },
-                " a realizar registro de imagen fotográfica y/o audiovisual del/la estudiante: ",
-                { text: registro[1], bold: false },
-                " con el fin de promover y difundir la cultura en los medios físicos y electrónicos que las referidas instancias consideren necesarias, en donde pueda aparecer de forma individual, en grupo o en situaciones recreativas y pedagógicas, autorizando así mismo a reproducir y difundir el material.",
+                { text: "El/la que suscribe ", fontSize: 13 },
+                { text: registro[1], fontSize: 11, bold: false },
+                {
+                  text: ", en su calidad de padre, madre o tutor/a, autoriza a ",
+                  fontSize: 13,
+                },
+                { text: "AQUAWORLDCLUB", fontSize: 13, bold: true },
+                {
+                  text: " a realizar registro de imagen fotográfica y/o audiovisual del/la estudiante: ",
+                  fontSize: 13,
+                },
+                { text: registro[1], fontSize: 11, bold: false },
+                {
+                  text: " con el fin de promover y difundir la cultura en los medios físicos y electrónicos que las referidas instancias consideren necesarias, en donde pueda aparecer de forma individual, en grupo o en situaciones recreativas y pedagógicas, autorizando así mismo a reproducir y difundir el material.",
+                  fontSize: 13,
+                },
               ],
               margin: [0, 10],
             },
@@ -1209,6 +1709,7 @@ function generarPDF(index) {
             },
             {
               text: "Nombre y firma del padre, madre o tutor",
+              bold: true,
               margin: [0, 0],
               alignment: "center",
             },
@@ -1376,23 +1877,29 @@ function generarPDF(index) {
             },
             {
               text: "Nombre y firma de conformidad",
+              bold: true,
               margin: [0, 10],
               alignment: "center",
             },
           ],
           styles: {
+            defaultText: {
+              fontSize: 13,
+            },
             header: {
-              fontSize: 14,
+              fontSize: 25,
               bold: true,
               margin: [0, 10],
             },
             subheader: {
-              fontSize: 12,
+              fontSize: 14,
               bold: true,
               margin: [0, 5],
             },
           },
         };
+
+        applyFontSizeToTextElements(docDefinition.content, 13);
 
         pdfMake
           .createPdf(docDefinition)

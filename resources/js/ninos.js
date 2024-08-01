@@ -994,7 +994,7 @@ function mostrarNinos() {
         $("#tbody").empty().append(tbody);
       } else {
         $("#tbody").empty();
-        alert("No se encontraron registros.");
+        //alert("No se encontraron registros.");
       }
     },
     error: function (xhr, status, error) {
